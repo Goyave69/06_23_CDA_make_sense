@@ -111,3 +111,28 @@ COLLATE = utf8mb4_0900_ai_ci;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+
+-- Fixtures for testing purposes --------------------------------
+
+INSERT INTO `project3test`.`makesense_user` (`id`, `firstname`, `lastname`, `email`, `password`, `birthdate`, `role`)
+VALUES (1, 'John', 'Doe', 'johndoe@example.com', 'password123', '1990-05-15', '{"role": "admin"}'),
+       (2, 'Jane', 'Smith', 'janesmith@example.com', 'abcdefg', '1985-12-03', '{"role": "user"}'),
+       (3, 'Michael', 'Johnson', 'michaeljohnson@example.com', 'mysecretpassword', '1988-07-21', '{"role": "user, expert"}');
+       (4, 'Robert', 'Smith', 'robertsmith@example.com', 'password789', '1995-03-10', '{"role": "expert"}'),
+       (5, 'Alice', 'Johnson', 'alicejohnson@example.com', 'password123', '1992-08-21', '{"role": "expert"}');
+
+INSERT INTO `project3test`.`decision` (`decision_id`, `title`, `deadline`, `decision_content`, `organization_utility`, `decision_context`, `decision_benefits`, `decision_risks`, `progress_status`, `makesense_user_id`)
+VALUES (1, 'Project Proposal', '2023-06-30', 'Lorem ipsum dolor', 'Lorem ipsum dolor', 'Lorem ipsum dolor', 'Lorem ipsum dolor', 'Lorem ipsum dolor', 0, 1),
+       (2, 'Marketing Plan', '2023-07-15', 'Nullam consequat', 'Nullam consequat', 'Nullam consequat', 'Nullam consequat', 'Nullam consequat', 0, 2),
+       (3, 'Financial Report', '2023-08-10', 'Sed ut perspiciatis', 'Sed ut perspiciatis', 'Sed ut perspiciatis', 'Sed ut perspiciatis', 'Sed ut perspiciatis', 0, 3);
+
+INSERT INTO `project3test`.`survey` (`Id`, `user_id`, `decision_id`, `comment_content`, `makesense_user_id`)
+VALUES (1, 1, 1, 'Lorem ipsum dolor', 1),
+       (2, 2, 1, 'Nullam consequat', 2),
+       (3, 3, 2, 'Sed ut perspiciatis', 3);
+
+INSERT INTO `project3test`.`user_decision` (`user_id`, `decision_id`, `makesense_user_id`)
+VALUES (1, 1, 1),
+       (2, 2, 2),
+       (3, 3, 3);
