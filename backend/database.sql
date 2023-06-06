@@ -1,10 +1,3 @@
-CREATE TABLE item (
-  id int(11) UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  title varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-INSERT INTO item (title) VALUES ('Stuff'), ('Doodads');
-
 -- MySQL Workbench Forward Engineering
 
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
@@ -118,7 +111,7 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 INSERT INTO `project3test`.`makesense_user` (`id`, `firstname`, `lastname`, `email`, `password`, `birthdate`, `role`)
 VALUES (1, 'John', 'Doe', 'johndoe@example.com', 'password123', '1990-05-15', '{"role": "admin"}'),
        (2, 'Jane', 'Smith', 'janesmith@example.com', 'abcdefg', '1985-12-03', '{"role": "user"}'),
-       (3, 'Michael', 'Johnson', 'michaeljohnson@example.com', 'mysecretpassword', '1988-07-21', '{"role": "user, expert"}');
+       (3, 'Michael', 'Johnson', 'michaeljohnson@example.com', 'mysecretpassword', '1988-07-21', '{"role": "user, expert"}'),
        (4, 'Robert', 'Smith', 'robertsmith@example.com', 'password789', '1995-03-10', '{"role": "expert"}'),
        (5, 'Alice', 'Johnson', 'alicejohnson@example.com', 'password123', '1992-08-21', '{"role": "expert"}');
 
