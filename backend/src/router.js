@@ -13,8 +13,8 @@ router.delete("/items/:id", itemControllers.destroy);
 
 router.get("/users", userControllers.getAllUsers);
 router.get("/users/:id", userControllers.getOneUser);
-// router.put("/users/:id", userControllers.updateUsers);
-// router.post("/users", userControllers.addUsers);
+router.put("/users/:id", userControllers.updateUser);
+router.post("/users", userControllers.addUser);
 router.delete("/users", userControllers.deleteUser);
 
 module.exports = router;

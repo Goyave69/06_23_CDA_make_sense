@@ -61,6 +61,7 @@ const addUser = (req, res) => {
       res.location(`/users/${result.insertId}`).sendStatus(201);
     })
     .catch((err) => {
+      console.info(user.role);
       console.error(err);
       res.sendStatus(500);
     });
