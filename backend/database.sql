@@ -55,6 +55,7 @@ CREATE TABLE IF NOT EXISTS `project3test`.`decision` (
   `decision_risks` TEXT NOT NULL,
   `progress_status` INT NOT NULL,
   `makesense_user_id` INT NOT NULL,
+  `in_conflict` INT NOT NULL, 
   PRIMARY KEY (`decision_id`),
   INDEX `makesense_user_id` (`makesense_user_id` ASC) VISIBLE,
   CONSTRAINT `decision_ibfk_1`
