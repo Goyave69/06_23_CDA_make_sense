@@ -31,8 +31,6 @@ const getOneUser = (req, res) => {
 const updateUser = (req, res) => {
   const user = req.body;
 
-  // TODO validations (length, format...)
-
   user.id = parseInt(req.params.id, 10);
 
   models.user
@@ -52,8 +50,6 @@ const updateUser = (req, res) => {
 
 const addUser = (req, res) => {
   const user = req.body;
-
-  // TODO validations (length, format...)
 
   models.user
     .insert(user)
