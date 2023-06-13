@@ -38,7 +38,7 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- Table `project3test`.`decision`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `project3test`.`decision` (
-  `decision_id` INT NOT NULL AUTO_INCREMENT,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `title` VARCHAR(255) NOT NULL,
   `deadline` DATE NOT NULL,
   `decision_content` TEXT NOT NULL,
@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS `project3test`.`decision` (
   `progress_status` INT NOT NULL,
   `makesense_user_id` INT NOT NULL,
   `in_conflict` INT NOT NULL, 
-  PRIMARY KEY (`decision_id`),
+  PRIMARY KEY (`id`),
   INDEX `makesense_user_id` (`makesense_user_id` ASC) VISIBLE,
   CONSTRAINT `decision_ibfk_1`
     FOREIGN KEY (`makesense_user_id`)
@@ -63,12 +63,12 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- Table `project3test`.`survey`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `project3test`.`survey` (
-  `Id` INT NOT NULL AUTO_INCREMENT,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `user_id` INT NOT NULL,
   `decision_id` INT NOT NULL,
   `comment_content` TEXT NOT NULL,
   `makesense_user_id` INT NOT NULL,
-  PRIMARY KEY (`Id`),
+  PRIMARY KEY (`id`),
   INDEX `makesense_user_id` (`makesense_user_id` ASC) VISIBLE,
   INDEX `decision_id` (`decision_id` ASC) VISIBLE,
   CONSTRAINT `survey_ibfk_1`
