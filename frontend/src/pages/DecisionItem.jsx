@@ -1,20 +1,24 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import * as React from "react";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import { Box, Chip } from "@mui/material";
-import Typography from "@mui/material/Typography";
-import Avatar from "@mui/material/Avatar";
-import Stack from "@mui/material/Stack";
+import {
+  Card,
+  CardActions,
+  CardContent,
+  Box,
+  Chip,
+  Typography,
+  Avatar,
+  Stack,
+} from "@mui/material";
 import { deepPurple } from "@mui/material/colors";
 import DecisionLoader from "../components/DecisionLoader";
 
-export default function DecisionItem() {
+export default function DecisionList() {
   return (
     <Box>
       <DecisionLoader />
       <Card sx={{ maxWidth: 280 }}>
+        ,
         <Chip
           variant="outlined"
           color="success"
