@@ -1,6 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from "./pages/Home";
+
 import ErrorPage from "./pages/ErrorPage";
 import LoginPage from "./pages/LoginPage";
 import "./App.css";
