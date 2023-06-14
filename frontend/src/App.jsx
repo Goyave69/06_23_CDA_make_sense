@@ -4,12 +4,13 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorPage from "./pages/ErrorPage";
 import LoginPage from "./pages/LoginPage";
 import "./App.css";
+import DecisionLoader from "./components/DecisionLoader";
 import DecisionItem from "./pages/DecisionItem";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <DecisionLoader />,
     errorElement: <ErrorPage />,
   },
   {
