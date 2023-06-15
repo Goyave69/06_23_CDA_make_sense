@@ -21,3 +21,8 @@ const decisionSchema = Joi.object({
   progress_status: Joi.number().required(),
   in_conflict: Joi.boolean().required(),
 });
+
+module.exports = {
+  decisionSchema,
+  userSchema,
+};

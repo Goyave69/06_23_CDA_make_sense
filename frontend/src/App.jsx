@@ -9,7 +9,7 @@ import DecisionItem from "./pages/DecisionItem";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <ErrorPage />,
     errorElement: <ErrorPage />,
   },
   {
