@@ -2,11 +2,23 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const Joi = require("joi");
 
+const { joiPasswordExtendCore } = require("joi-password");
+
+const joiPassword = Joi.extend(joiPasswordExtendCore);
+
 const userSchema = Joi.object({
   firstname: Joi.string().min(1).max(25).required(),
   lastname: Joi.string().min(1).max(25).required(),
   email: Joi.string().email().required(),
-  password: Joi.string(),
+  password: joiPassword
+    .string()
+    .minOfSpecialCharacters(2)
+    .minOfLowercase(2)
+    .minOfUppercase(2)
+    .minOfNumeric(2)
+    .noWhiteSpaces()
+    .onlyLatinCharacters()
+    .required(),
   birthdate: Joi.date().required(),
   role: Joi.object()
     .pattern(/./, Joi.string().valid("user", "admin", "expert"))
