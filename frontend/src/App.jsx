@@ -1,11 +1,18 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 import ErrorPage from "./pages/ErrorPage";
 import LoginPage from "./pages/LoginPage";
 import "./App.css";
 import DecisionLoader from "./components/DecisionLoader";
 import DecisionItem from "./pages/DecisionItem";
+
+const customTheme = createTheme({
+  typography: {
+    fontFamily: `"Raleway", sans-serif`,
+  },
+});
 
 const router = createBrowserRouter([
   {
@@ -27,9 +34,11 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <div className="App">
-      <RouterProvider router={router} />
-    </div>
+    <ThemeProvider theme={customTheme}>
+      <div className="App">
+        <RouterProvider router={router} />
+      </div>
+    </ThemeProvider>
   );
 }
 

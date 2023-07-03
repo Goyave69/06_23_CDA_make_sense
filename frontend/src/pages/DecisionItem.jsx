@@ -4,7 +4,7 @@ import axios from "axios";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
-import { Chip, Grid } from "@mui/material";
+import { Chip, Divider, Grid } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import Avatar from "@mui/material/Avatar";
 import Stack from "@mui/material/Stack";
@@ -24,11 +24,14 @@ export default function DecisionItem() {
       sx={{
         display: "flex",
         flexDirection: "row",
-        padding: "1%",
+        padding: "2%",
+        marginLeft: "1%",
       }}
       container
       spacing={2}
     >
+      <Typography variant="h5">All decisions</Typography>
+      <Divider style={{ width: "100%", paddingBottom: "1%" }} />
       {data.map((decision) => (
         <Grid item>
           <Card
@@ -43,14 +46,14 @@ export default function DecisionItem() {
               color="success"
               size="small"
               label="Décision en cours"
-              sx={{ marginLeft: "5%", marginTop: "1%" }}
+              sx={{ marginLeft: "5%", marginTop: "5%" }}
             />
             <Chip
               variant="outlined"
               color="error"
               size="small"
               label="Hub France"
-              sx={{ marginLeft: "1%", marginTop: "1%" }}
+              sx={{ marginLeft: "1%", marginTop: "5%" }}
             />
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
