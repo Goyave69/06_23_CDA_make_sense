@@ -1,6 +1,8 @@
 const express = require("express");
 
+const app = express();
 const router = express.Router();
+const cors = require("cors");
 
 // Controllers
 const decisionControllers = require("./controllers/decisionControllers");
@@ -17,6 +19,10 @@ const {
 
 // Hashing
 const { hashPassword } = require("./services/passwordHelper");
+
+// CORS
+
+app.use(cors);
 
 // POST Routes
 router.post("/login", loginController.login);
