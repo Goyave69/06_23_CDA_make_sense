@@ -1,12 +1,10 @@
-import Home from "./pages/Home";
-
+import DecisionForm from "./pages/DecisionForm";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <Home />
-      <p>coucou</p>
+      <DecisionForm />
     </div>
   );
 }

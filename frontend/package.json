@@ -8,9 +8,13 @@
   },
   "dependencies": {
     "@vitejs/plugin-react": "^3.0.1",
+    "ckeditor": "^4.12.1",
+    "ckeditor4-react": "^4.2.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-quill": "^2.0.0",
+    "react-step-progress-bar": "^1.0.3",
     "vite": "^4.0.4"
   },
   "devDependencies": {
