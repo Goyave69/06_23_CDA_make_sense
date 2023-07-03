@@ -19,7 +19,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: "/decision",
+    path: "/decisions",
     element: <DecisionItem />,
     errorElement: <ErrorPage />,
   },
