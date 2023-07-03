@@ -6,11 +6,17 @@ import LoginPage from "./pages/LoginPage";
 import "./App.css";
 import DecisionLoader from "./components/DecisionLoader";
 import DecisionItem from "./pages/DecisionItem";
+import NavBar from "./components/NavBar";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <DecisionLoader />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/nav",
+    element: <NavBar />,
     errorElement: <ErrorPage />,
   },
   {

@@ -36,12 +36,11 @@
 form {
   display: flex;
   flex-direction: column;
-  margin-top: 7%;
 }
 
 form .txt_field {
   border-bottom: 2px solid #adadad;
-  margin: 30px 0;
+  margin: 25px 0;
 }
 
 .txt_field input {
@@ -123,4 +122,54 @@ input[type="submit"]:hover {
   text-decoration: underline;
 }
 
+.BoxNavbar {
+  background-color: #fff;
+}
 
+.NavBarElement {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100px
+
+}
+
+.NavBarElement nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.NavBarElement img {
+  /* margin-right: 800px; */
+  margin-left: 25px;
+  height: 40px;
+
+}
+
+.NavBarElement ol {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  
+}
+
+.NavBarElement li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  font-size: 24px; /* Icon size */
+  vertical-align: middle;
+  gap: 3px;
+  
+}
+
+.NavBarElement a {
+  text-decoration: none;
+  color: #000;
+  font-size: 1rem;
+}
