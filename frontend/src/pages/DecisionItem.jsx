@@ -28,7 +28,7 @@ export default function DecisionItem() {
         marginLeft: "1%",
       }}
       container
-      spacing={2}
+      spacing={4}
     >
       <Typography variant="h5">All decisions</Typography>
       <Divider style={{ width: "100%", paddingBottom: "1%" }} />
@@ -36,7 +36,7 @@ export default function DecisionItem() {
         <Grid item>
           <Card
             sx={{
-              minWidth: 240,
+              minWidth: 250,
             }}
             key={decision.decision_id}
             elevation={4}
