@@ -6,7 +6,7 @@ import ErrorPage from "./pages/ErrorPage";
 import LoginPage from "./pages/LoginPage";
 import "./App.css";
 import DecisionLoader from "./components/DecisionLoader";
-import DecisionItem from "./pages/DecisionItem";
+import DecisionItem from "./pages/DecisionPage";
 
 const customTheme = createTheme({
   typography: {
