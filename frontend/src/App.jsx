@@ -1,12 +1,13 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { ChakraProvider } from "@chakra-ui/react";
 
 import ErrorPage from "./pages/ErrorPage";
 import LoginPage from "./pages/LoginPage";
 import "./App.css";
-import DecisionLoader from "./components/DecisionLoader";
-import DecisionItem from "./pages/DecisionPage";
+import DecisionPage from "./pages/DecisionPage";
+import DecisionItem from "./components/DecisionItem";
 
 const customTheme = createTheme({
   typography: {
@@ -17,7 +18,7 @@ const customTheme = createTheme({
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <DecisionLoader />,
+    element: <DecisionItem />,
     errorElement: <ErrorPage />,
   },
   {
@@ -27,7 +28,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/decisions",
-    element: <DecisionItem />,
+    element: <DecisionPage />,
     errorElement: <ErrorPage />,
   },
 ]);
@@ -35,9 +36,11 @@ const router = createBrowserRouter([
 function App() {
   return (
     <ThemeProvider theme={customTheme}>
-      <div className="App">
-        <RouterProvider router={router} />
-      </div>
+      <ChakraProvider>
+        <div className="App">
+          <RouterProvider router={router} />
+        </div>
+      </ChakraProvider>
     </ThemeProvider>
   );
 }

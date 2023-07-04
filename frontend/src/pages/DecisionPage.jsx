@@ -10,7 +10,7 @@ import Avatar from "@mui/material/Avatar";
 import Stack from "@mui/material/Stack";
 import { deepPurple } from "@mui/material/colors";
 
-export default function DecisionItem() {
+export default function DecisionPage() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
