@@ -20,7 +20,7 @@ export default function NavBar() {
             </li>
             <li>
               <PiSmileyBold />
-              <a href="http://localhost:3000/">Notifications</a>
+              <a href="http://localhost:3000/"> Notifications</a>
             </li>
           </ol>
         </nav>

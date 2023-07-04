@@ -162,14 +162,15 @@ input[type="submit"]:hover {
   align-items: center;
   justify-content: center;
   margin-right: 10px;
-  font-size: 24px; /* Icon size */
+  font-size: 20px; /* Icon size */
   vertical-align: middle;
   gap: 3px;
   
 }
 
 .NavBarElement a {
+  display: flex;
   text-decoration: none;
   color: #000;
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
