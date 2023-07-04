@@ -31,12 +31,16 @@ const models = {};
 
 const DecisionManager = require("./DecisionManager");
 const UserManager = require("./UserManager");
+const SurveyManager = require("./SurveyManager");
 
 models.decision = new DecisionManager();
 models.decision.setDatabase(pool);
 
 models.user = new UserManager();
 models.user.setDatabase(pool);
+
+models.survey = new SurveyManager();
+models.survey.setDatabase(pool);
 
 // bonus: use a proxy to personalize error message,
 // when asking for a non existing model

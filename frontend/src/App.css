@@ -1,49 +1,33 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Poppins:wght@400;500;600&display=swap");
 @import "../src/Reset.css";
-/* 
- body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Poppins"
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}  */
-
-/* Login Page  */
 
 .main {
   display: flex;
-}
-
-.BackgroundLogin {
-  display: flex;
-  max-width: 100%;
-  max-height: 100%;
-  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("assets/BackgroundLogin.png");
   background-color: #0c3944;
+  background-size: cover;
+  
 }
 
 .center {
   display: flex;
   flex-direction: column;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   max-width: 420px;
   width: 100%;
   background: white;
   border-radius: 10px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
 }
+
 .center h1 {
   text-align: center;
   padding: 20px 0;
   border-bottom: 1px solid silver;
 }
+
 .center form {
   padding: 0 40px;
   box-sizing: border-box;
@@ -52,14 +36,13 @@
 form {
   display: flex;
   flex-direction: column;
-  margin-top: 7%;
 }
 
 form .txt_field {
-  position: relative;
   border-bottom: 2px solid #adadad;
-  margin: 30px 0;
+  margin: 25px 0;
 }
+
 .txt_field input {
   width: 100%;
   padding: 0 5px;
@@ -67,45 +50,44 @@ form .txt_field {
   font-size: 16px;
   border: none;
   background: none;
-  outline: none;
+  outline: none;  
 }
-.txt_field label {
-  position: absolute;
-  top: 50%;
-  left: 5px;
+
+input::placeholder{
   color: #adadad;
-  transform: translateY(-50%);
+  font-size: 16px;
+}
+
+.txt_field label {
+
+  color: #adadad;
   font-size: 16px;
   pointer-events: none;
   transition: 0.5s;
 }
-.txt_field span::before {
-  content: "";
-  position: absolute;
-  top: 40px;
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background: #2691d9;
-  transition: 0.5s;
-}
+
+
 .txt_field input:focus ~ label,
 .txt_field input:valid ~ label {
   top: -5px;
   color: #2691d9;
 }
+
 .txt_field input:focus ~ span::before,
 .txt_field input:valid ~ span::before {
   width: 100%;
 }
+
 .pass {
   margin: -5px 0 20px 5px;
   color: #a6a6a6;
   cursor: pointer;
 }
+
 .pass:hover {
   text-decoration: underline;
 }
+
 input[type="submit"] {
   width: 100%;
   height: 50px;
@@ -119,19 +101,76 @@ input[type="submit"] {
   transition: 0.5s;
   border: none;
 }
+
 input[type="submit"]:hover {
   border-color: #2691d9;
 }
+
 .signup_link {
   margin: 30px 0;
   text-align: center;
   font-size: 16px;
   color: #666666;
 }
+
 .signup_link a {
   color: #2691d9;
   text-decoration: none;
 }
+
 .signup_link a:hover {
   text-decoration: underline;
+}
+
+.BoxNavbar {
+  background-color: #fff;
+}
+
+.NavBarElement {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100px
+
+}
+
+.NavBarElement nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.NavBarElement img {
+  /* margin-right: 800px; */
+  margin-left: 25px;
+  height: 40px;
+
+}
+
+.NavBarElement ol {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  
+}
+
+.NavBarElement li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  font-size: 20px; /* Icon size */
+  vertical-align: middle;
+  gap: 3px;
+  
+}
+
+.NavBarElement a {
+  display: flex;
+  text-decoration: none;
+  color: #000;
+  font-size: 0.8rem;
 }

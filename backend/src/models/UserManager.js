@@ -12,7 +12,7 @@ class UserManager extends AbstractManager {
         user.firstname,
         user.lastname,
         user.email,
-        user.password,
+        user.hashedPassword,
         user.birthdate,
         JSON.stringify(user.role),
       ]
@@ -26,11 +26,18 @@ class UserManager extends AbstractManager {
         user.firstname,
         user.lastname,
         user.email,
-        user.password,
+        user.hashedPassword,
         user.birthdate,
         JSON.stringify(user.role),
         user.id,
       ]
+    );
+  }
+
+  findOneByEmail(email) {
+    return this.database.query(
+      `SELECT  email, password FROM ${this.table} WHERE email = ?`,
+      [email]
     );
   }
 }
