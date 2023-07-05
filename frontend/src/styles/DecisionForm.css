@@ -1,10 +1,10 @@
-.all-area{
-margin-top: 10px;
-margin-left: 40px;
-margin-right: 40px;
+.all-area {
+  margin-top: 10px;
+  margin-left: 40px;
+  margin-right: 40px;
 }
 
-.title-poste{
-   display: flex;
-font-size: 1.2rem;
+.title-poste {
+  display: flex;
+  font-size: 1.2rem;
 }

@@ -1,44 +1,44 @@
-.Poste-area{
-    display: flex;
-    justify-content: space-between;
+.Poste-area {
+  display: flex;
+  justify-content: space-between;
 }
-.haeder-poste{
-    display: flex;
-    align-items: center;
-    margin-bottom: -20px;
-    font-size:20px;
+.haeder-poste {
+  display: flex;
+  align-items: center;
+  margin-bottom: -20px;
+  font-size: 20px;
 }
-.imgRond{
-    height: 30px;
-    margin-right: 10px;
+.imgRond {
+  height: 30px;
+  margin-right: 10px;
 }
-.area-left{
-    width: 25%;
-    text-align: start;
+.area-left {
+  width: 25%;
+  text-align: start;
 }
-.area-right{
-width: 65%;
-text-align: start;
+.area-right {
+  width: 65%;
+  text-align: start;
 }
-.input-form{
-    border-style:solid;
-    border-color: #EAEEF5;
-    width: 100%;
-    height: 40px;
-    border-radius: 10px;
+.input-form {
+  border-style: solid;
+  border-color: #eaeef5;
+  width: 100%;
+  height: 40px;
+  border-radius: 10px;
 }
- .ql-container {
-    min-height: 10em;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-  }
-  .ql-toolbar {
-    font-size: 20px;
-    height: 45px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom: none;
-  }
-  .p-haeder{
-font-size: large;
-  }
+.ql-container {
+  min-height: 10em;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.ql-toolbar {
+  font-size: 20px;
+  height: 45px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom: none;
+}
+.p-haeder {
+  font-size: large;
+}

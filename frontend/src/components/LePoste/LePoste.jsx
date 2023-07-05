@@ -1,9 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import "./LePoste.css";
+import ReactQuill from "react-quill";
 import rond from "../../assets/rond.png";
-import TextEditor from "../../components/TextEditor";
+import "react-quill/dist/quill.snow.css";
 
-const LePoste = ({ onButtonClick }) => {
+function LePoste({ onButtonClick }) {
+  const modulesRef = {
+    toolbar: [
+      ["bold", "italic", "link", "image"],
+      [{ header: [1, 2, 3, false] }],
+      [{ list: "ordered" }, { list: "bullet" }],
+      [{ indent: "-1" }],
+      ["clean"],
+    ],
+  };
+
+  const [detailForm, setDetailForm] = useState("");
+
+  const handleChangeDetail = (content, delta, source, editor) => {
+    setDetailForm(editor.getContents());
+  };
+
+  const [impactForm, setImpactForm] = useState("");
+
+  const handleChangeImpact = (content, delta, source, editor) => {
+    setImpactForm(editor.getContents());
+  };
+
   return (
     <div className="Poste-area">
       <div className="area-left">
@@ -28,7 +51,7 @@ const LePoste = ({ onButtonClick }) => {
                   fontSize: "18px",
                 }}
               >
-                Titre de l'annonce *
+                Titre de la decition *
               </label>
               <input
                 className="input-form"
@@ -38,7 +61,7 @@ const LePoste = ({ onButtonClick }) => {
                 placeholder="Super job à Paris..."
               />
             </div>
-            <br />
+
             <div className="mv3">
               <label
                 className="db lh-copy f6 mb1"
@@ -49,15 +72,20 @@ const LePoste = ({ onButtonClick }) => {
                   fontSize: "18px",
                 }}
               >
-                Descriptif de l'offre *
+                Les details de la décision *
               </label>
               <br />
               <br />
-              <TextEditor />
+
+              <ReactQuill
+                value={detailForm}
+                onChange={handleChangeDetail}
+                modules={modulesRef}
+                theme="snow"
+              />
             </div>
             <br />
             <div>
-              <br />
               <label
                 className="db lh-copy f6 mb1"
                 htmlFor="Profil-recherche"
@@ -67,11 +95,16 @@ const LePoste = ({ onButtonClick }) => {
                   fontSize: "18px",
                 }}
               >
-                Profil recherché *
+                Impact sur l'organisation *
               </label>
               <br />
               <br />
-              <TextEditor />
+              <ReactQuill
+                value={impactForm}
+                onChange={handleChangeImpact}
+                modules={modulesRef}
+                theme="snow"
+              />
             </div>
             <br />
             <div>
@@ -93,6 +126,6 @@ const LePoste = ({ onButtonClick }) => {
       </div>
     </div>
   );
-};
+}
 
 export default LePoste;

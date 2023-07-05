@@ -1,8 +1,9 @@
 import React from "react";
-import "../MultiStepProgressBar/MultiStepProgressBar.css"
+import "./MultiStepProgressBar.css";
 import { ProgressBar, Step } from "react-step-progress-bar";
-import fleche from "../../assets/fleche.png"
-const MultiStepProgressBar = ({ page, onPageNumberClick }) => {
+import fleche from "../../assets/fleche.png";
+
+function MultiStepProgressBar({ page, onPageNumberClick }) {
   let stepPercentage = 0;
   if (page === "LePoste") {
     stepPercentage = 16;
@@ -15,27 +16,31 @@ const MultiStepProgressBar = ({ page, onPageNumberClick }) => {
   }
 
   return (
-
-  <ProgressBar className="allBar" percent={stepPercentage}>
-   
-         <Step>
+    <ProgressBar className="allBar" percent={stepPercentage}>
+      <Step>
         {({ accomplished }) => (
           <div
             className={`indexedStep ${accomplished ? "accomplished" : null}`}
             onClick={() => onPageNumberClick("1")}
+            onKeyDown={() => onPageNumberClick("1")}
+            role="button"
+            tabIndex="0"
           >
-            {"1. Le Poste"}
+            1. Le Poste
           </div>
         )}
       </Step>
       <div>
-         <img className="fleche1" src={fleche} alt="fleche1" />
+        <img className="fleche1" src={fleche} alt="fleche1" />
       </div>
       <Step>
         {({ accomplished }) => (
           <div
             className={`indexedStep ${accomplished ? "accomplished" : null}`}
             onClick={() => onPageNumberClick("2")}
+            onKeyDown={() => onPageNumberClick("2")}
+            role="button"
+            tabIndex="0"
           >
             {"2. Candidater "}
           </div>
@@ -49,16 +54,16 @@ const MultiStepProgressBar = ({ page, onPageNumberClick }) => {
           <div
             className={`indexedStep ${accomplished ? "accomplished" : null}`}
             onClick={() => onPageNumberClick("3")}
+            onKeyDown={() => onPageNumberClick("3")}
+            role="button"
+            tabIndex="0"
           >
-            {"3. Reglages"}
+            3. Reglages
           </div>
         )}
       </Step>
-
-   
     </ProgressBar>
-  
   );
-};
+}
 
 export default MultiStepProgressBar;
