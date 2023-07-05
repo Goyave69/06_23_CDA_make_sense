@@ -1,2 +1,5 @@
 node_modules
 .env
+jwtRS256.key
+jwtRS256.key.pub
+database.sql
