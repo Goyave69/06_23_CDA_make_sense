@@ -6,5 +6,7 @@
 
 .title-poste {
   display: flex;
-  font-size: 1.2rem;
+}
+.titleposte {
+  font-size: 2.5rem;
 }

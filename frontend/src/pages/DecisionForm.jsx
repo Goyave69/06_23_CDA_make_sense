@@ -30,7 +30,9 @@ function DecisionForm() {
   return (
     <div className="all-area">
       <div className="title-poste">
-        <h1>Créer une nouvelle annonce: makesense France</h1>
+        <h1 className="titleposte">
+          Créer une nouvelle annonce: makesense France
+        </h1>
       </div>
       <div>
         <MultiStepProgressBar page={page} onPageNumberClick={nextPageNumber} />

@@ -1,7 +1,7 @@
 const models = require("../models");
 
-const browse = (req, res) => {
-  models.item
+const getAllDecisions = (req, res) => {
+  models.decision
     .findAll()
     .then(([rows]) => {
       res.send(rows);
@@ -12,8 +12,8 @@ const browse = (req, res) => {
     });
 };
 
-const read = (req, res) => {
-  models.item
+const getOneDecision = (req, res) => {
+  models.decision
     .find(req.params.id)
     .then(([rows]) => {
       if (rows[0] == null) {
@@ -28,15 +28,13 @@ const read = (req, res) => {
     });
 };
 
-const edit = (req, res) => {
-  const item = req.body;
+const updateDecision = (req, res) => {
+  const decision = req.body;
 
-  // TODO validations (length, format...)
+  decision.id = parseInt(req.params.id, 10);
 
-  item.id = parseInt(req.params.id, 10);
-
-  models.item
-    .update(item)
+  models.decision
+    .update(decision)
     .then(([result]) => {
       if (result.affectedRows === 0) {
         res.sendStatus(404);
@@ -50,15 +48,13 @@ const edit = (req, res) => {
     });
 };
 
-const add = (req, res) => {
-  const item = req.body;
+const addDecision = (req, res) => {
+  const decision = req.body;
 
-  // TODO validations (length, format...)
-
-  models.item
-    .insert(item)
+  models.decision
+    .create(decision)
     .then(([result]) => {
-      res.location(`/items/${result.insertId}`).sendStatus(201);
+      res.location(`/decisions/${result.insertId}`).sendStatus(201);
     })
     .catch((err) => {
       console.error(err);
@@ -66,8 +62,8 @@ const add = (req, res) => {
     });
 };
 
-const destroy = (req, res) => {
-  models.item
+const deleteDecision = (req, res) => {
+  models.decision
     .delete(req.params.id)
     .then(([result]) => {
       if (result.affectedRows === 0) {
@@ -83,9 +79,9 @@ const destroy = (req, res) => {
 };
 
 module.exports = {
-  browse,
-  read,
-  edit,
-  add,
-  destroy,
+  getAllDecisions,
+  getOneDecision,
+  updateDecision,
+  addDecision,
+  deleteDecision,
 };
