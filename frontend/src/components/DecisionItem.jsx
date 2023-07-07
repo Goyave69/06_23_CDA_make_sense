@@ -66,7 +66,7 @@ export default function DecisionItem() {
             </Typography>
           </Stack>
         </GridItem>
-        <GridItem marginTop="2%" backgroundColor="rgb(0 0 0 / 0.015)">
+        <GridItem marginTop="2%">
           <Accordion allowToggle marginLeft="20%">
             <AccordionItem>
               <h2>
@@ -78,7 +78,9 @@ export default function DecisionItem() {
                 </AccordionButton>
                 <Divider />
               </h2>
-              <AccordionPanel pb={4}>{data.decision_content}</AccordionPanel>
+              <AccordionPanel pb={4} backgroundColor="rgb(0 0 0 / 0.020)">
+                {data.decision_content}
+              </AccordionPanel>
             </AccordionItem>
 
             <AccordionItem>
@@ -91,7 +93,7 @@ export default function DecisionItem() {
                 </AccordionButton>
                 <Divider />
               </h2>
-              <AccordionPanel pb={4}>
+              <AccordionPanel pb={4} backgroundColor="rgb(0 0 0 / 0.020)">
                 {data.organization_utility}
               </AccordionPanel>
             </AccordionItem>
@@ -105,7 +107,9 @@ export default function DecisionItem() {
                 </AccordionButton>
                 <Divider />
               </h2>
-              <AccordionPanel pb={4}>{data.decision_benefits}</AccordionPanel>
+              <AccordionPanel pb={4} backgroundColor="rgb(0 0 0 / 0.020)">
+                {data.decision_benefits}
+              </AccordionPanel>
             </AccordionItem>
             <AccordionItem>
               <h2>
@@ -117,7 +121,9 @@ export default function DecisionItem() {
                 </AccordionButton>
                 <Divider />
               </h2>
-              <AccordionPanel pb={4}>{data.decision_risks}</AccordionPanel>
+              <AccordionPanel pb={4} backgroundColor="rgb(0 0 0 / 0.020)">
+                {data.decision_risks}
+              </AccordionPanel>
             </AccordionItem>
             <AccordionItem>
               <h2>
@@ -129,7 +135,7 @@ export default function DecisionItem() {
                 </AccordionButton>
                 <Divider />
               </h2>
-              <AccordionPanel pb={4}>
+              <AccordionPanel pb={4} backgroundColor="rgb(0 0 0 / 0.020)">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed
                 tempus urna et pharetra pharetra massa. In egestas erat
@@ -168,7 +174,7 @@ export default function DecisionItem() {
                 </AccordionButton>
                 <Divider />
               </h2>
-              <AccordionPanel pb={4}>
+              <AccordionPanel pb={4} backgroundColor="rgb(0 0 0 / 0.020)">
                 <div>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
