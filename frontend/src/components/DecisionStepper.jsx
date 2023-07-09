@@ -4,11 +4,8 @@ import {
   Box,
   Step,
   StepDescription,
-  StepIcon,
   StepIndicator,
-  StepNumber,
   StepSeparator,
-  StepStatus,
   StepTitle,
   Stepper,
   useSteps,
@@ -30,7 +27,7 @@ export default function DecisionStepper() {
 
   return (
     <Stepper
-      size="sm"
+      size="xs"
       colorScheme="green"
       index={activeStep}
       orientation="vertical"
@@ -39,23 +36,15 @@ export default function DecisionStepper() {
       marginY="10%"
     >
       {steps.map((step, index) => (
-        <Step key={index} color="#C1E94E">
-          <StepIndicator color="#0C3944">
-            <StepStatus
-              complete={<StepIcon />}
-              incomplete={<StepNumber />}
-              active={<StepNumber />}
-            />
-          </StepIndicator>
-
+        <Step key={index}>
+          <StepIndicator bg="#C1E94E" />
           <Box flexShrink="0">
             <StepTitle color="#0C3944">{step.title}</StepTitle>
             <StepDescription color="#0C3944">
               {step.description}
             </StepDescription>
+            <StepSeparator bg="#C1E94E" />
           </Box>
-
-          <StepSeparator />
         </Step>
       ))}
     </Stepper>

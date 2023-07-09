@@ -38,99 +38,130 @@ export default function DecisionItem() {
         <GridItem marginTop="4%" marginLeft="20%">
           <Chip
             variant="outlined"
-            color="success"
             size="small"
             label="Décision en cours"
+            sx={{
+              color: "#24673A",
+              backgroundColor: "rgb(36, 103, 58, 0.075 )",
+              borderColor: "#24673A",
+            }}
           />
           <Chip
             variant="outlined"
-            color="error"
             size="small"
-            label="Hub France"
-            sx={{ marginLeft: "0.25%" }}
+            label="Hub france"
+            sx={{
+              marginLeft: "0.25%",
+              color: "#9B084F",
+              backgroundColor: "rgb(155, 8, 79, 0.075 )",
+              borderColor: "#9B084F",
+            }}
           />
-          <Typography variant="h3" sx={{ marginTop: "2%", fontWeight: "900" }}>
+          <Typography
+            variant="h3"
+            sx={{ marginTop: "2%", fontWeight: "1000", color: "#0C3944" }}
+          >
             {data.title}
           </Typography>
-          <Stack direction="row">
+          <Stack direction="row" marginBottom="-2%">
             <Avatar sx={{ bgcolor: deepPurple[500], marginTop: "1%" }}>
               JD
             </Avatar>
-
-            <Typography
-              variant="caption"
-              display="block"
-              gutterBottom
-              sx={{ paddingTop: "2%" }}
-            >
-              par Jane Doe
-            </Typography>
+            <Stack direction="row" marginY="2%">
+              <Typography
+                variant="caption"
+                display="block"
+                gutterBottom
+                sx={{ paddingTop: "2%", color: "#0C3944" }}
+              >
+                par
+              </Typography>
+              <Typography
+                variant="caption"
+                display="block"
+                gutterBottom
+                sx={{
+                  paddingTop: "2%",
+                  color: "#0C3944",
+                  fontWeight: "1000",
+                  marginLeft: "-5%",
+                }}
+              >
+                Jane Doe
+              </Typography>
+            </Stack>
           </Stack>
         </GridItem>
-        <GridItem marginTop="2%" backgroundColor="rgb(0 0 0 / 0.015)">
+        <GridItem marginTop="2%">
           <Accordion allowToggle marginLeft="20%">
-            <AccordionItem>
+            <AccordionItem color="#0C3944">
               <h2>
-                <AccordionButton>
-                  <Box as="span" flex="1" textAlign="left">
+                <AccordionButton _expanded={{ bg: "rgb(0 0 0 / 0.020)" }}>
+                  <Box as="span" flex="1" textAlign="left" fontWeight="1000">
                     Les détails de la décision
                   </Box>
                   <AccordionIcon />
                 </AccordionButton>
                 <Divider />
               </h2>
-              <AccordionPanel pb={4}>{data.decision_content}</AccordionPanel>
+              <AccordionPanel pb={4} backgroundColor="rgb(0 0 0 / 0.020)">
+                {data.decision_content}
+              </AccordionPanel>
             </AccordionItem>
 
-            <AccordionItem>
+            <AccordionItem color="#0C3944">
               <h2>
-                <AccordionButton>
-                  <Box as="span" flex="1" textAlign="left">
+                <AccordionButton _expanded={{ bg: "rgb(0 0 0 / 0.020)" }}>
+                  <Box as="span" flex="1" textAlign="left" fontWeight="1000">
                     Impact sur l'organisation
                   </Box>
                   <AccordionIcon />
                 </AccordionButton>
                 <Divider />
               </h2>
-              <AccordionPanel pb={4}>
+              <AccordionPanel pb={4} backgroundColor="rgb(0 0 0 / 0.020)">
                 {data.organization_utility}
               </AccordionPanel>
             </AccordionItem>
-            <AccordionItem>
+            <AccordionItem color="#0C3944">
               <h2>
-                <AccordionButton>
-                  <Box as="span" flex="1" textAlign="left">
+                <AccordionButton _expanded={{ bg: "rgb(0 0 0 / 0.020)" }}>
+                  <Box as="span" flex="1" textAlign="left" fontWeight="1000">
                     Bénéfices 👍
                   </Box>
                   <AccordionIcon />
                 </AccordionButton>
                 <Divider />
               </h2>
-              <AccordionPanel pb={4}>{data.decision_benefits}</AccordionPanel>
+              <AccordionPanel pb={4} backgroundColor="rgb(0 0 0 / 0.020)">
+                {data.decision_benefits}
+              </AccordionPanel>
             </AccordionItem>
-            <AccordionItem>
+            <AccordionItem color="#0C3944">
               <h2>
-                <AccordionButton>
-                  <Box as="span" flex="1" textAlign="left">
+                <AccordionButton _expanded={{ bg: "rgb(0 0 0 / 0.020)" }}>
+                  <Box as="span" flex="1" textAlign="left" fontWeight="1000">
                     Risques potentiels 🚨
                   </Box>
                   <AccordionIcon />
                 </AccordionButton>
                 <Divider />
               </h2>
-              <AccordionPanel pb={4}>{data.decision_risks}</AccordionPanel>
+              <AccordionPanel pb={4} backgroundColor="rgb(0 0 0 / 0.020)">
+                {data.decision_risks}
+              </AccordionPanel>
             </AccordionItem>
-            <AccordionItem>
+            <AccordionItem color="#0C3944">
               <h2>
-                <AccordionButton>
-                  <Box as="span" flex="1" textAlign="left">
+                <AccordionButton _expanded={{ bg: "rgb(0 0 0 / 0.020)" }}>
+                  <Box as="span" flex="1" textAlign="left" fontWeight="1000">
                     Avis 💬
                   </Box>
                   <AccordionIcon />
                 </AccordionButton>
                 <Divider />
               </h2>
-              <AccordionPanel pb={4}>
+              <AccordionPanel pb={4} backgroundColor="rgb(0 0 0 / 0.020)">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed
                 tempus urna et pharetra pharetra massa. In egestas erat
@@ -159,17 +190,17 @@ export default function DecisionItem() {
                 lacus.
               </AccordionPanel>
             </AccordionItem>
-            <AccordionItem>
+            <AccordionItem color="#0C3944">
               <h2>
-                <AccordionButton>
-                  <Box as="span" flex="1" textAlign="left">
+                <AccordionButton _expanded={{ bg: "rgb(0 0 0 / 0.020)" }}>
+                  <Box as="span" flex="1" textAlign="left" fontWeight="1000">
                     Première décision
                   </Box>
                   <AccordionIcon />
                 </AccordionButton>
                 <Divider />
               </h2>
-              <AccordionPanel pb={4}>
+              <AccordionPanel pb={4} backgroundColor="rgb(0 0 0 / 0.020)">
                 <div>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -233,10 +264,11 @@ export default function DecisionItem() {
                       borderRadius: 3,
                       backgroundColor: "#0C3944",
                       textTransform: "none",
-                      fontWeight: "900",
+                      fontWeight: "1000",
                       textAlign: "center",
                       width: "18%",
                       marginTop: "5%",
+                      "&:hover": { backgroundColor: "#196C84" },
                     }}
                   >
                     Donner son avis
@@ -248,9 +280,9 @@ export default function DecisionItem() {
         </GridItem>
       </GridItem>
       <GridItem>
-        <Divider orientation="vertical" />
+        <Divider orientation="vertical" position="absolute" top="3%" />
       </GridItem>
-      <GridItem marginTop="10%">
+      <GridItem mt="10%">
         <DecisionResumeIntel />
       </GridItem>
     </Grid>

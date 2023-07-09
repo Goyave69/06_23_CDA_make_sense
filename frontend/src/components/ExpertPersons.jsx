@@ -5,7 +5,7 @@ import { Avatar, AvatarGroup, Box, Center, Text } from "@chakra-ui/react";
 export default function ExpertPersons() {
   return (
     <Box marginTop="10%">
-      <Text as="bold" fontSize="xl" fontWeight="900">
+      <Text as="bold" fontSize="xl" fontWeight="1000" color="#0C3944">
         Personnes expertes
       </Text>
       <AvatarGroup size="md" max={5} marginY="10%">
@@ -15,7 +15,12 @@ export default function ExpertPersons() {
         <Avatar name="Prosper Otemuyiwa" src="https://bit.ly/prosper-baba" />
         <Avatar name="Christian Nwamba" src="https://bit.ly/code-beast" />
       </AvatarGroup>
-      <Text fontSize="md" fontWeight="900" textDecoration="underline">
+      <Text
+        fontSize="md"
+        fontWeight="900"
+        textDecoration="underline"
+        color="#0C3944"
+      >
         Voir les avis
       </Text>
       <Center>
@@ -25,10 +30,11 @@ export default function ExpertPersons() {
             borderRadius: 3,
             backgroundColor: "#0C3944",
             textTransform: "none",
-            fontWeight: "900",
+            fontWeight: "1000",
             textAlign: "center",
             width: "90%",
             marginTop: "20%",
+            "&:hover": { backgroundColor: "#196C84" },
           }}
         >
           Donner son avis
