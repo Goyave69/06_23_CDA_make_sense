@@ -1,6 +1,6 @@
 import { React, useEffect, useState } from "react";
 import axios from "axios";
-import { Avatar, Box, Button, Chip, Stack, Typography } from "@mui/material";
+import { Avatar, Box, Button, Chip, Typography } from "@mui/material";
 import { deepPurple } from "@mui/material/colors";
 import {
   Accordion,
@@ -8,10 +8,11 @@ import {
   AccordionButton,
   AccordionPanel,
   AccordionIcon,
+  Center,
   Divider,
   Grid,
   GridItem,
-  Center,
+  Stack,
 } from "@chakra-ui/react";
 import DecisionResumeIntel from "./DecisionResumeIntel";
 
@@ -51,7 +52,7 @@ export default function DecisionItem() {
           <Typography variant="h3" sx={{ marginTop: "2%", fontWeight: "900" }}>
             {data.title}
           </Typography>
-          <Stack direction="row" spacing={2}>
+          <Stack direction="row">
             <Avatar sx={{ bgcolor: deepPurple[500], marginTop: "1%" }}>
               JD
             </Avatar>
@@ -60,13 +61,13 @@ export default function DecisionItem() {
               variant="caption"
               display="block"
               gutterBottom
-              sx={{ marginLeft: "5%", paddingTop: "2%" }}
+              sx={{ paddingTop: "2%" }}
             >
               par Jane Doe
             </Typography>
           </Stack>
         </GridItem>
-        <GridItem marginTop="2%">
+        <GridItem marginTop="2%" backgroundColor="rgb(0 0 0 / 0.015)">
           <Accordion allowToggle marginLeft="20%">
             <AccordionItem>
               <h2>
@@ -78,9 +79,7 @@ export default function DecisionItem() {
                 </AccordionButton>
                 <Divider />
               </h2>
-              <AccordionPanel pb={4} backgroundColor="rgb(0 0 0 / 0.020)">
-                {data.decision_content}
-              </AccordionPanel>
+              <AccordionPanel pb={4}>{data.decision_content}</AccordionPanel>
             </AccordionItem>
 
             <AccordionItem>
@@ -93,7 +92,7 @@ export default function DecisionItem() {
                 </AccordionButton>
                 <Divider />
               </h2>
-              <AccordionPanel pb={4} backgroundColor="rgb(0 0 0 / 0.020)">
+              <AccordionPanel pb={4}>
                 {data.organization_utility}
               </AccordionPanel>
             </AccordionItem>
@@ -107,9 +106,7 @@ export default function DecisionItem() {
                 </AccordionButton>
                 <Divider />
               </h2>
-              <AccordionPanel pb={4} backgroundColor="rgb(0 0 0 / 0.020)">
-                {data.decision_benefits}
-              </AccordionPanel>
+              <AccordionPanel pb={4}>{data.decision_benefits}</AccordionPanel>
             </AccordionItem>
             <AccordionItem>
               <h2>
@@ -121,9 +118,7 @@ export default function DecisionItem() {
                 </AccordionButton>
                 <Divider />
               </h2>
-              <AccordionPanel pb={4} backgroundColor="rgb(0 0 0 / 0.020)">
-                {data.decision_risks}
-              </AccordionPanel>
+              <AccordionPanel pb={4}>{data.decision_risks}</AccordionPanel>
             </AccordionItem>
             <AccordionItem>
               <h2>
@@ -135,7 +130,7 @@ export default function DecisionItem() {
                 </AccordionButton>
                 <Divider />
               </h2>
-              <AccordionPanel pb={4} backgroundColor="rgb(0 0 0 / 0.020)">
+              <AccordionPanel pb={4}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed
                 tempus urna et pharetra pharetra massa. In egestas erat
@@ -174,7 +169,7 @@ export default function DecisionItem() {
                 </AccordionButton>
                 <Divider />
               </h2>
-              <AccordionPanel pb={4} backgroundColor="rgb(0 0 0 / 0.020)">
+              <AccordionPanel pb={4}>
                 <div>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
