@@ -96,7 +96,12 @@ export default function DecisionItem() {
           <Accordion allowToggle marginLeft="20%">
             <AccordionItem color="#0C3944">
               <h2>
-                <AccordionButton _expanded={{ bg: "rgb(0 0 0 / 0.020)" }}>
+                <AccordionButton
+                  _expanded={{
+                    bg: "rgb(0 0 0 / 0.020)",
+                    color: "rgb(155, 8, 79)",
+                  }}
+                >
                   <Box as="span" flex="1" textAlign="left" fontWeight="1000">
                     Les détails de la décision
                   </Box>
@@ -111,7 +116,12 @@ export default function DecisionItem() {
 
             <AccordionItem color="#0C3944">
               <h2>
-                <AccordionButton _expanded={{ bg: "rgb(0 0 0 / 0.020)" }}>
+                <AccordionButton
+                  _expanded={{
+                    bg: "rgb(0 0 0 / 0.020)",
+                    color: "rgb(155, 8, 79)",
+                  }}
+                >
                   <Box as="span" flex="1" textAlign="left" fontWeight="1000">
                     Impact sur l'organisation
                   </Box>
@@ -125,7 +135,12 @@ export default function DecisionItem() {
             </AccordionItem>
             <AccordionItem color="#0C3944">
               <h2>
-                <AccordionButton _expanded={{ bg: "rgb(0 0 0 / 0.020)" }}>
+                <AccordionButton
+                  _expanded={{
+                    bg: "rgb(0 0 0 / 0.020)",
+                    color: "rgb(155, 8, 79)",
+                  }}
+                >
                   <Box as="span" flex="1" textAlign="left" fontWeight="1000">
                     Bénéfices 👍
                   </Box>
@@ -139,7 +154,12 @@ export default function DecisionItem() {
             </AccordionItem>
             <AccordionItem color="#0C3944">
               <h2>
-                <AccordionButton _expanded={{ bg: "rgb(0 0 0 / 0.020)" }}>
+                <AccordionButton
+                  _expanded={{
+                    bg: "rgb(0 0 0 / 0.020)",
+                    color: "rgb(155, 8, 79)",
+                  }}
+                >
                   <Box as="span" flex="1" textAlign="left" fontWeight="1000">
                     Risques potentiels 🚨
                   </Box>
@@ -153,7 +173,12 @@ export default function DecisionItem() {
             </AccordionItem>
             <AccordionItem color="#0C3944">
               <h2>
-                <AccordionButton _expanded={{ bg: "rgb(0 0 0 / 0.020)" }}>
+                <AccordionButton
+                  _expanded={{
+                    bg: "rgb(0 0 0 / 0.020)",
+                    color: "rgb(155, 8, 79)",
+                  }}
+                >
                   <Box as="span" flex="1" textAlign="left" fontWeight="1000">
                     Avis 💬
                   </Box>
@@ -192,7 +217,12 @@ export default function DecisionItem() {
             </AccordionItem>
             <AccordionItem color="#0C3944">
               <h2>
-                <AccordionButton _expanded={{ bg: "rgb(0 0 0 / 0.020)" }}>
+                <AccordionButton
+                  _expanded={{
+                    bg: "rgb(0 0 0 / 0.020)",
+                    color: "rgb(155, 8, 79)",
+                  }}
+                >
                   <Box as="span" flex="1" textAlign="left" fontWeight="1000">
                     Première décision
                   </Box>
