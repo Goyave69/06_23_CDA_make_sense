@@ -12,9 +12,18 @@ function login(req, res) {
         res.sendStatus(404);
       }
       if (!(await helper.verifyPassword(rows[0].password, password))) {
+        console.warn(password);
+        console.warn(rows[0].password);
         res.status(401).json("Email or password is wrong");
       }
-      res.status(200).json({ token: jwtGenerator(rows[0].id) });
+      const token = jwtGenerator(rows[0].id);
+      console.warn(token);
+      res
+        .cookie("token", token, {
+          httpOnly: true,
+        })
+        .status(200)
+        .json({ message: "Login successful" });
     })
     .catch((err) => {
       console.error(err);
@@ -22,4 +31,8 @@ function login(req, res) {
     });
 }
 
-module.exports = { login };
+async function logoutController(req, res) {
+  return res.clearCookie("token").status(200).json("Successfully logged out");
+}
+
+module.exports = { login, logoutController };

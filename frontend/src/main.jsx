@@ -1,40 +1,21 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 import ReactDOM from "react-dom/client";
-import ErrorPage from "./pages/ErrorPage";
+import Routes from "./routes/Routes";
 import "./App.css";
-import DecisionItem from "./pages/DecisionItem";
-import LoginPage from "./pages/LoginPage";
-import Root from "./routes/Root";
-import NavBar from "./components/NavBar";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Root />,
-    children: [
-      {
-        path: "/decision",
-        element: <DecisionItem />,
-        errorElement: <ErrorPage />,
-      },
-      {
-        path: "/login",
-        element: <LoginPage />,
-        errorElement: <ErrorPage />,
-      },
-      {
-        path: "/nav",
-        element: <NavBar />,
-        errorElement: <ErrorPage />,
-      },
-    ],
+const customTheme = createTheme({
+  typography: {
+    fontFamily: `"Raleway", sans-serif`,
   },
-]);
+});
+
+const router = createBrowserRouter(Routes);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
+  <ThemeProvider theme={customTheme}>
     <RouterProvider router={router} />
-  </React.StrictMode>
+  </ThemeProvider>
 );

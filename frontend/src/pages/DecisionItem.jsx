@@ -1,6 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { React, useEffect, useState } from "react";
-import axios from "axios";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
@@ -9,14 +8,13 @@ import Typography from "@mui/material/Typography";
 import Avatar from "@mui/material/Avatar";
 import Stack from "@mui/material/Stack";
 import { deepPurple } from "@mui/material/colors";
+import loadData from "../services/loadData";
 
 export default function DecisionItem() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("http://localhost:6001/decisions")
-      .then((res) => setData(res.data));
+    loadData("decisions", setData);
   }, []);
 
   return (
@@ -38,8 +36,8 @@ export default function DecisionItem() {
             sx={{
               minWidth: 240,
             }}
-            key={decision.decision_id}
             elevation={4}
+            key={decision.decision_id}
           >
             <Chip
               variant="outlined"

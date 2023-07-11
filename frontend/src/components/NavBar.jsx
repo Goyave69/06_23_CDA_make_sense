@@ -12,7 +12,9 @@ export default function NavBar() {
           <ol>
             <li>
               <BiHomeAlt />
-              <a href="http://localhost:3000/">Parcourir les décisions</a>
+              <a href="http://localhost:3000/decision">
+                Parcourir les décisions
+              </a>
             </li>
             <li>
               <AiOutlineCalendar />

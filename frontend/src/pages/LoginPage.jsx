@@ -1,21 +1,32 @@
+// import axios from "axios";
 import { React, useState } from "react";
-// eslint-disable-next-line import/no-extraneous-dependencies
-import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { useCookies } from "react-cookie";
+import ApiHelper from "../services/ApiHelper";
 
 export default function LoginPage() {
   const [inputPassword, setInputPassword] = useState("");
   const [inputUsername, setInputUsername] = useState("");
+  const [, setCookies] = useCookies();
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    axios
-      .post("http://localhost:8888/login", {
+    ApiHelper(
+      "login",
+      "post",
+      {
         email: inputUsername,
         password: inputPassword,
-      })
+      },
+      "application/json"
+    )
       .then((response) => {
         console.info(response.data);
+        console.warn(response.data.token);
+        setCookies("token", response.data.token);
+        navigate("/decision");
       })
       .catch((error) => {
         console.error(error);
@@ -52,7 +63,11 @@ export default function LoginPage() {
             />
           </div>
           <div className="pass">Forgot Password?</div>
-          <input type="submit" value="Login" />
+          <input
+            type="submit"
+            value="Login"
+            href="http://localhost:3000/decision"
+          />
           <div className="signup_link">
             Not a member? <a href="Test">Signup</a>
           </div>
