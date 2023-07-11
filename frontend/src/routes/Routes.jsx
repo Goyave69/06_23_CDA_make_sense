@@ -1,32 +1,32 @@
+import { createBrowserRouter } from "react-router-dom";
 import ErrorPage from "../pages/ErrorPage";
-import DecisionItem from "../pages/DecisionItem";
+import DecisionPage from "../pages/DecisionPage";
+import DecisionItem from "../components/DecisionItem";
+import DecisionForm from "../pages/DecisionForm";
 import LoginPage from "../pages/LoginPage";
-import DecisionLoader from "../components/DecisionLoader";
 import "../App.css";
 
-const Routes = [
+const Routes = createBrowserRouter([
   {
     path: "/",
-    element: <LoginPage />,
-  },
-  {
-    path: "/decision",
     element: <DecisionItem />,
-    children: [
-      {
-        path: "*",
-        element: <ErrorPage />,
-      },
-    ],
+    errorElement: <ErrorPage />,
   },
   {
     path: "/login",
-    element: <DecisionLoader />,
+    element: <LoginPage />,
+    errorElement: <ErrorPage />,
   },
   {
-    path: "*",
-    element: <ErrorPage />,
+    path: "/decisions",
+    element: <DecisionPage />,
+    errorElement: <ErrorPage />,
   },
-];
+  {
+    path: "/decisionsform",
+    element: <DecisionForm />,
+    errorElement: <ErrorPage />,
+  },
+]);
 
 export default Routes;
