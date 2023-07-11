@@ -2,9 +2,10 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { ChakraProvider } from "@chakra-ui/react";
-
+import DecisionForm from "./pages/DecisionForm";
 import ErrorPage from "./pages/ErrorPage";
 import LoginPage from "./pages/LoginPage";
+
 import "./App.css";
 import DecisionPage from "./pages/DecisionPage";
 import DecisionItem from "./components/DecisionItem";
@@ -29,6 +30,11 @@ const router = createBrowserRouter([
   {
     path: "/decisions",
     element: <DecisionPage />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/decisionsform",
+    element: <DecisionForm />,
     errorElement: <ErrorPage />,
   },
 ]);
