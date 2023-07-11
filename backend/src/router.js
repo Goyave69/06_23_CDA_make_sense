@@ -19,6 +19,7 @@ const {
 
 // Hashing
 const { hashPassword } = require("./services/passwordHelper");
+const securityMiddleware = require("./middleware/loginMiddleware");
 
 // CORS
 
@@ -31,7 +32,7 @@ router.post("/decisions", validateDecision, decisionControllers.addDecision);
 router.post("/surveys", validateSurvey, surveyControllers.addSurvey);
 
 // GET Routes
-router.get("/users", userControllers.getAllUsers);
+router.get("/users", securityMiddleware, userControllers.getAllUsers);
 router.get("/users/:id", userControllers.getOneUser);
 router.get("/decisions", decisionControllers.getAllDecisions);
 router.get("/decisions/:id", decisionControllers.getOneDecision);
