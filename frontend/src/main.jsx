@@ -18,9 +18,7 @@ const router = createBrowserRouter(Routes);
 ReactDOM.createRoot(document.getElementById("root")).render(
   <ThemeProvider theme={customTheme}>
     <ChakraProvider>
-      <div className="App">
-        <RouterProvider router={router} />
-      </div>
+      <RouterProvider router={router} />
     </ChakraProvider>
   </ThemeProvider>
 );
