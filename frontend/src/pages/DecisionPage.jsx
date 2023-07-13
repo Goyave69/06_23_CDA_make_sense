@@ -34,11 +34,10 @@ export default function DecisionPage() {
         </Text>
         <Divider />
       </GridItem>
-      {data.map((decision, index) => (
-        <GridItem>
+      {data.map((decision) => (
+        <GridItem key={decision.id}>
           <Card
             variant="elevated"
-            key={index}
             minWidth="260"
             minHeight="170"
             color="#0C3944"
