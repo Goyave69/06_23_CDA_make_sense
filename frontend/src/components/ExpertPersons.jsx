@@ -1,11 +1,17 @@
 import React from "react";
-import { Button } from "@mui/material";
-import { Avatar, AvatarGroup, Box, Center, Text } from "@chakra-ui/react";
+import {
+  Avatar,
+  AvatarGroup,
+  Box,
+  Button,
+  Center,
+  Text,
+} from "@chakra-ui/react";
 
 export default function ExpertPersons() {
   return (
     <Box marginTop="10%">
-      <Text as="bold" fontSize="xl" fontWeight="1000" color="#0C3944">
+      <Text fontSize="xl" fontWeight="800">
         Personnes expertes
       </Text>
       <AvatarGroup size="md" max={5} marginY="10%">
@@ -15,29 +21,23 @@ export default function ExpertPersons() {
         <Avatar name="Prosper Otemuyiwa" src="https://bit.ly/prosper-baba" />
         <Avatar name="Christian Nwamba" src="https://bit.ly/code-beast" />
       </AvatarGroup>
-      <Text
-        fontSize="md"
-        fontWeight="900"
-        textDecoration="underline"
-        color="#0C3944"
-      >
+      <Text fontSize="md" fontWeight="700" textDecoration="underline">
         Voir les avis
       </Text>
       <Center>
         <Button
-          variant="contained"
-          sx={{
-            borderRadius: 3,
-            backgroundColor: "#0C3944",
-            textTransform: "none",
-            fontWeight: "1000",
-            textAlign: "center",
-            width: "90%",
-            marginTop: "20%",
-            "&:hover": { backgroundColor: "#196C84" },
-          }}
+          variant="solid"
+          color="white"
+          borderRadius="10"
+          backgroundColor="#0C3944"
+          textTransform="none"
+          fontWeight="700"
+          textAlign="center"
+          width="90%"
+          marginTop="20%"
+          _hover={{ bg: "#196C84" }}
         >
-          Donner son avis
+          Donner mon avis
         </Button>
       </Center>
     </Box>

@@ -8,7 +8,7 @@ import ExpertPersons from "./ExpertPersons";
 export default function DecisionResumeIntel() {
   return (
     <>
-      <Text as="bold" fontSize="xl" fontWeight="1000" color="#0C3944">
+      <Text fontSize="xl" fontWeight="800">
         Dates à retenir
       </Text>
       <DecisionStepper />

@@ -1,18 +1,21 @@
 import { React, useEffect, useState } from "react";
 import axios from "axios";
-import { Avatar, Box, Button, Chip, Typography } from "@mui/material";
-import { deepPurple } from "@mui/material/colors";
 import {
   Accordion,
   AccordionItem,
   AccordionButton,
   AccordionPanel,
   AccordionIcon,
+  Avatar,
+  Badge,
+  Box,
+  Button,
   Center,
   Divider,
   Grid,
   GridItem,
   Stack,
+  Text,
 } from "@chakra-ui/react";
 import DecisionResumeIntel from "./DecisionResumeIntel";
 
@@ -33,68 +36,63 @@ export default function DecisionItem() {
   }, []);
 
   return (
-    <Grid height="100vh" templateColumns="84% 1% 15%">
+    <Grid height="100vh" templateColumns="84% 1% 15%" color="#0C3944">
       <GridItem>
         <GridItem marginTop="4%" marginLeft="20%">
-          <Chip
-            variant="outlined"
-            size="small"
-            label="Décision en cours"
-            sx={{
-              color: "#24673A",
-              backgroundColor: "rgb(36, 103, 58, 0.075 )",
-              borderColor: "#24673A",
-            }}
-          />
-          <Chip
-            variant="outlined"
-            size="small"
-            label="Hub france"
-            sx={{
-              marginLeft: "0.25%",
-              color: "#9B084F",
-              backgroundColor: "rgb(155, 8, 79, 0.075 )",
-              borderColor: "#9B084F",
-            }}
-          />
-          <Typography
-            variant="h3"
-            sx={{ marginTop: "2%", fontWeight: "1000", color: "#0C3944" }}
+          <Badge
+            variant="subtle"
+            color="#24673A"
+            borderRadius="15"
+            backgroundColor="rgb(36, 103, 58, 0.075 )"
+            borderColor="#24673A"
+            border="solid"
+            fontWeight="500"
+            textTransform="none"
+            padding="0.25% 0.75% 0.25% 0.75%"
+            fontSize="0.8em"
           >
+            Décision en cours
+          </Badge>
+          <Badge
+            variant="subtle"
+            color="#9B084F"
+            borderRadius="15"
+            backgroundColor="rgb(155, 8, 79, 0.075 )"
+            borderColor="#9B084F"
+            border="solid"
+            fontWeight="500"
+            textTransform="none"
+            marginLeft="0.5%"
+            padding="0.25% 0.75% 0.25% 0.75%"
+            fontSize="0.8em"
+          >
+            Hub France
+          </Badge>
+          <Text fontSize="5xl" fontWeight="800" marginTop="1.5%">
             {data.title}
-          </Typography>
+          </Text>
           <Stack direction="row" marginBottom="-2%">
-            <Avatar sx={{ bgcolor: deepPurple[500], marginTop: "1%" }}>
-              JD
-            </Avatar>
-            <Stack direction="row" marginY="2%">
-              <Typography
-                variant="caption"
-                display="block"
-                gutterBottom
-                sx={{ paddingTop: "2%", color: "#0C3944" }}
-              >
-                par
-              </Typography>
-              <Typography
-                variant="caption"
-                display="block"
-                gutterBottom
-                sx={{
-                  paddingTop: "2%",
-                  color: "#0C3944",
-                  fontWeight: "1000",
-                  marginLeft: "-5%",
-                }}
-              >
-                Jane Doe
-              </Typography>
+            <Stack direction="row" margin="1% 0 2% 0">
+              <Avatar name="Jane Doe" size="sm" />
+              <Stack direction="row" margin="4% 0 2% 0">
+                <Text variant="caption" marginLeft="2%" fontSize="sm">
+                  par
+                </Text>
+                <Text
+                  variant="caption"
+                  fontWeight="1000"
+                  fontSize="sm"
+                  margin="0 -20% 0 -2%"
+                >
+                  Jane Doe
+                </Text>
+              </Stack>
             </Stack>
           </Stack>
         </GridItem>
         <GridItem marginTop="2%">
           <Accordion allowToggle marginLeft="20%">
-            <AccordionItem color="#0C3944">
+            <AccordionItem borderTop="none">
               <h2>
                 <AccordionButton
                   _expanded={{
@@ -114,7 +112,7 @@ export default function DecisionItem() {
               </AccordionPanel>
             </AccordionItem>
 
-            <AccordionItem color="#0C3944">
+            <AccordionItem>
               <h2>
                 <AccordionButton
                   _expanded={{
@@ -133,7 +131,7 @@ export default function DecisionItem() {
                 {data.organization_utility}
               </AccordionPanel>
             </AccordionItem>
-            <AccordionItem color="#0C3944">
+            <AccordionItem>
               <h2>
                 <AccordionButton
                   _expanded={{
@@ -152,7 +150,7 @@ export default function DecisionItem() {
                 {data.decision_benefits}
               </AccordionPanel>
             </AccordionItem>
-            <AccordionItem color="#0C3944">
+            <AccordionItem>
               <h2>
                 <AccordionButton
                   _expanded={{
@@ -171,7 +169,7 @@ export default function DecisionItem() {
                 {data.decision_risks}
               </AccordionPanel>
             </AccordionItem>
-            <AccordionItem color="#0C3944">
+            <AccordionItem>
               <h2>
                 <AccordionButton
                   _expanded={{
@@ -215,7 +213,7 @@ export default function DecisionItem() {
                 lacus.
               </AccordionPanel>
             </AccordionItem>
-            <AccordionItem color="#0C3944">
+            <AccordionItem>
               <h2>
                 <AccordionButton
                   _expanded={{
@@ -289,19 +287,18 @@ export default function DecisionItem() {
                 </div>
                 <Center>
                   <Button
-                    variant="contained"
-                    sx={{
-                      borderRadius: 3,
-                      backgroundColor: "#0C3944",
-                      textTransform: "none",
-                      fontWeight: "1000",
-                      textAlign: "center",
-                      width: "18%",
-                      marginTop: "5%",
-                      "&:hover": { backgroundColor: "#196C84" },
-                    }}
+                    variant="solid"
+                    color="white"
+                    borderRadius="10"
+                    backgroundColor="#0C3944"
+                    textTransform="none"
+                    fontWeight="700"
+                    textAlign="center"
+                    width="25%"
+                    marginTop="5%"
+                    _hover={{ bg: "#196C84" }}
                   >
-                    Donner son avis
+                    Donner mon avis
                   </Button>
                 </Center>
               </AccordionPanel>

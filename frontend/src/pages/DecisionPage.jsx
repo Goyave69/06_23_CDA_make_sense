@@ -31,7 +31,7 @@ export default function DecisionPage() {
         <Text fontSize="3xl" fontWeight="800" marginBottom="1.5%">
           All decisions
         </Text>
-        <Divider style={{ width: "100%" }} />
+        <Divider />
       </GridItem>
       {data.map((decision) => (
         <GridItem>
