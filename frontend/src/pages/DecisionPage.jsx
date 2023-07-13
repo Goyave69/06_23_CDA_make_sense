@@ -41,6 +41,7 @@ export default function DecisionPage() {
             minWidth="260"
             minHeight="170"
             color="#0C3944"
+            boxShadow="lg"
           >
             <Stack direction="row" spacing={2} margin="6% 0 0 6%">
               <Badge

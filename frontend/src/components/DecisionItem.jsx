@@ -38,12 +38,12 @@ export default function DecisionItem() {
   return (
     <Grid height="100vh" templateColumns="84% 1% 15%" color="#0C3944">
       <GridItem>
-        <GridItem marginTop="4%" marginLeft="20%">
+        <GridItem mt="4%" marginLeft="20%">
           <Badge
             variant="subtle"
             color="#24673A"
             borderRadius="15"
-            backgroundColor="rgb(36, 103, 58, 0.075 )"
+            bgColor="rgb(36, 103, 58, 0.075 )"
             borderColor="#24673A"
             border="solid"
             fontWeight="500"
@@ -57,7 +57,7 @@ export default function DecisionItem() {
             variant="subtle"
             color="#9B084F"
             borderRadius="15"
-            backgroundColor="rgb(155, 8, 79, 0.075 )"
+            bgColor="rgb(155, 8, 79, 0.075 )"
             borderColor="#9B084F"
             border="solid"
             fontWeight="500"
@@ -68,7 +68,7 @@ export default function DecisionItem() {
           >
             Hub France
           </Badge>
-          <Text fontSize="5xl" fontWeight="800" marginTop="1.5%">
+          <Text fontSize="5xl" fontWeight="800" mt="1.5%">
             {data.title}
           </Text>
           <Stack direction="row" marginBottom="-2%">
@@ -90,7 +90,7 @@ export default function DecisionItem() {
             </Stack>
           </Stack>
         </GridItem>
-        <GridItem marginTop="2%">
+        <GridItem mt="2%">
           <Accordion allowToggle marginLeft="20%">
             <AccordionItem borderTop="none">
               <h2>
@@ -107,7 +107,7 @@ export default function DecisionItem() {
                 </AccordionButton>
                 <Divider />
               </h2>
-              <AccordionPanel pb={4} backgroundColor="rgb(0 0 0 / 0.020)">
+              <AccordionPanel pb={4} bgColor="rgb(0 0 0 / 0.020)">
                 {data.decision_content}
               </AccordionPanel>
             </AccordionItem>
@@ -127,7 +127,7 @@ export default function DecisionItem() {
                 </AccordionButton>
                 <Divider />
               </h2>
-              <AccordionPanel pb={4} backgroundColor="rgb(0 0 0 / 0.020)">
+              <AccordionPanel pb={4} bgColor="rgb(0 0 0 / 0.020)">
                 {data.organization_utility}
               </AccordionPanel>
             </AccordionItem>
@@ -146,7 +146,7 @@ export default function DecisionItem() {
                 </AccordionButton>
                 <Divider />
               </h2>
-              <AccordionPanel pb={4} backgroundColor="rgb(0 0 0 / 0.020)">
+              <AccordionPanel pb={4} bgColor="rgb(0 0 0 / 0.020)">
                 {data.decision_benefits}
               </AccordionPanel>
             </AccordionItem>
@@ -165,7 +165,7 @@ export default function DecisionItem() {
                 </AccordionButton>
                 <Divider />
               </h2>
-              <AccordionPanel pb={4} backgroundColor="rgb(0 0 0 / 0.020)">
+              <AccordionPanel pb={4} bgColor="rgb(0 0 0 / 0.020)">
                 {data.decision_risks}
               </AccordionPanel>
             </AccordionItem>
@@ -184,7 +184,7 @@ export default function DecisionItem() {
                 </AccordionButton>
                 <Divider />
               </h2>
-              <AccordionPanel pb={4} backgroundColor="rgb(0 0 0 / 0.020)">
+              <AccordionPanel pb={4} bgColor="rgb(0 0 0 / 0.020)">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed
                 tempus urna et pharetra pharetra massa. In egestas erat
@@ -228,7 +228,7 @@ export default function DecisionItem() {
                 </AccordionButton>
                 <Divider />
               </h2>
-              <AccordionPanel pb={4} backgroundColor="rgb(0 0 0 / 0.020)">
+              <AccordionPanel pb={4} bgColor="rgb(0 0 0 / 0.020)">
                 <div>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -290,12 +290,12 @@ export default function DecisionItem() {
                     variant="solid"
                     color="white"
                     borderRadius="10"
-                    backgroundColor="#0C3944"
+                    bgColor="#0C3944"
                     textTransform="none"
                     fontWeight="700"
                     textAlign="center"
                     width="25%"
-                    marginTop="5%"
+                    mt="5%"
                     _hover={{ bg: "#196C84" }}
                   >
                     Donner mon avis
