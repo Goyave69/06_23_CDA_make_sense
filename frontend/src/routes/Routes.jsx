@@ -1,8 +1,9 @@
 import ErrorPage from "../pages/ErrorPage";
-import DecisionItem from "../components/DecisionItem";
+import DecisionPage from "../pages/DecisionPage";
 import LoginPage from "../pages/LoginPage";
 import DecisionLoader from "../components/DecisionLoader";
 import "../App.css";
+import SignUpPage from "../pages/SignUpPage";
 
 const Routes = [
   {
@@ -11,7 +12,7 @@ const Routes = [
   },
   {
     path: "/decision",
-    element: <DecisionItem />,
+    element: <DecisionPage />,
     children: [
       {
         path: "",
@@ -24,8 +25,14 @@ const Routes = [
     element: <DecisionLoader />,
   },
   {
-    path: "",
-    element: <ErrorPage />,
+    path: "/Test",
+    element: <SignUpPage />,
+    children: [
+      {
+        path: "",
+        element: <ErrorPage />,
+      },
+    ],
   },
 ];
 

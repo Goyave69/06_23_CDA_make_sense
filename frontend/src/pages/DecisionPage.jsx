@@ -1,13 +1,15 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { React, useEffect, useState } from "react";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import { Chip, Divider, Grid } from "@mui/material";
-import Typography from "@mui/material/Typography";
-import Avatar from "@mui/material/Avatar";
-import Stack from "@mui/material/Stack";
-import { deepPurple } from "@mui/material/colors";
+import {
+  Avatar,
+  Badge,
+  Card,
+  Divider,
+  Grid,
+  GridItem,
+  Stack,
+  Text,
+} from "@chakra-ui/react";
 import loadData from "../services/loadData";
 
 export default function DecisionPage() {
@@ -19,65 +21,80 @@ export default function DecisionPage() {
 
   return (
     <Grid
-      sx={{
-        display: "flex",
-        flexDirection: "row",
-        padding: "2%",
-        marginLeft: "1%",
-      }}
-      container
-      spacing={4}
+      templateRows="repeat(1, 1fr)"
+      templateColumns="repeat(5, 1fr)"
+      gap={4}
+      color="#0C3944"
+      margin="5% 0 0 5%"
     >
-      <Typography variant="h5">All decisions</Typography>
-      <Divider style={{ width: "100%", paddingBottom: "1%" }} />
+      <GridItem rowSpan={1} colSpan={5} marginBottom="1.5%">
+        <Text fontSize="3xl" fontWeight="800" marginBottom="1.5%">
+          All decisions
+        </Text>
+        <Divider style={{ width: "100%" }} />
+      </GridItem>
       {data.map((decision) => (
-        <Grid item>
+        <GridItem>
           <Card
-            sx={{
-              minWidth: 250,
-            }}
-            elevation={4}
-            key={decision.decision_id}
+            variant="elevated"
+            key={decision.id}
+            minWidth="260"
+            minHeight="170"
+            color="#0C3944"
           >
-            <Chip
-              variant="outlined"
-              color="success"
-              size="small"
-              label="Décision en cours"
-              sx={{ marginLeft: "5%", marginTop: "5%" }}
-            />
-            <Chip
-              variant="outlined"
-              color="error"
-              size="small"
-              label="Hub France"
-              sx={{ marginLeft: "1%", marginTop: "5%" }}
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                {decision.title}
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                {`${decision.decision_content.substring(0, 30)}...`}
-              </Typography>
-            </CardContent>
-            <CardActions>
-              <Stack direction="row" spacing={2}>
-                <Avatar sx={{ bgcolor: deepPurple[500], marginLeft: "1%" }}>
-                  JD
-                </Avatar>
-              </Stack>
-              <Typography
-                variant="caption"
-                display="block"
-                gutterBottom
-                sx={{ marginLeft: "5%" }}
+            <Stack direction="row" spacing={2} margin="6% 0 0 6%">
+              <Badge
+                variant="subtle"
+                color="#24673A"
+                borderRadius="15"
+                backgroundColor="rgb(36, 103, 58, 0.075 )"
+                borderColor="#24673A"
+                border="solid"
+                fontWeight="500"
+                textTransform="none"
+                padding="1% 2% 1% 2%"
+                fontSize="0.8em"
               >
-                par Jane Doe
-              </Typography>
-            </CardActions>
+                Décision en cours
+              </Badge>
+              <Badge
+                variant="subtle"
+                color="#9B084F"
+                borderRadius="15"
+                backgroundColor="rgb(155, 8, 79, 0.075 )"
+                borderColor="#9B084F"
+                border="solid"
+                fontWeight="500"
+                textTransform="none"
+                padding="1% 2% 1% 2%"
+                fontSize="0.8em"
+              >
+                Hub France
+              </Badge>
+            </Stack>
+            <Text fontSize="2xl" fontWeight="900" margin="5% 0 5% 6%">
+              {decision.title}
+            </Text>
+            <Stack direction="row" spacing={2} position="absolute" bottom="8%">
+              <Avatar name="Jane Doe" marginLeft="10%" size="sm" />
+
+              <Stack direction="row" margin="4% 0 2% 0">
+                <Text variant="caption" marginLeft="3%" fontSize="sm">
+                  par
+                </Text>
+                <Text
+                  variant="caption"
+                  color="#0C3944"
+                  fontWeight="1000"
+                  fontSize="sm"
+                  margin="0 -20% 0 -2%"
+                >
+                  Jane Doe
+                </Text>
+              </Stack>
+            </Stack>
           </Card>
-        </Grid>
+        </GridItem>
       ))}
     </Grid>
   );

@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Poppins:wght@400;500;600&display=swap");
 @import "../src/Reset.css";
 
 .main {
@@ -7,9 +6,9 @@
   align-items: center;
   height: 100vh;
   background-image: url("assets/BackgroundLogin.png");
-  background-color: #0c3944;
+  background-color: #474136;
   background-size: cover;
-  
+
 }
 
 .center {
@@ -18,14 +17,14 @@
   max-width: 420px;
   width: 100%;
   background: white;
+  opacity: 0.95;
   border-radius: 10px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
 }
 
 .center h1 {
   text-align: center;
-  padding: 20px 0;
-  border-bottom: 1px solid silver;
+  padding: 5% 0;
 }
 
 .center form {
@@ -36,6 +35,7 @@
 form {
   display: flex;
   flex-direction: column;
+  margin-top: -3%;
 }
 
 form .txt_field {
@@ -50,37 +50,38 @@ form .txt_field {
   font-size: 16px;
   border: none;
   background: none;
-  outline: none;  
+  outline: none;
 }
 
-input::placeholder{
+input::placeholder {
   color: #adadad;
   font-size: 16px;
 }
 
 .txt_field label {
 
-  color: #adadad;
+  color: #0C3944;
   font-size: 16px;
+  font-weight: 700;
   pointer-events: none;
   transition: 0.5s;
 }
 
 
-.txt_field input:focus ~ label,
-.txt_field input:valid ~ label {
+.txt_field input:focus~label,
+.txt_field input:valid~label {
   top: -5px;
   color: #2691d9;
 }
 
-.txt_field input:focus ~ span::before,
-.txt_field input:valid ~ span::before {
+.txt_field input:focus~span::before,
+.txt_field input:valid~span::before {
   width: 100%;
 }
 
 .pass {
   margin: -5px 0 20px 5px;
-  color: #a6a6a6;
+  color: #70AF90;
   cursor: pointer;
 }
 
@@ -89,21 +90,22 @@ input::placeholder{
 }
 
 input[type="submit"] {
-  width: 100%;
+  width: 80%;
   height: 50px;
-  background: #2691d9;
+  background: #0C3944;
   border-radius: 25px;
   font-size: 18px;
   color: #e9f4fb;
-  font-weight: 700;
+  font-weight: 900;
   cursor: pointer;
   outline: none;
   transition: 0.5s;
   border: none;
+  margin: 0 auto;
 }
 
 input[type="submit"]:hover {
-  border-color: #2691d9;
+  background-color: #196C84;
 }
 
 .signup_link {
@@ -114,7 +116,7 @@ input[type="submit"]:hover {
 }
 
 .signup_link a {
-  color: #2691d9;
+  color: #70AF90;
   text-decoration: none;
 }
 
@@ -131,7 +133,6 @@ input[type="submit"]:hover {
   justify-content: space-between;
   width: 100%;
   height: 100px
-
 }
 
 .NavBarElement nav {
@@ -153,7 +154,7 @@ input[type="submit"]:hover {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  
+
 }
 
 .NavBarElement li {
@@ -162,10 +163,11 @@ input[type="submit"]:hover {
   align-items: center;
   justify-content: center;
   margin-right: 10px;
-  font-size: 20px; /* Icon size */
+  font-size: 20px;
+  /* Icon size */
   vertical-align: middle;
   gap: 3px;
-  
+
 }
 
 .NavBarElement a {
