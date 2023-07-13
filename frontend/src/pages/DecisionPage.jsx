@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 /* eslint-disable import/no-extraneous-dependencies */
 import { React, useEffect, useState } from "react";
 import {
@@ -33,11 +34,11 @@ export default function DecisionPage() {
         </Text>
         <Divider />
       </GridItem>
-      {data.map((decision) => (
+      {data.map((decision, index) => (
         <GridItem>
           <Card
             variant="elevated"
-            key={decision.id}
+            key={index}
             minWidth="260"
             minHeight="170"
             color="#0C3944"
