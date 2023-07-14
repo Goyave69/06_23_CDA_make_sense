@@ -31,13 +31,11 @@ export default function DecisionItem() {
       <Typography variant="h5">All decisions</Typography>
       <Divider style={{ width: "100%", paddingBottom: "1%" }} />
       {data.map((decision) => (
-        <Grid item>
+        <Grid item key={decision.id}>
           <Card
             sx={{
               minWidth: 240,
             }}
-            elevation={4}
-            key={decision.decision_id}
           >
             <Chip
               variant="outlined"
