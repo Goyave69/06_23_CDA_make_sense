@@ -100,10 +100,10 @@ export default function DecisionItem() {
                     color: "rgb(155, 8, 79)",
                   }}
                 >
+                  <AccordionIcon marginRight="1%" />
                   <Box as="span" flex="1" textAlign="left" fontWeight="1000">
                     Les détails de la décision
                   </Box>
-                  <AccordionIcon />
                 </AccordionButton>
                 <Divider />
               </h2>
@@ -120,10 +120,10 @@ export default function DecisionItem() {
                     color: "rgb(155, 8, 79)",
                   }}
                 >
+                  <AccordionIcon marginRight="1%" />
                   <Box as="span" flex="1" textAlign="left" fontWeight="1000">
                     Impact sur l'organisation
                   </Box>
-                  <AccordionIcon />
                 </AccordionButton>
                 <Divider />
               </h2>
@@ -139,10 +139,10 @@ export default function DecisionItem() {
                     color: "rgb(155, 8, 79)",
                   }}
                 >
+                  <AccordionIcon marginRight="1%" />
                   <Box as="span" flex="1" textAlign="left" fontWeight="1000">
                     Bénéfices 👍
                   </Box>
-                  <AccordionIcon />
                 </AccordionButton>
                 <Divider />
               </h2>
@@ -158,10 +158,10 @@ export default function DecisionItem() {
                     color: "rgb(155, 8, 79)",
                   }}
                 >
+                  <AccordionIcon marginRight="1%" />
                   <Box as="span" flex="1" textAlign="left" fontWeight="1000">
                     Risques potentiels 🚨
                   </Box>
-                  <AccordionIcon />
                 </AccordionButton>
                 <Divider />
               </h2>
@@ -177,10 +177,10 @@ export default function DecisionItem() {
                     color: "rgb(155, 8, 79)",
                   }}
                 >
+                  <AccordionIcon marginRight="1%" />
                   <Box as="span" flex="1" textAlign="left" fontWeight="1000">
                     Avis 💬
                   </Box>
-                  <AccordionIcon />
                 </AccordionButton>
                 <Divider />
               </h2>
@@ -221,10 +221,10 @@ export default function DecisionItem() {
                     color: "rgb(155, 8, 79)",
                   }}
                 >
+                  <AccordionIcon marginRight="1%" />
                   <Box as="span" flex="1" textAlign="left" fontWeight="1000">
                     Première décision
                   </Box>
-                  <AccordionIcon />
                 </AccordionButton>
                 <Divider />
               </h2>
