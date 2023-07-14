@@ -26,6 +26,10 @@ const Routes = [
     element: <DecisionItem />,
   },
   {
+    path: "/error",
+    element: <ErrorPage />,
+  },
+  {
     path: "/login",
     element: <DecisionLoader />,
   },
