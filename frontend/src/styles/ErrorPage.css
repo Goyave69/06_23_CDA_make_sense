@@ -1,0 +1,8 @@
+@import "../Reset.css";
+
+.main-container {
+    background-image: url("../assets/BackgroundLogin.png");
+    background-color: #E36164;
+    background-size: cover;
+
+}
