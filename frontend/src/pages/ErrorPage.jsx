@@ -10,12 +10,13 @@ export default function ErrorPage() {
       flexDirection="column"
       alignItems="center"
       color="#0C3944"
+      gap={2}
     >
       <Box
         display="flex"
         flexDirection="row"
-        alignItems="center"
-        gap={3}
+        alignItems="flex-end"
+        gap={4}
         height="50vh"
         fontSize="5xl"
       >
