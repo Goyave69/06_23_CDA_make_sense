@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 const argon2 = require("argon2");
 const jwt = require("jsonwebtoken");
 require("dotenv").config();

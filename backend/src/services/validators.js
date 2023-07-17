@@ -1,5 +1,4 @@
 /* eslint-disable camelcase */
-/* eslint-disable import/no-extraneous-dependencies */
 const Joi = require("joi");
 
 const { joiPasswordExtendCore } = require("joi-password");
