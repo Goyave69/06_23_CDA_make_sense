@@ -48,7 +48,7 @@ export default function SignUpPage() {
             <span />
             <label htmlFor="InputFirstname" style={{ fontWeight: 700 }}>
               {" "}
-              Firstname{" "}
+              Firstname{"* "}
             </label>
             <input
               type="text"
@@ -63,7 +63,7 @@ export default function SignUpPage() {
             <span />
             <label htmlFor="InputLastname" style={{ fontWeight: 700 }}>
               {" "}
-              Lastname{" "}
+              Lastname{"* "}
             </label>
             <input
               type="text"
@@ -78,7 +78,7 @@ export default function SignUpPage() {
             <span />
             <label htmlFor="InputBirthdate" style={{ fontWeight: 700 }}>
               {" "}
-              Birthdate{" "}
+              Birthdate{"* "}
             </label>
             <input
               type="date"
@@ -93,7 +93,7 @@ export default function SignUpPage() {
             <span />
             <label htmlFor="InputEmail" style={{ fontWeight: 700 }}>
               {" "}
-              Email{" "}
+              Email{"* "}
             </label>
             <input
               type="text"
@@ -107,7 +107,7 @@ export default function SignUpPage() {
           <div className="txt_field">
             <span />
             <label htmlFor="InputPassword" style={{ fontWeight: 700 }}>
-              Password
+              Password*
             </label>
             <input
               type="password"
