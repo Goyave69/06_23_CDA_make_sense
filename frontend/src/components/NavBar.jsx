@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import { BiHomeAlt } from "react-icons/bi";
 import { AiOutlineCalendar } from "react-icons/ai";
 import { PiSmileyBold } from "react-icons/pi";
