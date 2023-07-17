@@ -54,7 +54,7 @@ export default function DecisionPage() {
                 fontWeight="500"
                 textTransform="none"
                 padding="1% 2% 1% 2%"
-                fontSize="0.8em"
+                fontSize="0.7em"
               >
                 Décision en cours
               </Badge>
@@ -68,12 +68,19 @@ export default function DecisionPage() {
                 fontWeight="500"
                 textTransform="none"
                 padding="1% 2% 1% 2%"
-                fontSize="0.8em"
+                fontSize="0.7em"
               >
                 Hub France
               </Badge>
             </Stack>
-            <Text fontSize="2xl" fontWeight="900" margin="5% 0 5% 6%">
+            <Text
+              display="flex"
+              fontSize="0.99em"
+              fontWeight="900"
+              textAlign="justify"
+              margin="5%"
+              noOfLines={3}
+            >
               {decision.title}
             </Text>
             <Stack direction="row" spacing={2} position="absolute" bottom="8%">

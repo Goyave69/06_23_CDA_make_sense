@@ -3,6 +3,7 @@ import DecisionPage from "../pages/DecisionPage";
 import DecisionItem from "../components/DecisionItem";
 import LoginPage from "../pages/LoginPage";
 import DecisionLoader from "../components/DecisionLoader";
+import MyDecisions from "../pages/MyDecisions";
 import "../App.css";
 import SignUpPage from "../pages/SignUpPage";
 
@@ -24,6 +25,10 @@ const Routes = [
   {
     path: "/decision-item",
     element: <DecisionItem />,
+  },
+  {
+    path: "/my-decisions",
+    element: <MyDecisions />,
   },
   {
     path: "/error",
