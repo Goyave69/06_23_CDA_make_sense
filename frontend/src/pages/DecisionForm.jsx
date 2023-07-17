@@ -8,6 +8,13 @@ import Reglages from "../components/Reglages/Reglages";
 function DecisionForm() {
   const [page, setPage] = useState("LePoste");
 
+  const [detailForm, setDetailForm] = useState("");
+  const [impactForm, setImpactForm] = useState("");
+  const [beneficeForm, setBeneficeForm] = useState("");
+  const [risqueForm, setRisqueForm] = useState("");
+  const [decisionForm, setDecisionForm] = useState("");
+  const [concernerForm, setConcernerForm] = useState("");
+
   const nextPage = (newpage) => {
     setPage(newpage);
   };
@@ -39,9 +46,26 @@ function DecisionForm() {
 
         {
           {
-            LePoste: <LePoste onButtonClick={nextPage} />,
-            Candidater: <Candidater onButtonClick={nextPage} />,
-            Reglages: <Reglages />,
+            LePoste: (
+              <LePoste
+                onButtonClick={nextPage}
+                detail={[detailForm, setDetailForm]}
+                impact={[impactForm, setImpactForm]}
+              />
+            ),
+            Candidater: (
+              <Candidater
+                onButtonClick={nextPage}
+                benefice={[beneficeForm, setBeneficeForm]}
+                risk={[risqueForm, setRisqueForm]}
+              />
+            ),
+            Reglages: (
+              <Reglages
+                decision={[decisionForm, setDecisionForm]}
+                concerner={[concernerForm, setConcernerForm]}
+              />
+            ),
           }[page]
         }
       </div>

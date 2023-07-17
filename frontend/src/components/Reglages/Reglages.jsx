@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Reglages.css";
 import ReactQuill from "react-quill";
 import rond from "../../assets/rond.png";
 import "react-quill/dist/quill.snow.css";
 
-function Reglages() {
+function Reglages({ decision, concerner }) {
   function submit(e) {
     e.preventDefault();
   }
+
   const modulesRef = {
     toolbar: [
       ["bold", "italic", "link", "image"],
@@ -18,13 +19,16 @@ function Reglages() {
     ],
   };
 
-  const [decisionForm, setDecisionForm] = useState("");
+  const [decisionForm, setDecisionForm] = decision;
+  const [concernerForm, setConcernerForm] = concerner;
+
+  // const [decisionForm, setDecisionForm] = useState("");
 
   const handleChangeDecision = (content, delta, source, editor) => {
     setDecisionForm(editor.getContents());
   };
 
-  const [concernerForm, setConcernerForm] = useState("");
+  // const [concernerForm, setConcernerForm] = useState("");
 
   const handleChangeRisque = (content, delta, source, editor) => {
     setConcernerForm(editor.getContents());

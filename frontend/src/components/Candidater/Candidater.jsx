@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Candidater.css";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import rond from "../../assets/rond.png";
 
-function Candidater({ onButtonClick }) {
+function Candidater({ onButtonClick, benefice, risk }) {
   const modulesRef = {
     toolbar: [
       ["bold", "italic", "link", "image"],
@@ -15,13 +15,12 @@ function Candidater({ onButtonClick }) {
     ],
   };
 
-  const [beneficeForm, setBeneficeForm] = useState("");
+  const [beneficeForm, setBeneficeForm] = benefice;
+  const [risqueForm, setRisqueForm] = risk;
 
   const handleChangeBenefice = (content, delta, source, editor) => {
     setBeneficeForm(editor.getContents());
   };
-
-  const [risqueForm, setRisqueForm] = useState("");
 
   const handleChangeRisque = (content, delta, source, editor) => {
     setRisqueForm(editor.getContents());
