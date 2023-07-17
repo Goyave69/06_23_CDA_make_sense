@@ -31,7 +31,7 @@ const Routes = [
     element: <MyDecisions />,
   },
   {
-    path: "/error",
+    path: "/*",
     element: <ErrorPage />,
   },
   {
