@@ -15,6 +15,8 @@ const {
   validateDecision,
   validateUser,
   validateSurvey,
+  putValidateUser,
+  putValidateDecision,
 } = require("./services/validators");
 
 // Hashing
@@ -27,7 +29,6 @@ app.use(cors);
 
 // POST Routes
 router.post("/login", loginController.login);
-
 router.post("/users", validateUser, hashPassword, userControllers.addUser);
 router.post("/decisions", validateDecision, decisionControllers.addDecision);
 router.post("/surveys", validateSurvey, surveyControllers.addSurvey);
@@ -46,15 +47,10 @@ router.get("/surveys", surveyControllers.getAllSurveys);
 router.get("/surveys/:id", surveyControllers.getOneSurvey);
 
 // PUT Routes
-router.put(
-  "/users/:id",
-  validateUser,
-  hashPassword,
-  userControllers.updateUser
-);
+router.put("/users/:id", putValidateUser, userControllers.updateUser);
 router.put(
   "/decisions/:id",
-  validateDecision,
+  putValidateDecision,
   decisionControllers.updateDecision
 );
 router.put("/surveys/:id", validateSurvey, surveyControllers.updateSurvey);

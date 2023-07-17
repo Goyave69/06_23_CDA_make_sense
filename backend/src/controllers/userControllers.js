@@ -31,10 +31,10 @@ const getOneUser = (req, res) => {
 const updateUser = (req, res) => {
   const user = req.body;
 
-  user.id = parseInt(req.params.id, 10);
+  const id = parseInt(req.params.id, 10);
 
   models.user
-    .update(user)
+    .update(user, id)
     .then(([result]) => {
       if (result.affectedRows === 0) {
         res.sendStatus(404);

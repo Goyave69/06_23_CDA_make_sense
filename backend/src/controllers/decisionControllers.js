@@ -31,10 +31,10 @@ const getOneDecision = (req, res) => {
 const updateDecision = (req, res) => {
   const decision = req.body;
 
-  decision.id = parseInt(req.params.id, 10);
+  const id = parseInt(req.params.id, 10);
 
   models.decision
-    .update(decision)
+    .update(decision, id)
     .then(([result]) => {
       if (result.affectedRows === 0) {
         res.sendStatus(404);

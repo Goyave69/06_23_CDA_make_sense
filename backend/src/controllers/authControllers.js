@@ -8,19 +8,24 @@ function login(req, res) {
   models.user
     .findOneByEmail(email)
     .then(async ([rows]) => {
+      const user = rows[0];
       if (rows.length === 0) {
         res.sendStatus(404);
       }
-      if (!(await helper.verifyPassword(rows[0].password, password))) {
+      if (!(await helper.verifyPassword(user.password, password))) {
         console.warn(password);
-        console.warn(rows[0].password);
+        console.warn(user.password);
         res.status(401).json("Email or password is wrong");
       }
-      const token = jwtGenerator(rows[0].id);
+      const token = jwtGenerator(user.id);
       console.warn(token);
+      delete user.password;
       res
         .cookie("token", token, {
           httpOnly: true,
+        })
+        .cookie("user", user, {
+          httpOnly: false,
         })
         .status(200)
         .json({ message: "Login successful" });
@@ -30,7 +35,6 @@ function login(req, res) {
       res.sendStatus(500);
     });
 }
-
 async function logoutController(req, res) {
   return res.clearCookie("token").status(200).json("Successfully logged out");
 }
