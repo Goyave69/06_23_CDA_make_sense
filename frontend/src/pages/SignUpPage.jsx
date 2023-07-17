@@ -38,7 +38,10 @@ export default function SignUpPage() {
 
   return (
     <div className="main" style={{ backgroundColor: "#9B084F" }}>
-      <div className="center" style={{ paddingBottom: "3%", color: "#0C3944" }}>
+      <div
+        className="center"
+        style={{ paddingBottom: "3%", color: "#0C3944", height: "97%" }}
+      >
         <h1 style={{ fontWeight: 900, fontSize: "2rem" }}>Sign Up</h1>
         <form method="post" onSubmit={handleSubmit}>
           <div className="txt_field">
