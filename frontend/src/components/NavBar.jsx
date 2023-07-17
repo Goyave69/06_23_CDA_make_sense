@@ -11,13 +11,15 @@ export default function NavBar() {
           <ol>
             <li>
               <BiHomeAlt />
-              <a href="http://localhost:3000/decision">
+              <a href="http://localhost:3000/make_sense/decision">
                 Parcourir les décisions
               </a>
             </li>
             <li>
               <AiOutlineCalendar />
-              <a href="http://localhost:3000/">Mes décisions</a>
+              <a href="http://localhost:3000/make_sense/my-decisions">
+                Mes décisions
+              </a>
             </li>
             <li>
               <PiSmileyBold />

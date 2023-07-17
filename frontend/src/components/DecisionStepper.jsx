@@ -12,11 +12,11 @@ import {
 } from "@chakra-ui/react";
 
 const steps = [
-  { title: "15/10/2022", description: "Prise de décision commencée" },
-  { title: "25/10/2022", description: "Deadline pour donner son avis" },
-  { title: "10/11/2022", description: "Première décision prise" },
-  { title: "17/11/2022", description: "Deadline pour rentrer en conflit" },
-  { title: "30/11/2022", description: "Décision définitive" },
+  { title: "15/10/2022", description: "Start of first draft" },
+  { title: "25/10/2022", description: "Survey deadline" },
+  { title: "10/11/2022", description: "First draft approved" },
+  { title: "17/11/2022", description: "Conflict deadline" },
+  { title: "30/11/2022", description: "Final decision" },
 ];
 
 export default function DecisionStepper() {

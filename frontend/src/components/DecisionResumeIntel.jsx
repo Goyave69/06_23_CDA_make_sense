@@ -9,7 +9,7 @@ export default function DecisionResumeIntel() {
   return (
     <>
       <Text fontSize="xl" fontWeight="800">
-        Dates à retenir
+        Important deadlines
       </Text>
       <DecisionStepper />
       <ImpactedPersons />

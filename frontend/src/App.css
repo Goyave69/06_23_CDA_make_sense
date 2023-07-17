@@ -80,7 +80,7 @@ input::placeholder {
 }
 
 .pass {
-  margin: -5px 0 20px 5px;
+  margin: 0 0 4% 1%;
   color: #70AF90;
   cursor: pointer;
 }
@@ -91,10 +91,10 @@ input::placeholder {
 
 input[type="submit"] {
   width: 80%;
-  height: 50px;
+  height: 2.75em;
   background: #0C3944;
-  border-radius: 25px;
-  font-size: 18px;
+  border-radius: 2em;
+  font-size: 1.2em;
   color: #e9f4fb;
   font-weight: 900;
   cursor: pointer;
@@ -109,9 +109,9 @@ input[type="submit"]:hover {
 }
 
 .signup_link {
-  margin: 30px 0;
+  margin: 9%;
   text-align: center;
-  font-size: 16px;
+  font-size: 1em;
   color: #666666;
 }
 
@@ -125,14 +125,15 @@ input[type="submit"]:hover {
 }
 
 .BoxNavbar {
-  background-color: #fff;
+  background-color: transparent;
+  height: 7.5vh;
 }
 
 .NavBarElement {
   display: flex;
   justify-content: space-between;
+  height: 100%;
   width: 100%;
-  height: 100px
 }
 
 .NavBarElement nav {
@@ -143,10 +144,8 @@ input[type="submit"]:hover {
 }
 
 .NavBarElement img {
-  /* margin-right: 800px; */
-  margin-left: 25px;
-  height: 40px;
-
+  margin-left: 1.5%;
+  height: 90%;
 }
 
 .NavBarElement ol {
@@ -154,7 +153,7 @@ input[type="submit"]:hover {
   list-style-type: none;
   margin: 0;
   padding: 0;
-
+  height: 100%;
 }
 
 .NavBarElement li {
@@ -162,17 +161,18 @@ input[type="submit"]:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-right: 10px;
-  font-size: 20px;
+  margin-right: 2em;
+  font-size: 1.75em;
   /* Icon size */
   vertical-align: middle;
-  gap: 3px;
+  gap: 3%;
 
 }
 
 .NavBarElement a {
   display: flex;
   text-decoration: none;
-  color: #000;
+  color: #0C3944;
   font-size: 0.8rem;
+  font-weight: 700;
 }

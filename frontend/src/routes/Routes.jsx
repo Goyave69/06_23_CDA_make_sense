@@ -1,3 +1,4 @@
+import App from "../App";
 import ErrorPage from "../pages/ErrorPage";
 import DecisionPage from "../pages/DecisionPage";
 import DecisionItem from "../components/DecisionItem";
@@ -13,38 +14,32 @@ const Routes = [
     element: <LoginPage />,
   },
   {
-    path: "/decision",
-    element: <DecisionPage />,
+    path: "/make_sense",
+    element: <App />,
     children: [
       {
-        path: "",
+        path: "decision-item",
+        element: <DecisionItem />,
+      },
+      {
+        path: "decision",
+        element: <DecisionPage />,
+      },
+      {
+        path: "my-decisions",
+        element: <MyDecisions />,
+      },
+      {
+        path: "*",
         element: <ErrorPage />,
       },
-    ],
-  },
-  {
-    path: "/decision-item",
-    element: <DecisionItem />,
-  },
-  {
-    path: "/my-decisions",
-    element: <MyDecisions />,
-  },
-  {
-    path: "/*",
-    element: <ErrorPage />,
-  },
-  {
-    path: "/login",
-    element: <DecisionLoader />,
-  },
-  {
-    path: "/Test",
-    element: <SignUpPage />,
-    children: [
       {
-        path: "",
-        element: <ErrorPage />,
+        path: "login",
+        element: <DecisionLoader />,
+      },
+      {
+        path: "Test",
+        element: <SignUpPage />,
       },
     ],
   },
