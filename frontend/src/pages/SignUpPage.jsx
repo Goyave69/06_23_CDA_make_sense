@@ -40,11 +40,13 @@ export default function SignUpPage() {
     <div className="main" style={{ backgroundColor: "#9B084F" }}>
       <div
         className="center"
-        style={{ paddingBottom: "3%", color: "#0C3944", height: "97%" }}
+        style={{ color: "#0C3944", height: "88%", maxHeight: "800px" }}
       >
-        <h1 style={{ fontWeight: 900, fontSize: "2rem" }}>Sign Up</h1>
-        <form method="post" onSubmit={handleSubmit}>
-          <div className="txt_field">
+        <h1 style={{ fontWeight: 900, fontSize: "2rem", marginBottom: "5%" }}>
+          Sign Up
+        </h1>
+        <form method="post" onSubmit={handleSubmit} style={{ padding: "0 8%" }}>
+          <div className="txt_field" style={{ marginTop: 0 }}>
             <span />
             <label htmlFor="InputFirstname" style={{ fontWeight: 700 }}>
               {" "}
@@ -59,7 +61,7 @@ export default function SignUpPage() {
               required
             />
           </div>
-          <div className="txt_field">
+          <div className="txt_field" style={{ marginTop: 0 }}>
             <span />
             <label htmlFor="InputLastname" style={{ fontWeight: 700 }}>
               {" "}
@@ -74,7 +76,7 @@ export default function SignUpPage() {
               required
             />
           </div>
-          <div className="txt_field">
+          <div className="txt_field" style={{ marginTop: 0 }}>
             <span />
             <label htmlFor="InputBirthdate" style={{ fontWeight: 700 }}>
               {" "}
@@ -89,7 +91,7 @@ export default function SignUpPage() {
               required
             />
           </div>
-          <div className="txt_field">
+          <div className="txt_field" style={{ marginTop: 0 }}>
             <span />
             <label htmlFor="InputEmail" style={{ fontWeight: 700 }}>
               {" "}
@@ -102,11 +104,15 @@ export default function SignUpPage() {
               name="InputEmail"
               placeholder="goyave.lebrave@oasis.com"
               required
+              style={{ marginBottom: 0 }}
             />
           </div>
-          <div className="txt_field">
+          <div className="txt_field" style={{ marginTop: 0 }}>
             <span />
-            <label htmlFor="InputPassword" style={{ fontWeight: 700 }}>
+            <label
+              htmlFor="InputPassword"
+              style={{ fontWeight: 700, margin: "0, 0" }}
+            >
               Password*
             </label>
             <input
@@ -125,7 +131,7 @@ export default function SignUpPage() {
             style={{
               fontWeight: 900,
               backgroundColor: "#0C3944",
-              marginTop: "5%",
+              margin: "2.5% 10% 5% 10%",
             }}
           />
         </form>
