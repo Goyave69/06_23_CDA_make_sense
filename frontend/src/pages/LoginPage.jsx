@@ -65,7 +65,7 @@ export default function LoginPage() {
           <input
             type="submit"
             value="Login"
-            href="http://localhost:3000/decision"
+            href="http://localhost:3000/make_sense/admin"
           />
           <div className="signup_link">
             Not a member? <a href="Test">Sign Up</a>

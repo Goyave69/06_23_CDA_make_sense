@@ -1,4 +1,5 @@
 import App from "../App";
+import AdminPage from "../pages/AdminPage";
 import ErrorPage from "../pages/ErrorPage";
 import DecisionPage from "../pages/DecisionPage";
 import DecisionItem from "../components/DecisionItem";
@@ -40,6 +41,10 @@ const Routes = [
       {
         path: "Test",
         element: <SignUpPage />,
+      },
+      {
+        path: "admin",
+        element: <AdminPage />,
       },
     ],
   },
