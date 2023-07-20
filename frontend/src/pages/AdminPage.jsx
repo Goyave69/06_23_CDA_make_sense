@@ -14,10 +14,11 @@ import {
 import loadData from "../services/loadData";
 
 export default function AdminPage() {
-  const [data, setData] = useState([]);
+  const [userData, setUserData] = useState([]);
+  const allUsers = [userData];
 
   useEffect(() => {
-    loadData("users", setData);
+    loadData("users", setUserData);
   }, []);
 
   return (
@@ -39,50 +40,17 @@ export default function AdminPage() {
               </Tr>
             </Thead>
             <Tbody>
-              <Tr>
-                <Td>Jane Smith</Td>
-                <Td>1985-12-03</Td>
-                <Td>janesmith@example.com</Td>
-                <Td>User</Td>
-              </Tr>
-              <Tr>
-                <Td>John Doe</Td>
-                <Td>1990-05-15</Td>
-                <Td>johndoe@example.com</Td>
-                <Td>Admin</Td>
-              </Tr>
-              <Tr>
-                <Td>Michael Johnson</Td>
-                <Td>1988-07-21</Td>
-                <Td>michaeljohnson@example.com</Td>
-                <Td>Expert</Td>
-              </Tr>
-            </Tbody>
-          </Table>
-        </TableContainer>
-      </GridItem>
-      <GridItem marginX="5%">
-        <TableContainer>
-          <Table variant="striped" colorScheme="whatsapp">
-            <Thead>
-              <Tr>
-                <Th>Name</Th>
-                <Th>Birthdate</Th>
-                <Th>Email</Th>
-                <Th>Role</Th>
-              </Tr>
-            </Thead>
-            <Tbody>
-              {data.map((user) => (
-                <Tr key={user.id}>
-                  <Td>
-                    {user.firstname} + + {user.lastname}
-                  </Td>
-                  <Td>{user.birthdate}</Td>
-                  <Td>{user.email}</Td>
-                  <Td>{user.role}</Td>
-                </Tr>
-              ))}
+              {allUsers.map((element) => {
+                return element.map((user) => (
+                  <Tr key={user.id}>
+                    <Td>
+                      {user.firstname} {user.lastname}
+                    </Td>
+                    <Td>{user.birthdate}</Td>
+                    <Td>{user.email}</Td>
+                  </Tr>
+                ));
+              })}
             </Tbody>
           </Table>
         </TableContainer>
