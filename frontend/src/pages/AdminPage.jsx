@@ -22,7 +22,7 @@ export default function AdminPage() {
   }, []);
 
   return (
-    <Grid color="#0C3944" margin="5% 0 0 5%">
+    <Grid color="#0C3944" margin="2.5% 0 0 5%">
       <GridItem marginBottom="1.5%">
         <Text fontSize="3xl" fontWeight="800" marginBottom="1.5%">
           Users
