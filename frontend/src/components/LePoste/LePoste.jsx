@@ -117,7 +117,7 @@ function LePoste({ onButtonClick, detail, impact }) {
                   borderRadius: "10px",
                 }}
                 type="submit"
-                value="Create Workspace"
+                value="Suivant !"
                 onClick={() => onButtonClick("Candidater")}
               />
             </div>

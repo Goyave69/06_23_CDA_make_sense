@@ -5,8 +5,9 @@ import LoginPage from "../pages/LoginPage";
 import DecisionLoader from "../components/DecisionLoader";
 import MyDecisions from "../pages/MyDecisions";
 import DecisionForm from "../pages/DecisionForm";
-import "../App.css";
 import SignUpPage from "../pages/SignUpPage";
+import NewDecision from "../pages/NewDecision";
+import "../App.css";
 
 const Routes = [
   {
@@ -38,6 +39,10 @@ const Routes = [
   {
     path: "/login",
     element: <DecisionLoader />,
+  },
+  {
+    path: "/decision/:id",
+    element: <NewDecision />,
   },
   {
     path: "/decisionform",

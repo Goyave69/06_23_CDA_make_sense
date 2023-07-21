@@ -4,11 +4,7 @@ import ReactQuill from "react-quill";
 import rond from "../../assets/rond.png";
 import "react-quill/dist/quill.snow.css";
 
-function Reglages({ decision, concerner }) {
-  function submit(e) {
-    e.preventDefault();
-  }
-
+function Reglages({ decision, concerner, handleSend }) {
   const modulesRef = {
     toolbar: [
       ["bold", "italic", "link", "image"],
@@ -22,13 +18,9 @@ function Reglages({ decision, concerner }) {
   const [decisionForm, setDecisionForm] = decision;
   const [concernerForm, setConcernerForm] = concerner;
 
-  // const [decisionForm, setDecisionForm] = useState("");
-
   const handleChangeDecision = (content, delta, source, editor) => {
     setDecisionForm(editor.getContents());
   };
-
-  // const [concernerForm, setConcernerForm] = useState("");
 
   const handleChangeRisque = (content, delta, source, editor) => {
     setConcernerForm(editor.getContents());
@@ -105,7 +97,7 @@ function Reglages({ decision, concerner }) {
                 }}
                 type="submit"
                 value="Create Workspace"
-                onClick={submit}
+                onClick={handleSend}
               />
             </div>
           </form>
