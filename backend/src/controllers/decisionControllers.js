@@ -54,8 +54,10 @@ const addDecision = (req, res) => {
   models.decision
     .create(decision)
     .then(([result]) => {
-      res.location(`/decisions/${result.insertId}`).sendStatus(201);
+      const { insertId } = result;
+      res.status(201).json({ id: insertId });
     })
+
     .catch((err) => {
       console.error(err);
       res.sendStatus(500);
