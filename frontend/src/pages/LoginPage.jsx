@@ -25,7 +25,7 @@ export default function LoginPage() {
         console.info(response.data);
         console.warn(response.data.token);
         setCookies("token", response.data.token);
-        navigate("/decision");
+        navigate("make_sense/admin");
       })
       .catch((error) => {
         console.error(error);
@@ -62,11 +62,7 @@ export default function LoginPage() {
             />
           </div>
           <div className="pass">Forgot Password?</div>
-          <input
-            type="submit"
-            value="Login"
-            href="http://localhost:3000/make_sense/admin"
-          />
+          <input type="submit" value="Login" />
           <div className="signup_link">
             Not a member? <a href="Test">Sign Up</a>
           </div>

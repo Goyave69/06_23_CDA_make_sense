@@ -23,7 +23,10 @@ export default function NavBar() {
             </li>
             <li>
               <PiSmileyBold />
-              <a href="http://localhost:3000/"> Notifications</a>
+              <a href="http://localhost:3000/make_sense/decision-form">
+                {" "}
+                Notifications
+              </a>
             </li>
           </ol>
         </nav>

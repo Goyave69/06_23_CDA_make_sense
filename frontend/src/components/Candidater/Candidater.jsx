@@ -35,8 +35,8 @@ function Candidater({ onButtonClick }) {
           <h1>Candidater</h1>
         </div>
         <h4 className="p-haeder">
-          C'est le moment d'etre creatif: parlez de votre mission, de l'impact
-          direct ou indirect de ce poste, des jalons que vous avez deja atteints
+          C'est le moment d'être creatif: parlez de votre mission, de l'impact
+          direct ou indirect de ce poste, des jalons que vous avez déjà atteints
         </h4>
       </div>
       <div className="area-right">

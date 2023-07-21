@@ -31,7 +31,7 @@ function DecisionForm() {
     <div className="all-area">
       <div className="title-poste">
         <h1 className="titleposte">
-          Créer une nouvelle annonce: makesense France
+          Créer une nouvelle annonce : make_sense France
         </h1>
       </div>
       <div>

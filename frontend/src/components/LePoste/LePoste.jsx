@@ -35,8 +35,8 @@ function LePoste({ onButtonClick }) {
           <h1>Le poste</h1>
         </div>
         <h4 className="p-haeder">
-          C'est le moment d'etre creatif: parlez de votre mission, de l'impact
-          direct ou indirect de ce poste, des jalons que vous avez deja atteints
+          C'est le moment d'être créatif : parlez de votre mission, de l'impact
+          direct ou indirect de ce poste, des jalons que vous avez déjà atteints
         </h4>
       </div>
       <div className="area-right">
@@ -51,7 +51,7 @@ function LePoste({ onButtonClick }) {
                   fontSize: "18px",
                 }}
               >
-                Titre de la decition *
+                Titre de la décision *
               </label>
               <input
                 className="input-form"
@@ -72,7 +72,7 @@ function LePoste({ onButtonClick }) {
                   fontSize: "18px",
                 }}
               >
-                Les details de la décision *
+                Les détails de la décision *
               </label>
               <br />
               <br />

@@ -1,6 +1,7 @@
 import App from "../App";
 import AdminPage from "../pages/AdminPage";
 import ErrorPage from "../pages/ErrorPage";
+import DecisionForm from "../pages/DecisionForm";
 import DecisionPage from "../pages/DecisionPage";
 import DecisionItem from "../components/DecisionItem";
 import LoginPage from "../pages/LoginPage";
@@ -29,6 +30,10 @@ const Routes = [
       {
         path: "my-decisions",
         element: <MyDecisions />,
+      },
+      {
+        path: "decision-form",
+        element: <DecisionForm />,
       },
       {
         path: "*",
