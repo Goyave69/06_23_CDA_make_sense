@@ -29,8 +29,8 @@ export default function AdminPage() {
         </Text>
       </GridItem>
       <GridItem margin="0 5% 5% 5%">
-        <TableContainer border="1px" borderColor="#0C3944">
-          <Table variant="striped" colorScheme="whatsapp">
+        <TableContainer border="1px" borderColor="#0C3944" borderRadius="10">
+          <Table variant="striped" colorScheme="whatsapp" marginTop="0.5%">
             <Thead>
               <Tr>
                 <Th>Name</Th>
