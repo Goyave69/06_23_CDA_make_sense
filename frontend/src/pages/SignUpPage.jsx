@@ -37,10 +37,17 @@ export default function SignUpPage() {
   };
 
   return (
-    <div className="main" style={{ backgroundColor: "#9B084F" }}>
+    <div
+      className="main"
+      style={{ backgroundColor: "#9B084F", height: "92.5vh" }}
+    >
       <div
         className="center"
-        style={{ color: "#0C3944", height: "88%", maxHeight: "800px" }}
+        style={{
+          color: "#0C3944",
+          height: "88%",
+          maxHeight: "800px",
+        }}
       >
         <h1 style={{ fontWeight: 900, fontSize: "2rem", marginBottom: "5%" }}>
           Sign Up
