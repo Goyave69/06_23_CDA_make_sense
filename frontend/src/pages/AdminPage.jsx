@@ -36,7 +36,6 @@ export default function AdminPage() {
                 <Th>Name</Th>
                 <Th>Birthdate</Th>
                 <Th>Email</Th>
-                <Th>Role</Th>
               </Tr>
             </Thead>
             <Tbody>

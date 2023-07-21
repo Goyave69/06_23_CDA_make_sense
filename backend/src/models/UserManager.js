@@ -40,6 +40,12 @@ class UserManager extends AbstractManager {
       [email]
     );
   }
+
+  findAllUsers() {
+    return this.database.query(
+      `select firstname, lastname, date_format(birthdate, "%d/%m/%Y") as birthdate, email from  ${this.table}`
+    );
+  }
 }
 
 module.exports = UserManager;
