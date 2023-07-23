@@ -39,7 +39,7 @@ const Routes = [
         element: <ErrorPage />,
       },
       {
-        path: "/decision/:id",
+        path: "decision/:id",
         element: <NewDecision />,
       },
       {
