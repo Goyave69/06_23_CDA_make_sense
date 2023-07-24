@@ -1,5 +1,7 @@
 import { React, useEffect, useState } from "react";
 import {
+  Button,
+  ButtonGroup,
   Grid,
   GridItem,
   Text,
@@ -11,6 +13,7 @@ import {
   Td,
   TableContainer,
 } from "@chakra-ui/react";
+import { DeleteIcon, EditIcon } from "@chakra-ui/icons";
 import loadData from "../services/loadData";
 
 export default function AdminPage() {
@@ -36,6 +39,7 @@ export default function AdminPage() {
                 <Th>Name</Th>
                 <Th>Birthdate</Th>
                 <Th>Email</Th>
+                <Th>Actions</Th>
               </Tr>
             </Thead>
             <Tbody>
@@ -47,6 +51,17 @@ export default function AdminPage() {
                     </Td>
                     <Td>{user.birthdate}</Td>
                     <Td>{user.email}</Td>
+                    <Td>
+                      <ButtonGroup
+                        direction="row"
+                        spacing={4}
+                        variant="outlined"
+                        marginLeft="-5%"
+                      >
+                        <Button leftIcon={<EditIcon />}>Edit</Button>
+                        <Button leftIcon={<DeleteIcon />}>Delete</Button>
+                      </ButtonGroup>
+                    </Td>
                   </Tr>
                 ));
               })}
