@@ -11,6 +11,7 @@ import {
   ButtonGroup,
   Grid,
   GridItem,
+  Input,
   Text,
   Table,
   Thead,
@@ -86,9 +87,13 @@ export default function AdminPage() {
                   <Tr key={user.id}>
                     <Td>
                       {editableUserIndex === index ? (
-                        <input
-                          type="text"
-                          defaultValue={`${user.firstname} ${user.lastname}`}
+                        <Input
+                          variant="filled"
+                          size="sm"
+                          bg="#86FC9C"
+                          placeholder={`${user.firstname} ${user.lastname}`}
+                          _placeholder={{ opacity: 1, color: "#0C3944" }}
+                          marginLeft="-5%"
                         />
                       ) : (
                         `${user.firstname} ${user.lastname}`
@@ -96,14 +101,28 @@ export default function AdminPage() {
                     </Td>
                     <Td>
                       {editableUserIndex === index ? (
-                        <input type="text" defaultValue={user.birthdate} />
+                        <Input
+                          variant="filled"
+                          size="sm"
+                          bg="#86FC9C"
+                          type="date"
+                          placeholder={user.birthdate}
+                          marginLeft="-5%"
+                        />
                       ) : (
                         `${user.birthdate}`
                       )}
                     </Td>
                     <Td>
                       {editableUserIndex === index ? (
-                        <input type="text" defaultValue={user.email} />
+                        <Input
+                          variant="filled"
+                          size="sm"
+                          bg="#86FC9C"
+                          placeholder={user.email}
+                          _placeholder={{ opacity: 1, color: "#0C3944" }}
+                          marginLeft="-5%"
+                        />
                       ) : (
                         `${user.email}`
                       )}
@@ -171,9 +190,6 @@ export default function AdminPage() {
                               onClick={() => handleCancelClick(user.id)}
                             >
                               Cancel
-                            </Button>
-                            <Button leftIcon={<DeleteIcon />} isDisabled>
-                              Delete
                             </Button>
                           </>
                         ) : (
