@@ -18,10 +18,13 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
+import ApiHelper from "../services/ApiHelper";
 import DecisionResumeIntel from "../components/DecisionResumeIntel";
 
 export default function NewDecision() {
   const [decision, setDecision] = useState({});
+  const [survey, setSurvey] = useState({});
+  const [comment, setComment] = useState();
   const { id } = useParams();
 
   useEffect(() => {
@@ -34,6 +37,38 @@ export default function NewDecision() {
         console.error(error);
       });
   }, [id]);
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:8888/decisionSurvey`)
+      .then((response) => {
+        setSurvey(response.data);
+        console.log(response);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
+
+  const handleSurveySubmit = (e) => {
+    e.preventDefault();
+    ApiHelper(
+      "surveys",
+      "post",
+      {
+        decision_id: id,
+        comment_content: comment,
+        makesense_user_id: 1,
+      },
+      "application/json"
+    )
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
 
   return (
     <Grid height="100vh" templateColumns="84% 1% 15%" color="#0C3944">
@@ -169,50 +204,7 @@ export default function NewDecision() {
                 {decision.decision_risks}
               </AccordionPanel>
             </AccordionItem>
-            <AccordionItem>
-              <h2>
-                <AccordionButton
-                  _expanded={{
-                    bg: "rgb(0 0 0 / 0.020)",
-                    color: "rgb(155, 8, 79)",
-                  }}
-                >
-                  <AccordionIcon marginRight="1%" />
-                  <Box as="span" flex="1" textAlign="left" fontWeight="1000">
-                    Avis 💬
-                  </Box>
-                </AccordionButton>
-                <Divider />
-              </h2>
-              <AccordionPanel pb={4} bgColor="rgb(0 0 0 / 0.020)">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed
-                tempus urna et pharetra pharetra massa. In egestas erat
-                imperdiet sed euismod nisi porta lorem mollis. Rutrum quisque
-                non tellus orci ac auctor. Aliquam sem et tortor consequat. Ut
-                tellus elementum sagittis vitae et leo duis ut. Nulla facilisi
-                etiam dignissim diam quis enim lobortis scelerisque fermentum.
-                Pharetra et ultrices neque ornare. Lacus suspendisse faucibus
-                interdum posuere lorem ipsum dolor. Diam donec adipiscing
-                tristique risus nec feugiat. Vulputate sapien nec sagittis
-                aliquam malesuada bibendum. Nullam ac tortor vitae purus
-                faucibus ornare suspendisse sed. Diam vulputate ut pharetra sit
-                amet aliquam. Et netus et malesuada fames ac turpis. Faucibus
-                ornare suspendisse sed nisi. Mattis ullamcorper velit sed
-                ullamcorper. Quam elementum pulvinar etiam non quam lacus
-                suspendisse faucibus interdum. Mauris ultrices eros in cursus
-                turpis massa tincidunt dui. Elementum tempus egestas sed sed
-                risus pretium quam. Et magnis dis parturient montes nascetur
-                ridiculus mus mauris. Nec ultrices dui sapien eget. Adipiscing
-                elit duis tristique sollicitudin nibh sit amet commodo. Nulla
-                facilisi etiam dignissim diam quis. Imperdiet proin fermentum
-                leo vel orci porta. Diam vulputate ut pharetra sit amet.
-                Ultricies lacus sed turpis tincidunt id aliquet risus.
-                Sollicitudin ac orci phasellus egestas tellus. Orci ac auctor
-                augue mauris augue neque gravida. Iaculis urna id volutpat
-                lacus.
-              </AccordionPanel>
-            </AccordionItem>
+
             <AccordionItem>
               <h2>
                 <AccordionButton
@@ -285,6 +277,41 @@ export default function NewDecision() {
                   tristique sollicitudin nibh sit amet commodo nulla. Ultrices
                   sagittis orci a scelerisque purus semper.
                 </div>
+              </AccordionPanel>
+            </AccordionItem>
+
+            <AccordionItem>
+              <h2>
+                <AccordionButton
+                  _expanded={{
+                    bg: "rgb(0 0 0 / 0.020)",
+                    color: "rgb(155, 8, 79)",
+                  }}
+                >
+                  <AccordionIcon marginRight="1%" />
+                  <Box as="span" flex="1" textAlign="left" fontWeight="1000">
+                    Avis 💬
+                  </Box>
+                </AccordionButton>
+                <Divider />
+              </h2>
+              <AccordionPanel pb={4} bgColor="rgb(0 0 0 / 0.020)">
+                {survey.comment_content}
+                {/* <div className="txt_field">
+                  <span />
+                  <label htmlFor="Input">Password</label>
+                  <input
+                    type="text"
+                    onChange={(e) => setComment(e.target.value)}
+                    value={comment}
+                    name="InputPassword"
+                    placeholder="●●●●●●●●●"
+                    required
+                  />
+                </div>
+                <button type="submit" onClick={handleSurveySubmit}>
+                  click
+                </button> */}
                 <Center>
                   <Button
                     variant="solid"

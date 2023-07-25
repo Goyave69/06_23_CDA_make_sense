@@ -4,7 +4,6 @@ const loadData = (dataType, setState, dataId = "") => {
   ApiHelper(`${dataType}/${dataId}`, "get")
     .then((res) => {
       setState(res.data);
-      console.log(res.data);
     })
     .catch((err) => {
       console.error(`Axios Error : ${err.message}`);

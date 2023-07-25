@@ -17,7 +17,6 @@ function login(req, res) {
         res.status(401).json("Email or password is wrong");
       }
       const token = jwtGenerator(rows[0].id);
-      console.warn(token);
       res
         .cookie("token", token, {
           httpOnly: true,
