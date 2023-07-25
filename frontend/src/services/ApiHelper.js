@@ -4,12 +4,14 @@ const ApiHelper = async (
   route,
   method,
   data = null,
-  format = "application/json"
+  format = "application/json",
+  params = {}
 ) => {
   return axios({
     method,
     url: `http://localhost:6001/${route}`,
     data,
+    params,
     headers: {
       "content-type": format,
       Accept: "application/json",

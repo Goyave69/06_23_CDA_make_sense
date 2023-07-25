@@ -10,4 +10,24 @@ const loadData = (dataType, setState, dataId = "") => {
     });
 };
 
+// const editData = (dataType, updatedData, dataId = "") => {
+//   ApiHelper(`${dataType}/${dataId}`, "put", updatedData)
+//     .then((res) => {
+//       updatedData(res.data);
+//     })
+//     .catch((err) => {
+//       console.error(`Axios Error : ${err.message}`);
+//     });
+// };
+
+// const deleteData = (dataType, dataId = "") => {
+//   ApiHelper(`${dataType}/${dataId}`, "delete")
+//     .then((res) => {
+//       loadData(res.data);
+//     })
+//     .catch((err) => {
+//       console.error(`Axios Error : ${err.message}`);
+//     });
+// };
+
 export default loadData;

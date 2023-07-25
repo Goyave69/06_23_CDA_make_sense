@@ -23,6 +23,7 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { DeleteIcon, EditIcon, CheckIcon, CloseIcon } from "@chakra-ui/icons";
+import ApiHelper from "../services/ApiHelper";
 import loadData from "../services/loadData";
 
 export default function AdminPage() {
@@ -42,6 +43,10 @@ export default function AdminPage() {
     setEditableUserIndex(-1);
   };
 
+  useEffect(() => {
+    loadData("users", setUserData);
+  }, []);
+
   const {
     isOpen: isEditAlertOpen,
     onOpen: onEditAlertOpen,
@@ -54,9 +59,12 @@ export default function AdminPage() {
   } = useDisclosure();
   const cancelRef = useRef();
 
-  useEffect(() => {
-    loadData("users", setUserData);
-  }, []);
+  const handleDeleteUser = (dataId = "") => {
+    ApiHelper(`users/${dataId}`, "delete").then(() => {
+      loadData("users", setUserData);
+    });
+    onDeleteAlertClose();
+  };
 
   return (
     <Grid color="#0C3944" margin="2.5% 0 0 5%">
@@ -227,8 +235,8 @@ export default function AdminPage() {
                                 <AlertDialogFooter>
                                   <Button
                                     ref={cancelRef}
-                                    onClick={onDeleteAlertClose}
                                     _hover={{ bg: "#E36164" }}
+                                    onClick={onDeleteAlertClose}
                                   >
                                     No
                                   </Button>
@@ -236,6 +244,7 @@ export default function AdminPage() {
                                     colorScheme="red"
                                     ml={3}
                                     _hover={{ bg: "#E36164" }}
+                                    onClick={() => handleDeleteUser(user.id)}
                                   >
                                     Yes
                                   </Button>
