@@ -22,7 +22,7 @@ const { hashPassword } = require("./services/passwordHelper");
 
 // CORS
 
-app.use(cors);
+app.use(cors());
 
 // POST Routes
 router.post("/login", loginController.login);
