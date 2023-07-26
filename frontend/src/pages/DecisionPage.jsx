@@ -10,7 +10,7 @@ import Stack from "@mui/material/Stack";
 import { deepPurple } from "@mui/material/colors";
 import loadData from "../services/loadData";
 
-export default function DecisionItem() {
+export default function DecisionPage() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -26,7 +26,7 @@ export default function DecisionItem() {
         marginLeft: "1%",
       }}
       container
-      spacing={2}
+      spacing={4}
     >
       <Typography variant="h5">All decisions</Typography>
       <Divider style={{ width: "100%", paddingBottom: "1%" }} />
@@ -34,7 +34,7 @@ export default function DecisionItem() {
         <Grid item key={decision.id}>
           <Card
             sx={{
-              minWidth: 240,
+              minWidth: 250,
             }}
           >
             <Chip

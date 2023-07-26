@@ -1,5 +1,5 @@
 import ErrorPage from "../pages/ErrorPage";
-import DecisionItem from "../pages/DecisionItem";
+import DecisionItem from "../components/DecisionItem";
 import LoginPage from "../pages/LoginPage";
 import DecisionLoader from "../components/DecisionLoader";
 import App from "../App";

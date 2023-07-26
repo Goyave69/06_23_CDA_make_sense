@@ -1,6 +1,8 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import React from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import getCookie from "./services/CookieHelper";
+import "./App.css";
 
 export default function App() {
   const navigate = useNavigate();
