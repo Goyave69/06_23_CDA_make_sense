@@ -80,13 +80,13 @@ const deleteSurvey = (req, res) => {
 
 const getByDecision = (req, res) => {
   const { id } = req.params;
-  console.log(req.body);
-  console.log(id);
+  console.warn(req.body);
+  console.warn(id);
 
   models.survey
     .getByDecision(id)
     .then(([result]) => {
-      console.log(result);
+      console.warn(result);
       if (result.affectedRows === 0) {
         res.sendStatus(404);
       } else {
