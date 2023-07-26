@@ -43,7 +43,7 @@ class UserManager extends AbstractManager {
 
   findAllUsers() {
     return this.database.query(
-      `select firstname, lastname, date_format(birthdate, "%d/%m/%Y") as birthdate, email from  ${this.table}`
+      `select id, firstname, lastname, date_format(birthdate, "%d/%m/%Y") as birthdate, email from  ${this.table}`
     );
   }
 }
