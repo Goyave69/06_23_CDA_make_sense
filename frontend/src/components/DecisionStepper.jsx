@@ -28,7 +28,7 @@ export default function DecisionStepper() {
   return (
     <Stepper
       size="xs"
-      colorScheme="green"
+      colorScheme="orange"
       index={activeStep}
       orientation="vertical"
       height="200px"
@@ -37,7 +37,7 @@ export default function DecisionStepper() {
     >
       {steps.map((step, index) => (
         <Step key={index}>
-          <StepIndicator bg="#C1E94E" />
+          <StepIndicator bg="red" />
           <Box flexShrink="0">
             <StepTitle color="#0C3944">{step.title}</StepTitle>
             <StepDescription color="#0C3944">

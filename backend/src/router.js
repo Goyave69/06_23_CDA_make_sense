@@ -15,6 +15,8 @@ const {
   validateDecision,
   validateUser,
   validateSurvey,
+  putValidateUser,
+  putValidateDecision,
 } = require("./services/validators");
 
 // Hashing
@@ -32,6 +34,11 @@ router.post("/decisions", validateDecision, decisionControllers.addDecision);
 router.post("/surveys", validateSurvey, surveyControllers.addSurvey);
 
 // GET Routes
+
+router.get("/getcookie", (req, res) => {
+  res.send(req.cookies);
+});
+
 router.get("/users", securityMiddleware, userControllers.getAllUsers);
 router.get("/users/:id", userControllers.getOneUser);
 router.get("/decisions", decisionControllers.getAllDecisions);
@@ -39,16 +46,15 @@ router.get("/decisions/:id", decisionControllers.getOneDecision);
 router.get("/surveys", surveyControllers.getAllSurveys);
 router.get("/surveys/:id", surveyControllers.getOneSurvey);
 
+// GET Survey By Decision
+
+router.get("/decisionSurvey:id", surveyControllers.getByDecision);
+
 // PUT Routes
-router.put(
-  "/users/:id",
-  validateUser,
-  hashPassword,
-  userControllers.updateUser
-);
+router.put("/users/:id", putValidateUser, userControllers.updateUser);
 router.put(
   "/decisions/:id",
-  validateDecision,
+  putValidateDecision,
   decisionControllers.updateDecision
 );
 router.put("/surveys/:id", validateSurvey, surveyControllers.updateSurvey);

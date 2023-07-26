@@ -1,11 +1,11 @@
+import App from "../App";
 import ErrorPage from "../pages/ErrorPage";
-import DecisionPage from "../pages/DecisionPage";
-import DecisionItem from "../components/DecisionItem";
+import DecisionForm from "../pages/DecisionForm";
 import LoginPage from "../pages/LoginPage";
-import DecisionLoader from "../components/DecisionLoader";
 import MyDecisions from "../pages/MyDecisions";
-import "../App.css";
 import SignUpPage from "../pages/SignUpPage";
+import NewDecision from "../pages/NewDecision";
+import "../App.css";
 
 const Routes = [
   {
@@ -13,38 +13,28 @@ const Routes = [
     element: <LoginPage />,
   },
   {
-    path: "/decision",
-    element: <DecisionPage />,
+    path: "/",
+    element: <App />,
     children: [
       {
-        path: "",
+        path: "my-decisions",
+        element: <MyDecisions />,
+      },
+      {
+        path: "decision-form",
+        element: <DecisionForm />,
+      },
+      {
+        path: "*",
         element: <ErrorPage />,
       },
-    ],
-  },
-  {
-    path: "/decision-item",
-    element: <DecisionItem />,
-  },
-  {
-    path: "/my-decisions",
-    element: <MyDecisions />,
-  },
-  {
-    path: "/*",
-    element: <ErrorPage />,
-  },
-  {
-    path: "/login",
-    element: <DecisionLoader />,
-  },
-  {
-    path: "/Test",
-    element: <SignUpPage />,
-    children: [
       {
-        path: "",
-        element: <ErrorPage />,
+        path: "decision/:id",
+        element: <NewDecision />,
+      },
+      {
+        path: "Test",
+        element: <SignUpPage />,
       },
     ],
   },

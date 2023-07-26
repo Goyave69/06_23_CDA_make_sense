@@ -78,10 +78,32 @@ const deleteSurvey = (req, res) => {
     });
 };
 
+const getByDecision = (req, res) => {
+  const { id } = req.params;
+  console.warn(req.body);
+  console.warn(id);
+
+  models.survey
+    .getByDecision(id)
+    .then(([result]) => {
+      console.warn(result);
+      if (result.affectedRows === 0) {
+        res.sendStatus(404);
+      } else {
+        res.send(result);
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+};
+
 module.exports = {
   getAllSurveys,
   getOneSurvey,
   updateSurvey,
   addSurvey,
   deleteSurvey,
+  getByDecision,
 };

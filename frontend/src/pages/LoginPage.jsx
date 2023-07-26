@@ -23,9 +23,8 @@ export default function LoginPage() {
     )
       .then((response) => {
         console.info(response.data);
-        console.warn(response.data.token);
-        setCookies("token", response.data.token);
-        navigate("/decision");
+        setCookies("token", response.data);
+        navigate("/my-decisions");
       })
       .catch((error) => {
         console.error(error);
