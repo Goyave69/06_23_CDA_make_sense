@@ -27,8 +27,8 @@ export default function ErrorPage() {
       <Box height="50vh" fontSize="5xl">
         <Text textAlign="center" fontWeight="800">
           Let's go back to{" "}
-          <Link as={ReachLink} to="/Test" color="#196C84">
-            sign up
+          <Link as={ReachLink} to="/my-decisions" color="#196C84">
+            your decisions
           </Link>{" "}
           or{" "}
           <Link as={ReachLink} to="/" color="#196C84">

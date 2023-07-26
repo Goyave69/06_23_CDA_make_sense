@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
