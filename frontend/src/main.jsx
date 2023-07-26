@@ -8,7 +8,7 @@ import Routes from "./routes/Routes";
 import "./App.css";
 
 const customTheme = extendTheme({
-  typography: {
+  fonts: {
     fontFamily: `"Raleway", sans-serif`,
   },
 });

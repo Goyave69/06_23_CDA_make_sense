@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+/* eslint-disable import/no-extraneous-dependencies */
+import React from "react";
 import "./LePoste.css";
 import ReactQuill from "react-quill";
 import rond from "../../assets/rond.png";
 import "react-quill/dist/quill.snow.css";
 
-function LePoste({ onButtonClick }) {
+function LePoste({ onButtonClick, detail, impact }) {
   const modulesRef = {
     toolbar: [
       ["bold", "italic", "link", "image"],
@@ -15,13 +16,12 @@ function LePoste({ onButtonClick }) {
     ],
   };
 
-  const [detailForm, setDetailForm] = useState("");
+  const [detailForm, setDetailForm] = detail;
+  const [impactForm, setImpactForm] = impact;
 
   const handleChangeDetail = (content, delta, source, editor) => {
     setDetailForm(editor.getContents());
   };
-
-  const [impactForm, setImpactForm] = useState("");
 
   const handleChangeImpact = (content, delta, source, editor) => {
     setImpactForm(editor.getContents());
@@ -117,7 +117,7 @@ function LePoste({ onButtonClick }) {
                   borderRadius: "10px",
                 }}
                 type="submit"
-                value="Create Workspace"
+                value="Suivant !"
                 onClick={() => onButtonClick("Candidater")}
               />
             </div>

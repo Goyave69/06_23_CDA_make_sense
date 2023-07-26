@@ -4,8 +4,8 @@ import { useCookies } from "react-cookie";
 import ApiHelper from "../services/ApiHelper";
 
 export default function LoginPage() {
+  const [inputEmail, setInputEmail] = useState("");
   const [inputPassword, setInputPassword] = useState("");
-  const [inputUsername, setInputUsername] = useState("");
   const [, setCookies] = useCookies();
   const navigate = useNavigate();
 
@@ -16,7 +16,7 @@ export default function LoginPage() {
       "login",
       "post",
       {
-        email: inputUsername,
+        email: inputEmail,
         password: inputPassword,
       },
       "application/json"
@@ -24,7 +24,7 @@ export default function LoginPage() {
       .then((response) => {
         console.info(response.data);
         setCookies("token", response.data);
-        navigate("/decision");
+        navigate("/my-decisions");
       })
       .catch((error) => {
         console.error(error);
@@ -33,17 +33,17 @@ export default function LoginPage() {
 
   return (
     <div className="main">
-      <div className="center">
-        <h1>Login</h1>
+      <div className="center" style={{ color: "#0C3944" }}>
+        <h1 style={{ fontWeight: 900, fontSize: "2rem" }}>Login</h1>
         <form method="post" onSubmit={handleSubmit}>
           <div className="txt_field">
             <span />
-            <label htmlFor="InputUsername"> Username </label>
+            <label htmlFor="InputEmail"> Email </label>
             <input
               type="text"
-              onChange={(e) => setInputUsername(e.target.value)}
-              value={inputUsername}
-              name="InputUsername"
+              onChange={(e) => setInputEmail(e.target.value)}
+              value={inputEmail}
+              name="InputEmail"
               placeholder="john.doe@gmail.com"
               required
             />
@@ -67,7 +67,7 @@ export default function LoginPage() {
             href="http://localhost:3000/decision"
           />
           <div className="signup_link">
-            Not a member? <a href="Test">Signup</a>
+            Not a member? <a href="Test">Sign Up</a>
           </div>
         </form>
       </div>
