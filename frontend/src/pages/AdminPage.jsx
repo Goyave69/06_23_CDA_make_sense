@@ -1,70 +1,27 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import {
-  AlertDialog,
-  AlertDialogBody,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogContent,
-  AlertDialogOverlay,
-  AlertDialogCloseButton,
-  Button,
-  ButtonGroup,
   Grid,
   GridItem,
-  Input,
   Text,
   Table,
   Thead,
   Tbody,
   Tr,
   Th,
-  Td,
   TableContainer,
-  useDisclosure,
 } from "@chakra-ui/react";
-import { DeleteIcon, EditIcon, CheckIcon, CloseIcon } from "@chakra-ui/icons";
-import ApiHelper from "../services/ApiHelper";
+
 import loadData from "../services/loadData";
+import AdminPageUsersList from "../components/AdminPageUsersList";
 
 export default function AdminPage() {
   const [userData, setUserData] = useState([]);
-  const allUsers = [userData];
-  const [editableUserIndex, setEditableUserIndex] = useState(-1);
 
-  const handleEditClick = (userIndex) => {
-    setEditableUserIndex(userIndex);
-  };
-
-  const handleSaveClick = () => {
-    setEditableUserIndex(-1);
-  };
-
-  const handleCancelClick = () => {
-    setEditableUserIndex(-1);
-  };
+  const allUsers = [...userData];
 
   useEffect(() => {
     loadData("users", setUserData);
   }, []);
-
-  const {
-    isOpen: isEditAlertOpen,
-    onOpen: onEditAlertOpen,
-    onClose: onEditAlertClose,
-  } = useDisclosure();
-  const {
-    isOpen: isDeleteAlertOpen,
-    onOpen: onDeleteAlertOpen,
-    onClose: onDeleteAlertClose,
-  } = useDisclosure();
-  const cancelRef = useRef();
-
-  const handleDeleteUser = (dataId = "") => {
-    ApiHelper(`users/${dataId}`, "delete").then(() => {
-      loadData("users", setUserData);
-    });
-    onDeleteAlertClose();
-  };
 
   return (
     <Grid color="#0C3944" margin="2.5% 0 0 5%">
@@ -90,174 +47,9 @@ export default function AdminPage() {
               </Tr>
             </Thead>
             <Tbody>
-              {allUsers.map((element) => {
-                return element.map((user, index) => (
-                  <Tr key={user.id}>
-                    <Td>
-                      {editableUserIndex === index ? (
-                        <Input
-                          variant="filled"
-                          size="sm"
-                          bg="#86FC9C"
-                          placeholder={`${user.firstname} ${user.lastname}`}
-                          _placeholder={{ opacity: 1, color: "#0C3944" }}
-                          marginLeft="-5%"
-                        />
-                      ) : (
-                        `${user.firstname} ${user.lastname}`
-                      )}
-                    </Td>
-                    <Td>
-                      {editableUserIndex === index ? (
-                        <Input
-                          variant="filled"
-                          size="sm"
-                          bg="#86FC9C"
-                          type="date"
-                          placeholder={user.birthdate}
-                          marginLeft="-5%"
-                        />
-                      ) : (
-                        `${user.birthdate}`
-                      )}
-                    </Td>
-                    <Td>
-                      {editableUserIndex === index ? (
-                        <Input
-                          variant="filled"
-                          size="sm"
-                          bg="#86FC9C"
-                          placeholder={user.email}
-                          _placeholder={{ opacity: 1, color: "#0C3944" }}
-                          marginLeft="-5%"
-                        />
-                      ) : (
-                        `${user.email}`
-                      )}
-                    </Td>
-                    <Td>
-                      <ButtonGroup
-                        direction="row"
-                        spacing={4}
-                        variant="outlined"
-                        marginLeft="-5%"
-                      >
-                        {editableUserIndex === index ? (
-                          <>
-                            <>
-                              <Button
-                                leftIcon={<CheckIcon />}
-                                colorScheme="blue"
-                                onClick={onEditAlertOpen}
-                              >
-                                Save
-                              </Button>
-                              <AlertDialog
-                                motionPreset="slideInBottom"
-                                leastDestructiveRef={cancelRef}
-                                onClose={onEditAlertClose}
-                                isOpen={isEditAlertOpen}
-                                isCentered
-                              >
-                                <AlertDialogOverlay bg="blackAlpha.200" />
-
-                                <AlertDialogContent
-                                  bg="#9B084F"
-                                  color="#FCF6A0"
-                                >
-                                  <AlertDialogHeader>
-                                    Confirm Changes?
-                                  </AlertDialogHeader>
-                                  <AlertDialogCloseButton />
-                                  <AlertDialogBody>
-                                    Are you sure you want to edit this user?
-                                  </AlertDialogBody>
-                                  <AlertDialogFooter>
-                                    <Button
-                                      ref={cancelRef}
-                                      onClick={onEditAlertClose}
-                                      _hover={{ bg: "#E36164" }}
-                                    >
-                                      No
-                                    </Button>
-                                    <Button
-                                      colorScheme="red"
-                                      ml={3}
-                                      _hover={{ bg: "#E36164" }}
-                                      onClick={handleSaveClick}
-                                    >
-                                      Yes
-                                    </Button>
-                                  </AlertDialogFooter>
-                                </AlertDialogContent>
-                              </AlertDialog>
-                            </>
-                            <Button
-                              leftIcon={<CloseIcon />}
-                              colorScheme="red"
-                              onClick={() => handleCancelClick(user.id)}
-                            >
-                              Cancel
-                            </Button>
-                          </>
-                        ) : (
-                          <>
-                            <Button
-                              leftIcon={<EditIcon />}
-                              onClick={() => handleEditClick(index)}
-                            >
-                              Edit
-                            </Button>
-                            <Button
-                              leftIcon={<DeleteIcon />}
-                              onClick={onDeleteAlertOpen}
-                            >
-                              Delete
-                            </Button>
-                            <AlertDialog
-                              motionPreset="slideInBottom"
-                              leastDestructiveRef={cancelRef}
-                              onClose={onDeleteAlertClose}
-                              isOpen={isDeleteAlertOpen}
-                              isCentered
-                            >
-                              <AlertDialogOverlay bg="blackAlpha.200" />
-
-                              <AlertDialogContent bg="#9B084F" color="#FCF6A0">
-                                <AlertDialogHeader>
-                                  Confirm Deletion?
-                                </AlertDialogHeader>
-                                <AlertDialogCloseButton />
-                                <AlertDialogBody>
-                                  Are you sure? You can't undo this action
-                                  afterwards.
-                                </AlertDialogBody>
-                                <AlertDialogFooter>
-                                  <Button
-                                    ref={cancelRef}
-                                    _hover={{ bg: "#E36164" }}
-                                    onClick={onDeleteAlertClose}
-                                  >
-                                    No
-                                  </Button>
-                                  <Button
-                                    colorScheme="red"
-                                    ml={3}
-                                    _hover={{ bg: "#E36164" }}
-                                    onClick={() => handleDeleteUser(user.id)}
-                                  >
-                                    Yes
-                                  </Button>
-                                </AlertDialogFooter>
-                              </AlertDialogContent>
-                            </AlertDialog>
-                          </>
-                        )}
-                      </ButtonGroup>
-                    </Td>
-                  </Tr>
-                ));
-              })}
+              {allUsers.map((user, index) => (
+                <AdminPageUsersList key={user.id} user={user} index={index} />
+              ))}
             </Tbody>
           </Table>
         </TableContainer>

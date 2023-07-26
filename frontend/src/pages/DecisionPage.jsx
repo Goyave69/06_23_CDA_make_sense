@@ -6,9 +6,12 @@ import {
   Divider,
   Grid,
   GridItem,
+  LinkBox,
+  LinkOverlay,
   Stack,
   Text,
 } from "@chakra-ui/react";
+import { Link as ReachLink } from "react-router-dom";
 import loadData from "../services/loadData";
 
 export default function DecisionPage() {
@@ -34,72 +37,81 @@ export default function DecisionPage() {
       </GridItem>
       {data.map((decision) => (
         <GridItem key={decision.id}>
-          <Card
-            variant="elevated"
-            minWidth="260"
-            minHeight="170"
-            color="#0C3944"
-            boxShadow="lg"
-          >
-            <Stack direction="row" spacing={2} margin="6% 0 0 6%">
-              <Badge
-                variant="subtle"
-                color="#24673A"
-                borderRadius="15"
-                backgroundColor="rgb(36, 103, 58, 0.075 )"
-                borderColor="#24673A"
-                border="solid"
-                fontWeight="500"
-                textTransform="none"
-                padding="1% 2% 1% 2%"
-                fontSize="0.7em"
-              >
-                Pending decision
-              </Badge>
-              <Badge
-                variant="subtle"
-                color="#9B084F"
-                borderRadius="15"
-                backgroundColor="rgb(155, 8, 79, 0.075 )"
-                borderColor="#9B084F"
-                border="solid"
-                fontWeight="500"
-                textTransform="none"
-                padding="1% 2% 1% 2%"
-                fontSize="0.7em"
-              >
-                France Hub
-              </Badge>
-            </Stack>
-            <Text
-              display="flex"
-              fontSize="0.99em"
-              fontWeight="900"
-              textAlign="justify"
-              margin="5%"
-              noOfLines={3}
+          <LinkBox>
+            <Card
+              variant="elevated"
+              minWidth="260"
+              minHeight="170"
+              color="#0C3944"
+              boxShadow="lg"
             >
-              {decision.title}
-            </Text>
-            <Stack direction="row" spacing={1} position="absolute" bottom="8%">
-              <Avatar name="Jane Doe" marginLeft="10%" size="sm" />
-
-              <Stack direction="row" margin="4% 0 2% 0">
-                <Text variant="caption" marginLeft="3%" fontSize="sm">
-                  by
-                </Text>
-                <Text
-                  variant="caption"
-                  color="#0C3944"
-                  fontWeight="1000"
-                  fontSize="sm"
-                  margin="0 -20% 0 -2%"
+              <Stack direction="row" spacing={2} margin="6% 0 0 6%">
+                <Badge
+                  variant="subtle"
+                  color="#24673A"
+                  borderRadius="15"
+                  backgroundColor="rgb(36, 103, 58, 0.075 )"
+                  borderColor="#24673A"
+                  border="solid"
+                  fontWeight="500"
+                  textTransform="none"
+                  padding="1% 2% 1% 2%"
+                  fontSize="0.7em"
                 >
-                  Jane Doe
-                </Text>
+                  Pending decision
+                </Badge>
+                <Badge
+                  variant="subtle"
+                  color="#9B084F"
+                  borderRadius="15"
+                  backgroundColor="rgb(155, 8, 79, 0.075 )"
+                  borderColor="#9B084F"
+                  border="solid"
+                  fontWeight="500"
+                  textTransform="none"
+                  padding="1% 2% 1% 2%"
+                  fontSize="0.7em"
+                >
+                  France Hub
+                </Badge>
               </Stack>
-            </Stack>
-          </Card>
+              <Text
+                display="flex"
+                fontSize="0.99em"
+                fontWeight="900"
+                textAlign="justify"
+                margin="5%"
+                noOfLines={3}
+              >
+                <LinkOverlay as={ReachLink} to={`${decision.id}`}>
+                  {decision.title}
+                </LinkOverlay>
+              </Text>
+              <Stack
+                direction="row"
+                spacing={1}
+                position="absolute"
+                bottom="8%"
+              >
+                <Avatar name="Jane Doe" marginLeft="10%" size="sm" />
+
+                <Stack direction="row" margin="4% 0 2% 0">
+                  <Text variant="caption" marginLeft="3%" fontSize="sm">
+                    by
+                  </Text>
+                  <Text
+                    variant="caption"
+                    color="#0C3944"
+                    fontWeight="1000"
+                    fontSize="sm"
+                    margin="0 -20% 0 -2%"
+                  >
+                    Jane Doe
+                  </Text>
+                </Stack>
+              </Stack>
+            </Card>
+          </LinkBox>
         </GridItem>
       ))}
     </Grid>

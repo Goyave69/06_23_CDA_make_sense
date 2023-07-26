@@ -12,11 +12,6 @@ const ApiHelper = async (
     url: `http://localhost:6001/${route}`,
     data,
     params,
-    headers: {
-      "content-type": format,
-      Accept: "application/json",
-    },
-    withCredentials: true,
   });
 };
 

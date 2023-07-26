@@ -229,62 +229,7 @@ export default function DecisionItem() {
                 <Divider />
               </h2>
               <AccordionPanel pb={4} bgColor="rgb(0 0 0 / 0.020)">
-                <div>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Sit amet venenatis urna cursus eget nunc scelerisque viverra.
-                  Morbi tempus iaculis urna id volutpat. Vulputate eu
-                  scelerisque felis imperdiet. Proin sed libero enim sed.
-                  Egestas erat imperdiet sed euismod nisi porta lorem mollis
-                  aliquam. Fermentum leo vel orci porta non pulvinar neque. Enim
-                  eu turpis egestas pretium aenean pharetra magna. Risus commodo
-                  viverra maecenas accumsan lacus. Lobortis scelerisque
-                  fermentum dui faucibus in ornare. Nunc pulvinar sapien et
-                  ligula ullamcorper malesuada. Ut faucibus pulvinar elementum
-                  integer enim neque volutpat ac. Cursus in hac habitasse platea
-                  dictumst quisque sagittis. Vitae elementum curabitur vitae
-                  nunc sed velit dignissim sodales. Volutpat odio facilisis
-                  mauris sit amet massa vitae tortor condimentum. Ultrices
-                  gravida dictum fusce ut placerat orci. Augue ut lectus arcu
-                  bibendum at varius. Non sodales neque sodales ut etiam. Nulla
-                  aliquet enim tortor at auctor. Nam libero justo laoreet sit.
-                  Donec enim diam vulputate ut pharetra sit. Tincidunt id
-                  aliquet risus feugiat in ante metus dictum at. Blandit turpis
-                  cursus in hac habitasse platea dictumst. Auctor augue mauris
-                  augue neque gravida in fermentum et. Ac tincidunt vitae semper
-                  quis lectus nulla at. Egestas fringilla phasellus faucibus
-                  scelerisque eleifend donec pretium. Natoque penatibus et
-                  magnis dis parturient montes nascetur. Sit amet dictum sit
-                  amet justo. Et tortor consequat id porta nibh venenatis cras
-                  sed felis. Iaculis urna id volutpat lacus laoreet non. Platea
-                  dictumst vestibulum rhoncus est pellentesque elit ullamcorper
-                  dignissim. Leo urna molestie at elementum eu facilisis sed
-                  odio morbi. Vitae tempus quam pellentesque nec nam aliquam.
-                  Viverra adipiscing at in tellus integer feugiat. Neque ornare
-                  aenean euismod elementum nisi quis. Pretium quam vulputate
-                  dignissim suspendisse in est ante in nibh. Sagittis eu
-                  volutpat odio facilisis mauris sit amet massa vitae. Enim nec
-                  dui nunc mattis. Quisque non tellus orci ac auctor augue
-                  mauris augue. Eu augue ut lectus arcu bibendum at varius vel
-                  pharetra. At varius vel pharetra vel turpis nunc eget lorem.
-                  Pharetra et ultrices neque ornare aenean euismod elementum.
-                  Fermentum iaculis eu non diam. Etiam tempor orci eu lobortis
-                  elementum nibh. Tellus rutrum tellus pellentesque eu tincidunt
-                  tortor aliquam nulla facilisi. Magna ac placerat vestibulum
-                  lectus mauris ultrices. Scelerisque felis imperdiet proin
-                  fermentum. Odio eu feugiat pretium nibh. Pharetra diam sit
-                  amet nisl suscipit adipiscing bibendum est. Erat imperdiet sed
-                  euismod nisi. Ut pharetra sit amet aliquam id diam. At auctor
-                  urna nunc id cursus metus aliquam eleifend. Vitae nunc sed
-                  velit dignissim sodales ut. Urna neque viverra justo nec.
-                  Laoreet suspendisse interdum consectetur libero id faucibus.
-                  Fringilla est ullamcorper eget nulla facilisi etiam dignissim
-                  diam. Eu facilisis sed odio morbi quis. Porttitor lacus luctus
-                  accumsan tortor posuere ac ut consequat. Egestas egestas
-                  fringilla phasellus faucibus scelerisque eleifend. Elit duis
-                  tristique sollicitudin nibh sit amet commodo nulla. Ultrices
-                  sagittis orci a scelerisque purus semper.
-                </div>
+                {data.decision_context}
                 <Center>
                   <Button
                     variant="solid"
