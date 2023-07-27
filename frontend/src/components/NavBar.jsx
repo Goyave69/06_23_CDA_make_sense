@@ -1,6 +1,5 @@
-import { BiHomeAlt } from "react-icons/bi";
+import { BiHomeAlt, BiLogOut } from "react-icons/bi";
 import { AiOutlineCalendar } from "react-icons/ai";
-import { PiSmileyBold } from "react-icons/pi";
 
 export default function NavBar() {
   return (
@@ -22,11 +21,8 @@ export default function NavBar() {
               </a>
             </li>
             <li>
-              <PiSmileyBold />
-              <a href="http://localhost:3000/make_sense/decision-form">
-                {" "}
-                Notifications
-              </a>
+              <BiLogOut />
+              <a href="http://localhost:3000/"> Log Out</a>
             </li>
           </ol>
         </nav>

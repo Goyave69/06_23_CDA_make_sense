@@ -6,7 +6,7 @@ const router = express.Router();
 const decisionControllers = require("./controllers/decisionControllers");
 const userControllers = require("./controllers/userControllers");
 const surveyControllers = require("./controllers/surveyControllers");
-const loginController = require("./controllers/authControllers");
+const authControllers = require("./controllers/authControllers");
 
 // Validators
 const {
@@ -19,8 +19,8 @@ const {
 const { hashPassword } = require("./services/passwordHelper");
 
 // POST Routes
-router.post("/login", loginController.login);
-router.post("/users", validateUser, hashPassword, userControllers.addUser);
+router.post("/login", authControllers.login);
+router.post("/users", hashPassword, userControllers.addUser);
 router.post("/decisions", validateDecision, decisionControllers.addDecision);
 router.post("/surveys", validateSurvey, surveyControllers.addSurvey);
 
@@ -35,6 +35,10 @@ router.get("/surveys/:id", surveyControllers.getOneSurvey);
 // GET Survey By Decision
 
 router.get("/decisionSurvey", surveyControllers.getByDecision);
+
+// GET Logout
+
+router.get("/logout", authControllers.logoutController);
 
 // PUT Routes
 router.put(

@@ -220,7 +220,13 @@ export default function NewDecision() {
                 </AccordionButton>
                 <Divider />
               </h2>
-              <AccordionPanel pb={4} bgColor="rgb(0 0 0 / 0.020)">
+              <AccordionPanel
+                bgColor="rgb(0 0 0 / 0.020)"
+                px={10}
+                py={5}
+                textAlign="justify"
+                textIndent={20}
+              >
                 <div>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
