@@ -32,6 +32,16 @@ class DecisionManager extends AbstractManager {
       [...Object.values(decision), id]
     );
   }
+
+  updateStatus(decision, id) {
+    const sqlSets = generateSqlSets(decision);
+
+    // Requête SQL pour incrémenter progress_status
+    return this.database.query(
+      `UPDATE ${this.table} SET progress_status = progress_status + 1, ${sqlSets} WHERE id = ?`,
+      [...Object.values(decision), id]
+    );
+  }
 }
 
 module.exports = DecisionManager;

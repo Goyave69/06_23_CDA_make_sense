@@ -9,18 +9,19 @@ function login(req, res) {
     .findOneByEmail(email)
     .then(async ([rows]) => {
       const user = rows[0];
+
       if (rows.length === 0) {
-        res.sendStatus(404);
+        return res.sendStatus(404);
       }
       if (!(await helper.verifyPassword(user.password, password))) {
-        console.warn(password);
-        console.warn(user.password);
-        res.status(401).json("Email or password is wrong");
+        console.warn("titi", password);
+        console.warn("otot", user.password);
+        return res.status(401).json("Email or password is wrong");
       }
       const token = jwtGenerator(user.id);
       console.warn(token);
       delete user.password;
-      res
+      return res
         .cookie("token", token, {
           httpOnly: true,
         })
@@ -32,7 +33,7 @@ function login(req, res) {
     })
     .catch((err) => {
       console.error(err);
-      res.sendStatus(500);
+      return res.sendStatus(500);
     });
 }
 async function logoutController(req, res) {

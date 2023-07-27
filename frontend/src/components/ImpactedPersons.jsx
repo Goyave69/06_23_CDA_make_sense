@@ -6,7 +6,7 @@ export default function ImpactedPersons() {
   return (
     <Box>
       <Text fontSize="xl" fontWeight="800">
-        Personnes impactées
+        Impacted people
       </Text>
       <AvatarGroup size="md" max={5} marginY="10%">
         <Avatar name="Ryan Florence" src="https://bit.ly/ryan-florence" />
@@ -16,7 +16,7 @@ export default function ImpactedPersons() {
         <Avatar name="Christian Nwamba" src="https://bit.ly/code-beast" />
       </AvatarGroup>
       <Text fontSize="md" fontWeight="700" textDecoration="underline">
-        Voir les avis
+        See surveys
       </Text>
     </Box>
   );

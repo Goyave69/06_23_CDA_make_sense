@@ -37,10 +37,7 @@ const putUserSchema = Joi.object({
     .noWhiteSpaces()
     .onlyLatinCharacters(),
   birthdate: Joi.date(),
-  role: Joi.object().pattern(
-    /./,
-    Joi.string().valid("user", "admin", "expert")
-  ),
+  role: Joi.string().valid("user", "admin", "expert"),
 });
 
 const decisionSchema = Joi.object({

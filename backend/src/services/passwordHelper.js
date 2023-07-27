@@ -10,11 +10,12 @@ const hashingOptions = {
 };
 
 const hashPassword = (req, res, next) => {
+  console.error(req.body);
   argon2
     .hash(req.body.password, hashingOptions)
     .then((hashedPassword) => {
-      req.body.hashedPassword = hashedPassword;
-      delete req.body.password;
+      req.body.password = hashedPassword;
+
       next();
     })
     .catch((err) => {

@@ -10,6 +10,7 @@ export default function ErrorPage() {
       flexDirection="column"
       alignItems="center"
       color="#0C3944"
+      height="92.5vh"
       gap={2}
     >
       <Box
