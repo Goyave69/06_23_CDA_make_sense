@@ -16,20 +16,17 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { DeleteIcon, EditIcon, CheckIcon, CloseIcon } from "@chakra-ui/icons";
-import ApiHelper from "../services/ApiHelper";
-import loadData from "../services/loadData";
+import ApiHelper, { deleteApiHelper } from "../services/ApiHelper";
 
-export default function AdminPageUsersList({ user, index }) {
-  const [, setUserData] = useState([]);
+export default function AdminPageUsersList({ user, index, setDataReload }) {
+  // const [, setUserData] = useState([]);
   const [, setIdToUse] = useState(null);
   const [editableUserIndex, setEditableUserIndex] = useState(-1);
+  const [editedData, setEditedData] = useState({});
 
   const handleEditClick = (userIndex) => {
     setEditableUserIndex(userIndex);
-  };
-
-  const handleSaveClick = () => {
-    setEditableUserIndex(-1);
+    setEditedData(user);
   };
 
   const handleCancelClick = () => {
@@ -54,10 +51,17 @@ export default function AdminPageUsersList({ user, index }) {
   };
 
   const handleDeleteUser = (dataId = "") => {
-    ApiHelper(`users/${dataId}`, "delete").then(() => {
-      loadData("users", setUserData);
+    deleteApiHelper(`users/${dataId}`, "delete").then(() => {
+      setDataReload((curr) => !curr);
     });
     onDeleteAlertClose();
+  };
+  const handleEditUser = (dataId = "") => {
+    ApiHelper(`users/${dataId}`, "put", JSON.stringify(editedData)).then(() => {
+      setDataReload((curr) => !curr);
+    });
+    onEditAlertClose();
+    handleCancelClick();
   };
 
   return (
@@ -68,12 +72,16 @@ export default function AdminPageUsersList({ user, index }) {
             variant="filled"
             size="sm"
             bg="#86FC9C"
-            placeholder={`${user.firstname} ${user.lastname}`}
+            value={editedData.firstname}
+            placeholder={user.firstname}
             _placeholder={{ opacity: 1, color: "#0C3944" }}
             marginLeft="-5%"
+            onChange={(e) =>
+              setEditedData({ ...editedData, firstname: e.target.value })
+            }
           />
         ) : (
-          `${user.firstname} ${user.lastname}`
+          `${user.firstname}`
         )}
       </Td>
       <Td>
@@ -82,9 +90,31 @@ export default function AdminPageUsersList({ user, index }) {
             variant="filled"
             size="sm"
             bg="#86FC9C"
+            value={editedData.lastname}
+            placeholder={user.lastname}
+            _placeholder={{ opacity: 1, color: "#0C3944" }}
+            marginLeft="-5%"
+            onChange={(e) =>
+              setEditedData({ ...editedData, lastname: e.target.value })
+            }
+          />
+        ) : (
+          `${user.lastname}`
+        )}
+      </Td>
+      <Td>
+        {editableUserIndex === index ? (
+          <Input
+            variant="filled"
+            size="sm"
+            bg="#86FC9C"
+            value={editedData.birthdate}
             type="date"
             placeholder={user.birthdate}
             marginLeft="-5%"
+            onChange={(e) =>
+              setEditedData({ ...editedData, birthdate: e.target.value })
+            }
           />
         ) : (
           `${user.birthdate}`
@@ -96,9 +126,12 @@ export default function AdminPageUsersList({ user, index }) {
             variant="filled"
             size="sm"
             bg="#86FC9C"
-            placeholder={user.email}
+            value={editedData.email}
             _placeholder={{ opacity: 1, color: "#0C3944" }}
             marginLeft="-5%"
+            onChange={(e) =>
+              setEditedData({ ...editedData, email: e.target.value })
+            }
           />
         ) : (
           `${user.email}`
@@ -148,7 +181,7 @@ export default function AdminPageUsersList({ user, index }) {
                         colorScheme="red"
                         ml={3}
                         _hover={{ bg: "#E36164" }}
-                        onClick={handleSaveClick}
+                        onClick={() => handleEditUser(user.id)}
                       >
                         Yes
                       </Button>

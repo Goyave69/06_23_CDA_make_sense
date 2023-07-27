@@ -16,12 +16,13 @@ import AdminPageUsersList from "../components/AdminPageUsersList";
 
 export default function AdminPage() {
   const [userData, setUserData] = useState([]);
+  const [dataReload, setDataReload] = useState(false);
 
   const allUsers = [...userData];
 
   useEffect(() => {
     loadData("users", setUserData);
-  }, []);
+  }, [dataReload]);
 
   return (
     <Grid color="#0C3944" margin="2.5% 0 0 5%">
@@ -40,7 +41,8 @@ export default function AdminPage() {
           >
             <Thead>
               <Tr>
-                <Th>Name</Th>
+                <Th>First Name</Th>
+                <Th>Last Name</Th>
                 <Th>Birthdate</Th>
                 <Th>Email</Th>
                 <Th marginRight="-5%">Actions</Th>
@@ -48,7 +50,12 @@ export default function AdminPage() {
             </Thead>
             <Tbody>
               {allUsers.map((user, index) => (
-                <AdminPageUsersList key={user.id} user={user} index={index} />
+                <AdminPageUsersList
+                  key={user.id}
+                  user={user}
+                  index={index}
+                  setDataReload={setDataReload}
+                />
               ))}
             </Tbody>
           </Table>

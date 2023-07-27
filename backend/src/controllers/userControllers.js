@@ -32,7 +32,7 @@ const updateUser = (req, res) => {
   const user = req.body;
 
   user.id = parseInt(req.params.id, 10);
-
+  delete user.birthdate;
   models.user
     .update(user)
     .then(([result]) => {

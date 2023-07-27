@@ -35,8 +35,7 @@ router.get("/surveys/:id", surveyControllers.getOneSurvey);
 // PUT Routes
 router.put(
   "/users/:id",
-  validateUser,
-  hashPassword,
+
   userControllers.updateUser
 );
 router.put(
