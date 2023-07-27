@@ -5,7 +5,6 @@ import ImpactedPersons from "./ImpactedPersons";
 import ExpertPersons from "./ExpertPersons";
 
 export default function DecisionResumeIntel({ status }) {
-  console.warn(status);
   return (
     <>
       <Text fontSize="xl" fontWeight="800">

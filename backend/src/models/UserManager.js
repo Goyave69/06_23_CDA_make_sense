@@ -13,7 +13,7 @@ class UserManager extends AbstractManager {
         user.firstname,
         user.lastname,
         user.email,
-        user.hashedPassword,
+        user.password,
         user.birthdate,
         JSON.stringify(user.role),
       ]

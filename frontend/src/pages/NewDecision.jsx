@@ -31,8 +31,30 @@ export default function NewDecision() {
 
   const token = JSON.parse(getCookie("user").split("").splice(2).join(""));
   const userId = token.id;
-  const decisionStatus = decision.progress_status;
-  console.warn(decisionStatus);
+
+  const userRole = token.role;
+
+  let decisionStatus = decision.progress_status;
+
+  const updateStatus = () => {
+    decisionStatus += 1;
+  };
+
+  const editedData = {
+    progress_status: decisionStatus,
+  };
+
+  // s'éxecute comme un useEffect jsp pourquoi
+
+  const handleUpdateStatus = (dataId = "") => {
+    updateStatus();
+    ApiHelper(`decisions/${dataId}`, "put", JSON.stringify(editedData)).then(
+      () => {}
+    );
+  };
+
+  const decisionConflict = decision.in_conflict;
+  console.warn(decisionConflict);
 
   useEffect(() => {
     axios
@@ -346,6 +368,14 @@ export default function NewDecision() {
       <GridItem mt="10%">
         <DecisionResumeIntel status={decisionStatus} />
       </GridItem>
+      <GridItem>
+        {userRole === "ROLE_EXPERT" && (
+          <Button>Put This Decision In Conflict ?</Button>
+        )}
+      </GridItem>
+      <Button type="submit" onSubmit={handleUpdateStatus(decision.id)}>
+        oIOscyoisvyiazlv
+      </Button>
     </Grid>
   );
 }

@@ -48,7 +48,7 @@ export default function DecisionStepper({ status }) {
       {steps.map((step) => (
         <Step key={step.step}>
           {/* Apply green color for the active step and red color for the rest */}
-          <StepIndicator bg={step.step === activeStep ? "green" : "red"} />
+          <StepIndicator bg={step.step === activeStep ? "green" : "#0C3944"} />
           <Box flexShrink="0">
             <StepTitle color={step.step === activeStep ? "green" : "#0C3944"}>
               {step.title}
