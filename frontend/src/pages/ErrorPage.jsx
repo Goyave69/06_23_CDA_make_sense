@@ -21,19 +21,19 @@ export default function ErrorPage() {
         height="50vh"
         fontSize="5xl"
       >
-        <Text fontWeight="800">It doesn't</Text>
-        <Text fontWeight="1000">make_sense</Text>
-        <Text fontWeight="800">you're here!!!</Text>
+        <Text fontWeight="800">Vous êtes là?</Text>
+        <Text fontWeight="800">Ça ne</Text>
+        <Text fontWeight="1000">fait pas sens...</Text>
       </Box>
       <Box height="50vh" fontSize="5xl">
         <Text textAlign="center" fontWeight="800">
-          Let's go back to{" "}
+          Retournez vers{" "}
           <Link as={ReachLink} to="/my-decisions" color="#196C84">
-            your decisions
+            vos décisions
           </Link>{" "}
-          or{" "}
+          ou{" "}
           <Link as={ReachLink} to="/" color="#196C84">
-            login
+            connectez-vous
           </Link>
         </Text>
       </Box>

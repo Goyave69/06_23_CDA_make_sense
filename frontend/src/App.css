@@ -110,7 +110,7 @@ input[type="submit"]:hover {
 .signup_link {
   margin: 9%;
   text-align: center;
-  font-size: 1em;
+  font-size: 0.85em;
   color: #666666;
 }
 
@@ -126,6 +126,7 @@ input[type="submit"]:hover {
 .BoxNavbar {
   background-color: transparent;
   height: 7.5vh;
+  margin-top: 0.5%;
 }
 
 .NavBarElement {
@@ -168,10 +169,18 @@ input[type="submit"]:hover {
 
 }
 
+.NavBarElement li:hover {
+  color: #C1E94E;
+}
+
 .NavBarElement a {
   display: flex;
   text-decoration: none;
   color: #0C3944;
   font-size: 0.8rem;
   font-weight: 700;
+}
+
+.NavBarElement a:hover {
+  color: #C1E94E;
 }

@@ -28,7 +28,7 @@ export default function AdminPage() {
     <Grid color="#0C3944" margin="2.5% 0 0 5%">
       <GridItem marginBottom="1.5%">
         <Text fontSize="3xl" fontWeight="800" marginBottom="1.5%">
-          Users
+          Utilisateurs
         </Text>
       </GridItem>
       <GridItem margin="0 5% 5% 5%">
@@ -41,11 +41,11 @@ export default function AdminPage() {
           >
             <Thead>
               <Tr>
-                <Th>First Name</Th>
-                <Th>Last Name</Th>
-                <Th>Birthdate</Th>
-                <Th>Email</Th>
-                <Th marginRight="-5%">Actions</Th>
+                <Th>Prénom</Th>
+                <Th>Nom</Th>
+                <Th pl="2.5%">Date de naissance</Th>
+                <Th pl="5%">E-mail</Th>
+                <Th pl="5%">Actions</Th>
               </Tr>
             </Thead>
             <Tbody>

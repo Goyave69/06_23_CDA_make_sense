@@ -1,6 +1,7 @@
 import { React, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
+import { useToast } from "@chakra-ui/react";
 import ApiHelper from "../services/ApiHelper";
 
 export default function LoginPage() {
@@ -8,6 +9,7 @@ export default function LoginPage() {
   const [inputPassword, setInputPassword] = useState("");
   const [, setCookies] = useCookies();
   const navigate = useNavigate();
+  const toast = useToast();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -25,6 +27,12 @@ export default function LoginPage() {
         console.info(response.data);
         setCookies("token", response.data);
         navigate("/my-decisions");
+        toast({
+          title: "Conexion réussie",
+          description: "Bon retour parmi nous!",
+          status: "success",
+          duration: 3000,
+        });
       })
       .catch((error) => {
         console.error(error);
@@ -34,11 +42,11 @@ export default function LoginPage() {
   return (
     <div className="main">
       <div className="center" style={{ color: "#0C3944" }}>
-        <h1 style={{ fontWeight: 900, fontSize: "2rem" }}>Login</h1>
+        <h1 style={{ fontWeight: 900, fontSize: "2rem" }}>Connexion</h1>
         <form method="post" onSubmit={handleSubmit}>
           <div className="txt_field">
             <span />
-            <label htmlFor="InputEmail"> Email </label>
+            <label htmlFor="InputEmail"> E-mail </label>
             <input
               type="text"
               onChange={(e) => setInputEmail(e.target.value)}
@@ -50,7 +58,7 @@ export default function LoginPage() {
           </div>
           <div className="txt_field">
             <span />
-            <label htmlFor="InputPassword">Password</label>
+            <label htmlFor="InputPassword">Mot de passe</label>
             <input
               type="password"
               onChange={(e) => setInputPassword(e.target.value)}
@@ -60,10 +68,10 @@ export default function LoginPage() {
               required
             />
           </div>
-          <div className="pass">Forgot Password?</div>
-          <input type="submit" value="Login" />
+          <div className="pass">Mot de passe oublié?</div>
+          <input type="submit" value="Se connecter" />
           <div className="signup_link">
-            Not a member? <a href="Test">Sign Up</a>
+            Vous n'êtes pas membre? <a href="Test">Enregistrez-vous</a>
           </div>
         </form>
       </div>

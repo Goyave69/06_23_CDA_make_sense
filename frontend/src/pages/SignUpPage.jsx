@@ -1,4 +1,5 @@
 import { React, useState } from "react";
+import { useToast } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import ApiHelper from "../services/ApiHelper";
 
@@ -9,6 +10,7 @@ export default function SignUpPage() {
   const [inputEmail, setInputEmail] = useState("");
   const [inputPassword, setInputPassword] = useState("");
   const navigate = useNavigate();
+  const toast = useToast();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -45,19 +47,18 @@ export default function SignUpPage() {
         className="center"
         style={{
           color: "#0C3944",
-          height: "88%",
-          maxHeight: "800px",
+          height: "93%",
         }}
       >
         <h1 style={{ fontWeight: 900, fontSize: "2rem", marginBottom: "5%" }}>
-          Sign Up
+          Enregistrement
         </h1>
         <form method="post" onSubmit={handleSubmit} style={{ padding: "0 8%" }}>
           <div className="txt_field" style={{ marginTop: 0 }}>
             <span />
             <label htmlFor="InputFirstname" style={{ fontWeight: 700 }}>
               {" "}
-              Firstname{"* "}
+              Prénom{"* "}
             </label>
             <input
               type="text"
@@ -72,7 +73,7 @@ export default function SignUpPage() {
             <span />
             <label htmlFor="InputLastname" style={{ fontWeight: 700 }}>
               {" "}
-              Lastname{"* "}
+              Nom{"* "}
             </label>
             <input
               type="text"
@@ -87,7 +88,7 @@ export default function SignUpPage() {
             <span />
             <label htmlFor="InputBirthdate" style={{ fontWeight: 700 }}>
               {" "}
-              Birthdate{"* "}
+              Date de naissance{"* "}
             </label>
             <input
               type="date"
@@ -102,7 +103,7 @@ export default function SignUpPage() {
             <span />
             <label htmlFor="InputEmail" style={{ fontWeight: 700 }}>
               {" "}
-              Email{"* "}
+              E-mail{"* "}
             </label>
             <input
               type="text"
@@ -117,7 +118,7 @@ export default function SignUpPage() {
           <div className="txt_field" style={{ marginTop: 0 }}>
             <span />
             <label htmlFor="InputPassword" style={{ fontWeight: 700 }}>
-              Password*
+              Mot de passe*
             </label>
             <input
               type="password"
@@ -130,8 +131,16 @@ export default function SignUpPage() {
           </div>
           <input
             type="submit"
-            value="Create Account"
-            href="http://localhost:3000/decision"
+            value="Créer votre compte"
+            href="http://localhost:3000/"
+            onClick={() =>
+              toast({
+                title: "Compte créée",
+                description: "Bienvenue chez vous!",
+                status: "success",
+                duration: 3000,
+              })
+            }
             style={{
               fontWeight: 900,
               backgroundColor: "#0C3944",

@@ -12,7 +12,7 @@ import "../App.css";
 
 const Routes = [
   {
-    path: "/",
+    path: "/login",
     element: <LoginPage />,
   },
   {

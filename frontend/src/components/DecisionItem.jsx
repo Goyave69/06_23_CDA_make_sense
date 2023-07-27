@@ -51,7 +51,7 @@ export default function DecisionItem() {
             padding="0.25% 0.75% 0.25% 0.75%"
             fontSize="0.8em"
           >
-            Pending decision
+            Décision en cours
           </Badge>
           <Badge
             variant="subtle"
@@ -66,7 +66,7 @@ export default function DecisionItem() {
             padding="0.25% 0.75% 0.25% 0.75%"
             fontSize="0.8em"
           >
-            France Hub
+            Hub France
           </Badge>
           <Text fontSize="5xl" fontWeight="800" mt="1.5%">
             {data.title}
@@ -76,7 +76,7 @@ export default function DecisionItem() {
               <Avatar name="Jane Doe" size="sm" />
               <Stack direction="row" margin="4% 0 2% 0">
                 <Text variant="caption" marginLeft="2%" fontSize="sm">
-                  by
+                  par
                 </Text>
                 <Text
                   variant="caption"
@@ -102,7 +102,7 @@ export default function DecisionItem() {
                 >
                   <AccordionIcon marginRight="1%" />
                   <Box as="span" flex="1" textAlign="left" fontWeight="1000">
-                    Details
+                    Les détails de la décision
                   </Box>
                 </AccordionButton>
                 <Divider />
@@ -122,7 +122,7 @@ export default function DecisionItem() {
                 >
                   <AccordionIcon marginRight="1%" />
                   <Box as="span" flex="1" textAlign="left" fontWeight="1000">
-                    Organization utility
+                    Impact sur l'organisation
                   </Box>
                 </AccordionButton>
                 <Divider />
@@ -141,7 +141,7 @@ export default function DecisionItem() {
                 >
                   <AccordionIcon marginRight="1%" />
                   <Box as="span" flex="1" textAlign="left" fontWeight="1000">
-                    Benefits 👍
+                    Bénéfices 👍
                   </Box>
                 </AccordionButton>
                 <Divider />
@@ -160,7 +160,7 @@ export default function DecisionItem() {
                 >
                   <AccordionIcon marginRight="1%" />
                   <Box as="span" flex="1" textAlign="left" fontWeight="1000">
-                    Possible risks 🚨
+                    Risques potentiels 🚨
                   </Box>
                 </AccordionButton>
                 <Divider />
@@ -179,7 +179,7 @@ export default function DecisionItem() {
                 >
                   <AccordionIcon marginRight="1%" />
                   <Box as="span" flex="1" textAlign="left" fontWeight="1000">
-                    Surveys 💬
+                    Avis 💬
                   </Box>
                 </AccordionButton>
                 <Divider />
@@ -223,7 +223,7 @@ export default function DecisionItem() {
                 >
                   <AccordionIcon marginRight="1%" />
                   <Box as="span" flex="1" textAlign="left" fontWeight="1000">
-                    First draft
+                    Première décision
                   </Box>
                 </AccordionButton>
                 <Divider />
@@ -243,7 +243,7 @@ export default function DecisionItem() {
                     mt="5%"
                     _hover={{ bg: "#196C84" }}
                   >
-                    Post my survey
+                    Donner mon avis
                   </Button>
                 </Center>
               </AccordionPanel>

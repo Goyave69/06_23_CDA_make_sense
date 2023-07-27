@@ -31,11 +31,11 @@ function Reglages({ decision, concerner, handleSend }) {
       <div className="area-left">
         <div className="haeder-poste">
           <img className="imgRond" src={rond} alt="rond" />
-          <h1>Reglages</h1>
+          <h1>Réglages</h1>
         </div>
         <h4 className="p-haeder">
-          C'est le moment d'etre creatif: parlez de votre mission, de l'impact
-          direct ou indirect de ce poste, des jalons que vous avez deja atteints
+          C'est le moment d'être créatif: parlez de votre mission, de l'impact
+          direct ou indirect de ce poste, des jalons que vous avez déjà atteints
         </h4>
       </div>
       <div className="area-right">
@@ -51,7 +51,7 @@ function Reglages({ decision, concerner, handleSend }) {
                   fontSize: "18px",
                 }}
               >
-                Premiere décision *
+                Première décision *
               </label>
               <br />
               <br />
@@ -96,7 +96,7 @@ function Reglages({ decision, concerner, handleSend }) {
                   borderRadius: "10px",
                 }}
                 type="submit"
-                value="Create Workspace"
+                value="Création de la décision"
                 onClick={handleSend}
               />
             </div>

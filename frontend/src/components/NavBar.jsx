@@ -10,19 +10,15 @@ export default function NavBar() {
           <ol>
             <li>
               <BiHomeAlt />
-              <a href="http://localhost:3000/make_sense/decision">
-                Browse decisions
-              </a>
+              <a href="http://localhost:3000/decision">Toutes les décisions</a>
             </li>
             <li>
               <AiOutlineCalendar />
-              <a href="http://localhost:3000/make_sense/my-decisions">
-                My decisions
-              </a>
+              <a href="http://localhost:3000/my-decisions">Mes décisions</a>
             </li>
             <li>
               <BiLogOut />
-              <a href="http://localhost:3000/"> Log Out</a>
+              <a href="http://localhost:3000/login"> Se déconnecter</a>
             </li>
           </ol>
         </nav>

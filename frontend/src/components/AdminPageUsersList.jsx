@@ -20,7 +20,6 @@ import { DeleteIcon, EditIcon, CheckIcon, CloseIcon } from "@chakra-ui/icons";
 import ApiHelper, { deleteApiHelper } from "../services/ApiHelper";
 
 export default function AdminPageUsersList({ user, index, setDataReload }) {
-  // const [, setUserData] = useState([]);
   const [, setIdToUse] = useState(null);
   const [editableUserIndex, setEditableUserIndex] = useState(-1);
   const [editedData, setEditedData] = useState({});
@@ -60,8 +59,8 @@ export default function AdminPageUsersList({ user, index, setDataReload }) {
     onDeleteAlertClose();
 
     toast({
-      title: "User deleted.",
-      description: "Let's say goodbye!",
+      title: "Utilisateur supprimé.",
+      description: "On lui souhaite bon vent!",
       status: "success",
       duration: 3000,
     });
@@ -73,8 +72,8 @@ export default function AdminPageUsersList({ user, index, setDataReload }) {
     onEditAlertClose();
     handleCancelClick();
     toast({
-      title: "User edited.",
-      description: "Good as new!",
+      title: "Utilisateur modifié.",
+      description: "Il est comme neuf!",
       status: "success",
       duration: 3000,
     });
@@ -118,7 +117,7 @@ export default function AdminPageUsersList({ user, index, setDataReload }) {
           `${user.lastname}`
         )}
       </Td>
-      <Td>
+      <Td pl="4.5%">
         {editableUserIndex === index ? (
           <Input
             variant="filled"
@@ -168,7 +167,7 @@ export default function AdminPageUsersList({ user, index, setDataReload }) {
                   colorScheme="blue"
                   onClick={onEditAlertOpen}
                 >
-                  Save
+                  Enregistrer
                 </Button>
                 <AlertDialog
                   motionPreset="slideInBottom"
@@ -180,10 +179,12 @@ export default function AdminPageUsersList({ user, index, setDataReload }) {
                   <AlertDialogOverlay bg="blackAlpha.200" />
 
                   <AlertDialogContent bg="#9B084F" color="#FCF6A0">
-                    <AlertDialogHeader>Confirm Changes?</AlertDialogHeader>
+                    <AlertDialogHeader>
+                      Confirmer ces changements?
+                    </AlertDialogHeader>
                     <AlertDialogCloseButton />
                     <AlertDialogBody>
-                      Are you sure you want to edit this user?
+                      Êtes vous sûr de vouloir modifier cet utilisateur?
                     </AlertDialogBody>
                     <AlertDialogFooter>
                       <Button
@@ -191,7 +192,7 @@ export default function AdminPageUsersList({ user, index, setDataReload }) {
                         onClick={onEditAlertClose}
                         _hover={{ bg: "#E36164" }}
                       >
-                        No
+                        Non
                       </Button>
                       <Button
                         colorScheme="red"
@@ -199,7 +200,7 @@ export default function AdminPageUsersList({ user, index, setDataReload }) {
                         _hover={{ bg: "#E36164" }}
                         onClick={() => handleEditUser(user.id)}
                       >
-                        Yes
+                        Oui
                       </Button>
                     </AlertDialogFooter>
                   </AlertDialogContent>
@@ -210,7 +211,7 @@ export default function AdminPageUsersList({ user, index, setDataReload }) {
                 colorScheme="red"
                 onClick={() => handleCancelClick(user.id)}
               >
-                Cancel
+                Annuler
               </Button>
             </>
           ) : (
@@ -219,13 +220,13 @@ export default function AdminPageUsersList({ user, index, setDataReload }) {
                 leftIcon={<EditIcon />}
                 onClick={() => handleEditClick(index)}
               >
-                Edit
+                Modifier
               </Button>
               <Button
                 leftIcon={<DeleteIcon />}
                 onClick={() => handleAlert(user.id)}
               >
-                Delete
+                Supprimer
               </Button>
               <AlertDialog
                 motionPreset="slideInBottom"
@@ -237,10 +238,12 @@ export default function AdminPageUsersList({ user, index, setDataReload }) {
                 <AlertDialogOverlay bg="blackAlpha.200" />
 
                 <AlertDialogContent bg="#9B084F" color="#FCF6A0">
-                  <AlertDialogHeader>Confirm Deletion?</AlertDialogHeader>
+                  <AlertDialogHeader>
+                    Confirmer la suppression?
+                  </AlertDialogHeader>
                   <AlertDialogCloseButton />
                   <AlertDialogBody>
-                    Are you sure? You can't undo this action afterwards.
+                    En êtes vous sûr? Cette action est IRRÉVERSIBLE.
                   </AlertDialogBody>
                   <AlertDialogFooter>
                     <Button
@@ -248,7 +251,7 @@ export default function AdminPageUsersList({ user, index, setDataReload }) {
                       _hover={{ bg: "#E36164" }}
                       onClick={onDeleteAlertClose}
                     >
-                      No
+                      Non
                     </Button>
                     <Button
                       colorScheme="red"
@@ -256,7 +259,7 @@ export default function AdminPageUsersList({ user, index, setDataReload }) {
                       _hover={{ bg: "#E36164" }}
                       onClick={() => handleDeleteUser(user.id)}
                     >
-                      Yes
+                      Oui
                     </Button>
                   </AlertDialogFooter>
                 </AlertDialogContent>

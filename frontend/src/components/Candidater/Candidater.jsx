@@ -96,7 +96,7 @@ function Candidater({ onButtonClick, benefice, risk }) {
                   borderRadius: "10px",
                 }}
                 type="submit"
-                value="Suivant !"
+                value="Suivant"
                 onClick={() => onButtonClick("Reglages")}
               />
             </div>

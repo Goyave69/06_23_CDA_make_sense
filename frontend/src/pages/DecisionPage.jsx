@@ -31,7 +31,7 @@ export default function DecisionPage() {
     >
       <GridItem rowSpan={1} colSpan={5} marginBottom="1.5%">
         <Text fontSize="3xl" fontWeight="800" marginBottom="1.5%">
-          All decisions
+          Toutes les décisions
         </Text>
         <Divider />
       </GridItem>
@@ -44,6 +44,11 @@ export default function DecisionPage() {
               minHeight="170"
               color="#0C3944"
               boxShadow="lg"
+              _hover={{
+                boxShadow: "2xl",
+                color: "#196C84",
+                border: "1px solid #C1E94E",
+              }}
             >
               <Stack direction="row" spacing={2} margin="6% 0 0 6%">
                 <Badge
@@ -58,7 +63,7 @@ export default function DecisionPage() {
                   padding="1% 2% 1% 2%"
                   fontSize="0.7em"
                 >
-                  Pending decision
+                  Décision en cours
                 </Badge>
                 <Badge
                   variant="subtle"
@@ -72,7 +77,7 @@ export default function DecisionPage() {
                   padding="1% 2% 1% 2%"
                   fontSize="0.7em"
                 >
-                  France Hub
+                  Hub France
                 </Badge>
               </Stack>
               <Text
@@ -97,7 +102,7 @@ export default function DecisionPage() {
 
                 <Stack direction="row" margin="4% 0 2% 0">
                   <Text variant="caption" marginLeft="3%" fontSize="sm">
-                    by
+                    par
                   </Text>
                   <Text
                     variant="caption"

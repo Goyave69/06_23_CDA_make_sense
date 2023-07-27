@@ -4,32 +4,29 @@ import {
   AvatarBadge,
   AvatarGroup,
   Box,
-  Button,
-  Center,
+  // Button,
+  // Center,
   Text,
 } from "@chakra-ui/react";
 
 export default function ExpertPersons() {
   return (
     <Box marginTop="10%">
-      <Text fontSize="xl" fontWeight="800">
+      <Text fontSize="lg" fontWeight="800">
         Experts
       </Text>
       <AvatarGroup size="md" max={5} marginY="10%">
-        <Avatar name="Ryan Florence" src="https://bit.ly/ryan-florence" />
         <Avatar name="Segun Adebayo" src="https://bit.ly/sage-adebayo">
-          <AvatarBadge boxSize="1.1em" bg="#FCF6A0" borderColor="#24673A" />
+          <AvatarBadge boxSize="1.1em" bg="#C1E94E" />
         </Avatar>
         <Avatar name="Kent Dodds" src="https://bit.ly/kent-c-dodds">
-          <AvatarBadge boxSize="1.1em" bg="#FCF6A0" borderColor="#24673A" />
+          <AvatarBadge boxSize="1.1em" bg="#C1E94E" />
         </Avatar>
-        <Avatar name="Prosper Otemuyiwa" src="https://bit.ly/prosper-baba" />
-        <Avatar name="Christian Nwamba" src="https://bit.ly/code-beast" />
       </AvatarGroup>
-      <Text fontSize="md" fontWeight="700" textDecoration="underline">
-        See surveys
+      <Text fontSize="sm" fontWeight="700" textDecoration="underline">
+        Voir les avis
       </Text>
-      <Center>
+      {/* <Center>
         <Button
           variant="solid"
           color="white"
@@ -39,12 +36,13 @@ export default function ExpertPersons() {
           fontWeight="700"
           textAlign="center"
           width="90%"
-          marginTop="20%"
-          _hover={{ bg: "#196C84" }}
+          mt="20%"
+          padding="3%"
+          _hover={{ bg: "#196C84", color: "#C1E94E" }}
         >
-          Post my survey
+          Donner mon avis
         </Button>
-      </Center>
+      </Center> */}
     </Box>
   );
 }

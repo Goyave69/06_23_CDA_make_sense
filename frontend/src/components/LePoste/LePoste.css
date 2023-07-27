@@ -3,26 +3,31 @@
   justify-content: space-between;
   flex-wrap: wrap;
 }
+
 .haeder-poste {
   display: flex;
   align-items: center;
   font-size: 2.5rem;
 }
+
 .imgRond {
   height: 30px;
   margin-right: 10px;
 }
+
 .area-left {
   width: 25%;
   text-align: start;
   margin-top: 30px;
   min-width: 300px;
 }
+
 .area-right {
   width: 65%;
   text-align: start;
   min-width: 450px;
 }
+
 .input-form {
   border-style: solid;
   border-color: #eaeef5;
@@ -30,11 +35,13 @@
   height: 40px;
   border-radius: 10px;
 }
+
 .ql-container {
   min-height: 10em;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
+
 .ql-toolbar {
   font-size: 20px;
   height: 45px;
@@ -42,6 +49,7 @@
   border-top-right-radius: 10px;
   border-bottom: none;
 }
+
 .p-haeder {
   font-size: large;
 }

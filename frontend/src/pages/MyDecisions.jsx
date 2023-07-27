@@ -22,7 +22,7 @@ export default function MyDecisions() {
     >
       <GridItem rowSpan={1} colSpan={5} marginBottom="1.5%">
         <Text fontSize="3xl" fontWeight="800" marginBottom="1.5%">
-          My decisions
+          Mes décisions
         </Text>
         <Divider />
       </GridItem>
@@ -47,7 +47,7 @@ export default function MyDecisions() {
               padding="1% 2% 1% 2%"
               fontSize="0.7em"
             >
-              Pending decision
+              Décision en cours
             </Badge>
             <Badge
               variant="subtle"
@@ -61,7 +61,7 @@ export default function MyDecisions() {
               padding="1% 2% 1% 2%"
               fontSize="0.7em"
             >
-              France Hub
+              Hub France
             </Badge>
           </Stack>
           <Text
@@ -72,14 +72,14 @@ export default function MyDecisions() {
             margin="5%"
             noOfLines={3}
           >
-            Moving outside of Paris in Spring 2023 (late April) and test Milan
+            Déménager hors de Paris à printemps 2023 (fin Avril) et tester Milan
           </Text>
           <Stack direction="row" spacing={1} position="absolute" bottom="3%">
             <Avatar name="Jane Doe" marginLeft="10%" size="sm" />
 
             <Stack direction="row" margin="4% 0 2% 0">
               <Text variant="caption" marginLeft="3%" fontSize="sm">
-                by
+                par
               </Text>
               <Text
                 variant="caption"
@@ -115,7 +115,7 @@ export default function MyDecisions() {
               padding="1% 2% 1% 2%"
               fontSize="0.7em"
             >
-              Pending decision
+              Décision en cours
             </Badge>
             <Badge
               variant="subtle"
@@ -129,7 +129,7 @@ export default function MyDecisions() {
               padding="1% 2% 1% 2%"
               fontSize="0.7em"
             >
-              France Hub
+              Hub France
             </Badge>
           </Stack>
           <Text
@@ -140,14 +140,14 @@ export default function MyDecisions() {
             margin="5%"
             noOfLines={3}
           >
-            Moving outside of Paris in Spring 2023 (late April) and test Milan
+            Déménager hors de Paris à printemps 2023 (fin Avril) et tester Milan
           </Text>
           <Stack direction="row" spacing={1} position="absolute" bottom="3%">
             <Avatar name="Jane Doe" marginLeft="10%" size="sm" />
 
             <Stack direction="row" margin="4% 0 2% 0">
               <Text variant="caption" marginLeft="3%" fontSize="sm">
-                by
+                par
               </Text>
               <Text
                 variant="caption"
@@ -183,7 +183,7 @@ export default function MyDecisions() {
               padding="1% 2% 1% 2%"
               fontSize="0.7em"
             >
-              Pending decision
+              Décision en cours
             </Badge>
             <Badge
               variant="subtle"
@@ -197,7 +197,7 @@ export default function MyDecisions() {
               padding="1% 2% 1% 2%"
               fontSize="0.7em"
             >
-              France Hub
+              Hub France
             </Badge>
           </Stack>
           <Text
@@ -208,14 +208,14 @@ export default function MyDecisions() {
             margin="5%"
             noOfLines={3}
           >
-            Moving outside of Paris in Spring 2023 (late April) and test Milan
+            Déménager hors de Paris à printemps 2023 (fin Avril) et tester Milan
           </Text>
           <Stack direction="row" spacing={1} position="absolute" bottom="3%">
             <Avatar name="Jane Doe" marginLeft="10%" size="sm" />
 
             <Stack direction="row" margin="4% 0 2% 0">
               <Text variant="caption" marginLeft="3%" fontSize="sm">
-                by
+                par
               </Text>
               <Text
                 variant="caption"
@@ -251,7 +251,7 @@ export default function MyDecisions() {
               padding="1% 2% 1% 2%"
               fontSize="0.7em"
             >
-              Pending decision
+              Décision en cours
             </Badge>
             <Badge
               variant="subtle"
@@ -265,7 +265,7 @@ export default function MyDecisions() {
               padding="1% 2% 1% 2%"
               fontSize="0.7em"
             >
-              France Hub
+              Hub France
             </Badge>
           </Stack>
           <Text
@@ -276,14 +276,14 @@ export default function MyDecisions() {
             margin="5%"
             noOfLines={3}
           >
-            Moving outside of Paris in Spring 2023 (late April) and test Milan
+            Déménager hors de Paris à printemps 2023 (fin Avril) et tester Milan
           </Text>
           <Stack direction="row" spacing={1} position="absolute" bottom="3%">
             <Avatar name="Jane Doe" marginLeft="10%" size="sm" />
 
             <Stack direction="row" margin="4% 0 2% 0">
               <Text variant="caption" marginLeft="3%" fontSize="sm">
-                by
+                par
               </Text>
               <Text
                 variant="caption"
@@ -319,7 +319,7 @@ export default function MyDecisions() {
               padding="1% 2% 1% 2%"
               fontSize="0.7em"
             >
-              Pending decision
+              Décision en cours
             </Badge>
             <Badge
               variant="subtle"
@@ -333,7 +333,7 @@ export default function MyDecisions() {
               padding="1% 2% 1% 2%"
               fontSize="0.7em"
             >
-              France Hub
+              Hub France
             </Badge>
           </Stack>
           <Text
@@ -344,14 +344,14 @@ export default function MyDecisions() {
             margin="5%"
             noOfLines={3}
           >
-            Moving outside of Paris in Spring 2023 (late April) and test Milan
+            Déménager hors de Paris à printemps 2023 (fin Avril) et tester Milan
           </Text>
           <Stack direction="row" spacing={1} position="absolute" bottom="3%">
             <Avatar name="Jane Doe" marginLeft="10%" size="sm" />
 
             <Stack direction="row" margin="4% 0 2% 0">
               <Text variant="caption" marginLeft="3%" fontSize="sm">
-                by
+                par
               </Text>
               <Text
                 variant="caption"
@@ -387,7 +387,7 @@ export default function MyDecisions() {
               padding="1% 2% 1% 2%"
               fontSize="0.7em"
             >
-              Pending decision
+              Décision en cours
             </Badge>
             <Badge
               variant="subtle"
@@ -401,7 +401,7 @@ export default function MyDecisions() {
               padding="1% 2% 1% 2%"
               fontSize="0.7em"
             >
-              France Hub
+              Hub France
             </Badge>
           </Stack>
           <Text
@@ -412,14 +412,14 @@ export default function MyDecisions() {
             margin="5%"
             noOfLines={3}
           >
-            Moving outside of Paris in Spring 2023 (late April) and test Milan
+            Déménager hors de Paris à printemps 2023 (fin Avril) et tester Milan
           </Text>
           <Stack direction="row" spacing={1} position="absolute" bottom="3%">
             <Avatar name="Jane Doe" marginLeft="10%" size="sm" />
 
             <Stack direction="row" margin="4% 0 2% 0">
               <Text variant="caption" marginLeft="3%" fontSize="sm">
-                by
+                par
               </Text>
               <Text
                 variant="caption"
@@ -436,7 +436,7 @@ export default function MyDecisions() {
       </GridItem>
       <GridItem rowSpan={1} colSpan={5} marginBottom="1.5%">
         <Text fontSize="3xl" fontWeight="800" marginBottom="1.5%">
-          My decisions
+          Mes décisions
         </Text>
         <Divider />
       </GridItem>
@@ -461,7 +461,7 @@ export default function MyDecisions() {
               padding="1% 2% 1% 2%"
               fontSize="0.7em"
             >
-              Pending decision
+              Décision en cours
             </Badge>
             <Badge
               variant="subtle"
@@ -475,7 +475,7 @@ export default function MyDecisions() {
               padding="1% 2% 1% 2%"
               fontSize="0.7em"
             >
-              France Hub
+              Hub France
             </Badge>
           </Stack>
           <Text
@@ -486,14 +486,14 @@ export default function MyDecisions() {
             margin="5%"
             noOfLines={3}
           >
-            Moving outside of Paris in Spring 2023 (late April) and test Milan
+            Déménager hors de Paris à printemps 2023 (fin Avril) et tester Milan
           </Text>
           <Stack direction="row" spacing={1} position="absolute" bottom="3%">
             <Avatar name="Jane Doe" marginLeft="10%" size="sm" />
 
             <Stack direction="row" margin="4% 0 2% 0">
               <Text variant="caption" marginLeft="3%" fontSize="sm">
-                by
+                par
               </Text>
               <Text
                 variant="caption"
@@ -529,7 +529,7 @@ export default function MyDecisions() {
               padding="1% 2% 1% 2%"
               fontSize="0.7em"
             >
-              Pending decision
+              Décision en cours
             </Badge>
             <Badge
               variant="subtle"
@@ -543,7 +543,7 @@ export default function MyDecisions() {
               padding="1% 2% 1% 2%"
               fontSize="0.7em"
             >
-              France Hub
+              Hub France
             </Badge>
           </Stack>
           <Text
@@ -554,14 +554,14 @@ export default function MyDecisions() {
             margin="5%"
             noOfLines={3}
           >
-            Moving outside of Paris in Spring 2023 (late April) and test Milan
+            Déménager hors de Paris à printemps 2023 (fin Avril) et tester Milan
           </Text>
           <Stack direction="row" spacing={1} position="absolute" bottom="3%">
             <Avatar name="Jane Doe" marginLeft="10%" size="sm" />
 
             <Stack direction="row" margin="4% 0 2% 0">
               <Text variant="caption" marginLeft="3%" fontSize="sm">
-                by
+                par
               </Text>
               <Text
                 variant="caption"
@@ -597,7 +597,7 @@ export default function MyDecisions() {
               padding="1% 2% 1% 2%"
               fontSize="0.7em"
             >
-              Pending decision
+              Décision en cours
             </Badge>
             <Badge
               variant="subtle"
@@ -611,7 +611,7 @@ export default function MyDecisions() {
               padding="1% 2% 1% 2%"
               fontSize="0.7em"
             >
-              France Hub
+              Hub France
             </Badge>
           </Stack>
           <Text
@@ -622,14 +622,14 @@ export default function MyDecisions() {
             margin="5%"
             noOfLines={3}
           >
-            Moving outside of Paris in Spring 2023 (late April) and test Milan
+            Déménager hors de Paris à printemps 2023 (fin Avril) et tester Milan
           </Text>
           <Stack direction="row" spacing={1} position="absolute" bottom="3%">
             <Avatar name="Jane Doe" marginLeft="10%" size="sm" />
 
             <Stack direction="row" margin="4% 0 2% 0">
               <Text variant="caption" marginLeft="3%" fontSize="sm">
-                by
+                par
               </Text>
               <Text
                 variant="caption"
@@ -666,7 +666,7 @@ export default function MyDecisions() {
                 padding="1% 2% 1% 2%"
                 fontSize="0.8em"
               >
-                Pending decision
+                Décision en cours
               </Badge>
               <Badge
                 variant="subtle"
@@ -680,7 +680,7 @@ export default function MyDecisions() {
                 padding="1% 2% 1% 2%"
                 fontSize="0.8em"
               >
-                France Hub
+                Hub France
               </Badge>
             </Stack>
             <Text fontSize="2xl" fontWeight="900" margin="5% 0 5% 6%">
@@ -691,7 +691,7 @@ export default function MyDecisions() {
 
               <Stack direction="row" margin="4% 0 2% 0">
                 <Text variant="caption" marginLeft="3%" fontSize="sm">
-                  by
+                  par
                 </Text>
                 <Text
                   variant="caption"

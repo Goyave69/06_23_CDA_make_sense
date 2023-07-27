@@ -33,26 +33,27 @@ export default function NewDecision() {
   const token = JSON.parse(getCookie("user").split("").splice(2).join(""));
   const userId = token.id;
 
-  const userRole = token.role;
+  // const userRole = token.role;
 
-  let decisionStatus = decision.progress_status;
+  // let decisionStatus = decision.progress_status;
 
-  const updateStatus = () => {
-    decisionStatus += 1;
-  };
+  // const updateStatus = () => {
+  //   decisionStatus += 1;
+  // };
 
-  const editedData = {
-    progress_status: decisionStatus,
-  };
+  // const editedData = {
+  //   progress_status: decisionStatus,
+  // };
 
-  // s'éxecute comme un useEffect jsp pourquoi
+  // s'éxecute comme un useEffect jsp pourquoi (Driss)
+  // Je ne sais non plus ^^' (Benoît)
 
-  const handleUpdateStatus = (dataId = "") => {
-    updateStatus();
-    ApiHelper(`decisions/${dataId}`, "put", JSON.stringify(editedData)).then(
-      () => {}
-    );
-  };
+  // const handleUpdateStatus = (dataId = "") => {
+  //   updateStatus();
+  //   ApiHelper(`decisions/${dataId}`, "put", JSON.stringify(editedData)).then(
+  //     () => {}
+  //   );
+  // };
 
   const decisionConflict = decision.in_conflict;
   console.warn(decisionConflict);
@@ -80,8 +81,8 @@ export default function NewDecision() {
       });
   }, []);
 
-  const commentaire = survey.map((item) => item.comment_content);
-  console.warn(commentaire.length);
+  // const commentaire = survey.map((item) => item.comment_content);
+  // console.warn(commentaire.length);
 
   const handleSurveySubmit = (e) => {
     e.preventDefault();
@@ -106,7 +107,7 @@ export default function NewDecision() {
   console.warn(survey.comment_content);
 
   return (
-    <Grid height="92.5vh" templateColumns="84% 1% 15%" color="#0C3944">
+    <Grid height="92.5vh" templateColumns="82% 1% 17%" color="#0C3944">
       <GridItem>
         <GridItem mt="4%" ml="15%">
           <Badge
@@ -121,7 +122,7 @@ export default function NewDecision() {
             padding="0.25% 0.75% 0.25% 0.75%"
             fontSize="0.8em"
           >
-            Pending decision
+            Décision en cours
           </Badge>
           <Badge
             variant="subtle"
@@ -136,7 +137,7 @@ export default function NewDecision() {
             padding="0.25% 0.75% 0.25% 0.75%"
             fontSize="0.8em"
           >
-            France Hub
+            Hub France
           </Badge>
           <Text fontSize="5xl" fontWeight="800" mt="1.5%">
             {decision.title}
@@ -146,7 +147,7 @@ export default function NewDecision() {
               <Avatar name="Jane Doe" size="sm" />
               <Stack direction="row" margin="4% 0 2% 0">
                 <Text variant="caption" ml="2%" fontSize="sm">
-                  by
+                  par
                 </Text>
                 <Text
                   variant="caption"
@@ -172,7 +173,7 @@ export default function NewDecision() {
                 >
                   <AccordionIcon mr="1%" />
                   <Box as="span" flex="1" textAlign="left" fontWeight="1000">
-                    Details
+                    Les détails de la décision
                   </Box>
                 </AccordionButton>
                 <Divider />
@@ -198,7 +199,7 @@ export default function NewDecision() {
                 >
                   <AccordionIcon mr="1%" />
                   <Box as="span" flex="1" textAlign="left" fontWeight="1000">
-                    Organization utility
+                    Impact sur l'organisation
                   </Box>
                 </AccordionButton>
                 <Divider />
@@ -223,7 +224,7 @@ export default function NewDecision() {
                 >
                   <AccordionIcon mr="1%" />
                   <Box as="span" flex="1" textAlign="left" fontWeight="1000">
-                    Benefits 👍
+                    Bénéfices 👍
                   </Box>
                 </AccordionButton>
                 <Divider />
@@ -248,7 +249,7 @@ export default function NewDecision() {
                 >
                   <AccordionIcon mr="1%" />
                   <Box as="span" flex="1" textAlign="left" fontWeight="1000">
-                    Possible risks 🚨
+                    Risques potentiels 🚨
                   </Box>
                 </AccordionButton>
                 <Divider />
@@ -274,7 +275,7 @@ export default function NewDecision() {
                 >
                   <AccordionIcon mr="1%" />
                   <Box as="span" flex="1" textAlign="left" fontWeight="1000">
-                    First draft
+                    Première décision
                   </Box>
                 </AccordionButton>
                 <Divider />
@@ -355,7 +356,7 @@ export default function NewDecision() {
                 >
                   <AccordionIcon mr="1%" />
                   <Box as="span" flex="1" textAlign="left" fontWeight="1000">
-                    Surveys 💬
+                    Avis 💬
                   </Box>
                 </AccordionButton>
                 <Divider />
@@ -367,21 +368,37 @@ export default function NewDecision() {
                 textAlign="justify"
                 textIndent={20}
               >
-                <Text
-                  bgColor="#FCF6A0"
-                  borderRadius={10}
-                  border="1px solid #C1E94E"
-                  borderColor="#C1E94E"
-                  px={5}
-                  py={2.5}
-                  textAlign="justify"
-                >
-                  {commentaire}
-                </Text>
+                {survey.map((item) => (
+                  <GridItem
+                    gap={4}
+                    display="flex"
+                    flexDirection={item.Id % 2 === 0 ? "row" : "row-reverse"}
+                  >
+                    <Text
+                      key={item.Id}
+                      display="flex"
+                      bgColor="rgb(193, 233, 78, 0.65)"
+                      borderRadius={
+                        item.Id % 2 === 0
+                          ? "1.125em 1.125em 1.125em 0"
+                          : "1.125em 1.125em 0 1.125em"
+                      }
+                      border="1px solid #C1E94E"
+                      flexDirection={item.Id % 2 === 0 ? "row" : "row-reverse"}
+                      width="26%"
+                      my={4}
+                      px={5}
+                      py={2.5}
+                      textAlign="justify"
+                    >
+                      {item.comment_content}
+                    </Text>
+                  </GridItem>
+                ))}
                 <Input
                   mt="2.5%"
                   variant="filled"
-                  placeholder="Type here..."
+                  placeholder="Écrivez votre avis ici..."
                   onChange={(e) => setComment(e.target.value)}
                   value={comment}
                   _focusWithin="#0C3944"
@@ -397,10 +414,10 @@ export default function NewDecision() {
                     textAlign="center"
                     width="25%"
                     mt="2.5%"
-                    _hover={{ bg: "#196C84" }}
+                    _hover={{ bg: "#196C84", color: "#C1E94E" }}
                     onClick={handleSurveySubmit}
                   >
-                    Post my survey
+                    Donner mon avis
                   </Button>
                 </Center>
               </AccordionPanel>
@@ -412,16 +429,16 @@ export default function NewDecision() {
         <Divider orientation="vertical" position="absolute" top="9.5%" />
       </GridItem>
       <GridItem mt="10%">
-        <DecisionResumeIntel status={decisionStatus} />
+        <DecisionResumeIntel />
       </GridItem>
-      <GridItem>
+      {/* <GridItem>
         {userRole === "ROLE_EXPERT" && (
           <Button>Put This Decision In Conflict ?</Button>
         )}
       </GridItem>
       <Button type="submit" onSubmit={handleUpdateStatus(decision.id)}>
         oIOscyoisvyiazlv
-      </Button>
+      </Button> */}
     </Grid>
   );
 }
