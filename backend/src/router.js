@@ -13,7 +13,7 @@ const loginController = require("./controllers/authControllers");
 // Validators
 const {
   validateDecision,
-  validateUser,
+  // validateUser,
   validateSurvey,
   putValidateUser,
   putValidateDecision,
@@ -21,7 +21,7 @@ const {
 
 // Hashing
 const { hashPassword } = require("./services/passwordHelper");
-const securityMiddleware = require("./middleware/loginMiddleware");
+// const securityMiddleware = require("./middleware/loginMiddleware");
 
 // CORS
 
