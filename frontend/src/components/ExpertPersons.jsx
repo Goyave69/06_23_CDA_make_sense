@@ -12,7 +12,7 @@ export default function ExpertPersons() {
   return (
     <Box marginTop="10%">
       <Text fontSize="xl" fontWeight="800">
-        Personnes expertes
+        Experts
       </Text>
       <AvatarGroup size="md" max={5} marginY="10%">
         <Avatar name="Ryan Florence" src="https://bit.ly/ryan-florence" />
@@ -22,7 +22,7 @@ export default function ExpertPersons() {
         <Avatar name="Christian Nwamba" src="https://bit.ly/code-beast" />
       </AvatarGroup>
       <Text fontSize="md" fontWeight="700" textDecoration="underline">
-        Voir les avis
+        See surveys
       </Text>
       <Center>
         <Button
@@ -37,7 +37,7 @@ export default function ExpertPersons() {
           marginTop="20%"
           _hover={{ bg: "#196C84" }}
         >
-          Donner mon avis
+          Post my survey
         </Button>
       </Center>
     </Box>

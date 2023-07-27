@@ -1,5 +1,3 @@
-/* eslint-disable react/no-array-index-key */
-/* eslint-disable import/no-extraneous-dependencies */
 import { React, useEffect, useState } from "react";
 import {
   Avatar,
@@ -56,7 +54,7 @@ export default function DecisionPage() {
                 padding="1% 2% 1% 2%"
                 fontSize="0.7em"
               >
-                Décision en cours
+                Pending decision
               </Badge>
               <Badge
                 variant="subtle"
@@ -70,7 +68,7 @@ export default function DecisionPage() {
                 padding="1% 2% 1% 2%"
                 fontSize="0.7em"
               >
-                Hub France
+                France Hub
               </Badge>
             </Stack>
             <Text
@@ -83,12 +81,12 @@ export default function DecisionPage() {
             >
               {decision.title}
             </Text>
-            <Stack direction="row" spacing={2} position="absolute" bottom="8%">
+            <Stack direction="row" spacing={1} position="absolute" bottom="8%">
               <Avatar name="Jane Doe" marginLeft="10%" size="sm" />
 
               <Stack direction="row" margin="4% 0 2% 0">
                 <Text variant="caption" marginLeft="3%" fontSize="sm">
-                  par
+                  by
                 </Text>
                 <Text
                   variant="caption"

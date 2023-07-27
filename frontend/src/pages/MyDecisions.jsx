@@ -47,7 +47,7 @@ export default function MyDecisions() {
               padding="1% 2% 1% 2%"
               fontSize="0.7em"
             >
-              Décision en cours
+              Pending decision
             </Badge>
             <Badge
               variant="subtle"
@@ -61,7 +61,7 @@ export default function MyDecisions() {
               padding="1% 2% 1% 2%"
               fontSize="0.7em"
             >
-              Hub France
+              France Hub
             </Badge>
           </Stack>
           <Text
@@ -74,12 +74,12 @@ export default function MyDecisions() {
           >
             Moving outside of Paris in Spring 2023 (late April) and test Milan
           </Text>
-          <Stack direction="row" spacing={2} position="absolute" bottom="3%">
+          <Stack direction="row" spacing={1} position="absolute" bottom="3%">
             <Avatar name="Jane Doe" marginLeft="10%" size="sm" />
 
             <Stack direction="row" margin="4% 0 2% 0">
               <Text variant="caption" marginLeft="3%" fontSize="sm">
-                par
+                by
               </Text>
               <Text
                 variant="caption"
@@ -116,7 +116,7 @@ export default function MyDecisions() {
                 padding="1% 2% 1% 2%"
                 fontSize="0.8em"
               >
-                Décision en cours
+                Pending decision
               </Badge>
               <Badge
                 variant="subtle"
@@ -130,18 +130,18 @@ export default function MyDecisions() {
                 padding="1% 2% 1% 2%"
                 fontSize="0.8em"
               >
-                Hub France
+                France Hub
               </Badge>
             </Stack>
             <Text fontSize="2xl" fontWeight="900" margin="5% 0 5% 6%">
               {decision.title}
             </Text>
-            <Stack direction="row" spacing={2} position="absolute" bottom="8%">
+            <Stack direction="row" spacing={1} position="absolute" bottom="8%">
               <Avatar name="Jane Doe" marginLeft="10%" size="sm" />
 
               <Stack direction="row" margin="4% 0 2% 0">
                 <Text variant="caption" marginLeft="3%" fontSize="sm">
-                  par
+                  by
                 </Text>
                 <Text
                   variant="caption"

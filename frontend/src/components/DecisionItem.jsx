@@ -38,7 +38,7 @@ export default function DecisionItem() {
   return (
     <Grid height="100vh" templateColumns="84% 1% 15%" color="#0C3944">
       <GridItem>
-        <GridItem mt="4%" marginLeft="20%">
+        <GridItem mt="4%" marginLeft="15%">
           <Badge
             variant="subtle"
             color="#24673A"
@@ -51,7 +51,7 @@ export default function DecisionItem() {
             padding="0.25% 0.75% 0.25% 0.75%"
             fontSize="0.8em"
           >
-            Décision en cours
+            Pending decision
           </Badge>
           <Badge
             variant="subtle"
@@ -66,7 +66,7 @@ export default function DecisionItem() {
             padding="0.25% 0.75% 0.25% 0.75%"
             fontSize="0.8em"
           >
-            Hub France
+            France Hub
           </Badge>
           <Text fontSize="5xl" fontWeight="800" mt="1.5%">
             {data.title}
@@ -76,7 +76,7 @@ export default function DecisionItem() {
               <Avatar name="Jane Doe" size="sm" />
               <Stack direction="row" margin="4% 0 2% 0">
                 <Text variant="caption" marginLeft="2%" fontSize="sm">
-                  par
+                  by
                 </Text>
                 <Text
                   variant="caption"
@@ -91,7 +91,7 @@ export default function DecisionItem() {
           </Stack>
         </GridItem>
         <GridItem mt="2%">
-          <Accordion allowToggle marginLeft="20%">
+          <Accordion allowToggle marginLeft="15%">
             <AccordionItem borderTop="none">
               <h2>
                 <AccordionButton
@@ -102,7 +102,7 @@ export default function DecisionItem() {
                 >
                   <AccordionIcon marginRight="1%" />
                   <Box as="span" flex="1" textAlign="left" fontWeight="1000">
-                    Les détails de la décision
+                    Details
                   </Box>
                 </AccordionButton>
                 <Divider />
@@ -122,7 +122,7 @@ export default function DecisionItem() {
                 >
                   <AccordionIcon marginRight="1%" />
                   <Box as="span" flex="1" textAlign="left" fontWeight="1000">
-                    Impact sur l'organisation
+                    Organization utility
                   </Box>
                 </AccordionButton>
                 <Divider />
@@ -141,7 +141,7 @@ export default function DecisionItem() {
                 >
                   <AccordionIcon marginRight="1%" />
                   <Box as="span" flex="1" textAlign="left" fontWeight="1000">
-                    Bénéfices 👍
+                    Benefits 👍
                   </Box>
                 </AccordionButton>
                 <Divider />
@@ -160,7 +160,7 @@ export default function DecisionItem() {
                 >
                   <AccordionIcon marginRight="1%" />
                   <Box as="span" flex="1" textAlign="left" fontWeight="1000">
-                    Risques potentiels 🚨
+                    Possible risks 🚨
                   </Box>
                 </AccordionButton>
                 <Divider />
@@ -179,7 +179,7 @@ export default function DecisionItem() {
                 >
                   <AccordionIcon marginRight="1%" />
                   <Box as="span" flex="1" textAlign="left" fontWeight="1000">
-                    Avis 💬
+                    Surveys 💬
                   </Box>
                 </AccordionButton>
                 <Divider />
@@ -223,7 +223,7 @@ export default function DecisionItem() {
                 >
                   <AccordionIcon marginRight="1%" />
                   <Box as="span" flex="1" textAlign="left" fontWeight="1000">
-                    Première décision
+                    First draft
                   </Box>
                 </AccordionButton>
                 <Divider />
@@ -298,7 +298,7 @@ export default function DecisionItem() {
                     mt="5%"
                     _hover={{ bg: "#196C84" }}
                   >
-                    Donner mon avis
+                    Post my survey
                   </Button>
                 </Center>
               </AccordionPanel>
@@ -307,7 +307,7 @@ export default function DecisionItem() {
         </GridItem>
       </GridItem>
       <GridItem>
-        <Divider orientation="vertical" position="absolute" top="3%" />
+        <Divider orientation="vertical" position="absolute" top="9.5%" />
       </GridItem>
       <GridItem mt="10%">
         <DecisionResumeIntel />
