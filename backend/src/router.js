@@ -30,7 +30,7 @@ router.get("/surveys/:id", surveyControllers.getOneSurvey);
 
 // GET Survey By Decision
 
-router.get("/decisionSurvey", surveyControllers.getByDecision);
+router.get("/decisionSurvey/:id", surveyControllers.getByDecision);
 
 // GET Logout
 

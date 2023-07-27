@@ -15,6 +15,7 @@ import {
   Divider,
   Grid,
   GridItem,
+  Input,
   Stack,
   Text,
 } from "@chakra-ui/react";
@@ -40,7 +41,7 @@ export default function NewDecision() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8888/decisionSurvey`)
+      .get(`http://localhost:6001/decisionSurvey/${id}`)
       .then((response) => {
         setSurvey(response.data);
         console.warn(response);
@@ -70,10 +71,12 @@ export default function NewDecision() {
       });
   };
 
+  console.warn(survey.comment_content);
+
   return (
     <Grid height="100vh" templateColumns="84% 1% 15%" color="#0C3944">
       <GridItem>
-        <GridItem mt="4%" marginLeft="15%">
+        <GridItem mt="4%" ml="15%">
           <Badge
             variant="subtle"
             color="#24673A"
@@ -97,7 +100,7 @@ export default function NewDecision() {
             border="solid"
             fontWeight="500"
             textTransform="none"
-            marginLeft="0.5%"
+            ml="0.5%"
             padding="0.25% 0.75% 0.25% 0.75%"
             fontSize="0.8em"
           >
@@ -110,7 +113,7 @@ export default function NewDecision() {
             <Stack direction="row" margin="1% 0 2% 0">
               <Avatar name="Jane Doe" size="sm" />
               <Stack direction="row" margin="4% 0 2% 0">
-                <Text variant="caption" marginLeft="2%" fontSize="sm">
+                <Text variant="caption" ml="2%" fontSize="sm">
                   by
                 </Text>
                 <Text
@@ -126,7 +129,7 @@ export default function NewDecision() {
           </Stack>
         </GridItem>
         <GridItem mt="2%">
-          <Accordion allowToggle marginLeft="15%">
+          <Accordion allowToggle ml="15%">
             <AccordionItem borderTop="none">
               <h2>
                 <AccordionButton
@@ -135,14 +138,20 @@ export default function NewDecision() {
                     color: "rgb(155, 8, 79)",
                   }}
                 >
-                  <AccordionIcon marginRight="1%" />
+                  <AccordionIcon mr="1%" />
                   <Box as="span" flex="1" textAlign="left" fontWeight="1000">
                     Details
                   </Box>
                 </AccordionButton>
                 <Divider />
               </h2>
-              <AccordionPanel pb={4} bgColor="rgb(0 0 0 / 0.020)">
+              <AccordionPanel
+                bgColor="rgb(0 0 0 / 0.020)"
+                px={10}
+                py={5}
+                textAlign="justify"
+                textIndent={20}
+              >
                 {decision.decision_content}
               </AccordionPanel>
             </AccordionItem>
@@ -155,14 +164,20 @@ export default function NewDecision() {
                     color: "rgb(155, 8, 79)",
                   }}
                 >
-                  <AccordionIcon marginRight="1%" />
+                  <AccordionIcon mr="1%" />
                   <Box as="span" flex="1" textAlign="left" fontWeight="1000">
                     Organization utility
                   </Box>
                 </AccordionButton>
                 <Divider />
               </h2>
-              <AccordionPanel pb={4} bgColor="rgb(0 0 0 / 0.020)">
+              <AccordionPanel
+                bgColor="rgb(0 0 0 / 0.020)"
+                px={10}
+                py={5}
+                textAlign="justify"
+                textIndent={20}
+              >
                 {decision.organization_utility}
               </AccordionPanel>
             </AccordionItem>
@@ -174,14 +189,20 @@ export default function NewDecision() {
                     color: "rgb(155, 8, 79)",
                   }}
                 >
-                  <AccordionIcon marginRight="1%" />
+                  <AccordionIcon mr="1%" />
                   <Box as="span" flex="1" textAlign="left" fontWeight="1000">
                     Benefits 👍
                   </Box>
                 </AccordionButton>
                 <Divider />
               </h2>
-              <AccordionPanel pb={4} bgColor="rgb(0 0 0 / 0.020)">
+              <AccordionPanel
+                bgColor="rgb(0 0 0 / 0.020)"
+                px={10}
+                py={5}
+                textAlign="justify"
+                textIndent={20}
+              >
                 {decision.decision_benefits}
               </AccordionPanel>
             </AccordionItem>
@@ -193,14 +214,20 @@ export default function NewDecision() {
                     color: "rgb(155, 8, 79)",
                   }}
                 >
-                  <AccordionIcon marginRight="1%" />
+                  <AccordionIcon mr="1%" />
                   <Box as="span" flex="1" textAlign="left" fontWeight="1000">
                     Possible risks 🚨
                   </Box>
                 </AccordionButton>
                 <Divider />
               </h2>
-              <AccordionPanel pb={4} bgColor="rgb(0 0 0 / 0.020)">
+              <AccordionPanel
+                bgColor="rgb(0 0 0 / 0.020)"
+                px={10}
+                py={5}
+                textAlign="justify"
+                textIndent={20}
+              >
                 {decision.decision_risks}
               </AccordionPanel>
             </AccordionItem>
@@ -213,7 +240,7 @@ export default function NewDecision() {
                     color: "rgb(155, 8, 79)",
                   }}
                 >
-                  <AccordionIcon marginRight="1%" />
+                  <AccordionIcon mr="1%" />
                   <Box as="span" flex="1" textAlign="left" fontWeight="1000">
                     First draft
                   </Box>
@@ -294,31 +321,39 @@ export default function NewDecision() {
                     color: "rgb(155, 8, 79)",
                   }}
                 >
-                  <AccordionIcon marginRight="1%" />
+                  <AccordionIcon mr="1%" />
                   <Box as="span" flex="1" textAlign="left" fontWeight="1000">
-                    Avis 💬
+                    Surveys 💬
                   </Box>
                 </AccordionButton>
                 <Divider />
               </h2>
-              <AccordionPanel pb={4} bgColor="rgb(0 0 0 / 0.020)">
-                {survey.comment_content}
-                <div className="txt_field">
-                  <span />
-                  <label htmlFor="Input">Password</label>
-                  <input
-                    type="text"
-                    onChange={(e) => setComment(e.target.value)}
-                    value={comment}
-                    name="InputPassword"
-                    placeholder="●●●●●●●●●"
-                    required
-                  />
-                </div>
-                <button type="submit" onClick={handleSurveySubmit}>
-                  click
-                </button>
-                {decision.decision_context}
+              <AccordionPanel
+                bgColor="rgb(0 0 0 / 0.020)"
+                px={10}
+                py={5}
+                textAlign="justify"
+                textIndent={20}
+              >
+                <Text
+                  bgColor="#FCF6A0"
+                  borderRadius={10}
+                  border="1px solid #C1E94E"
+                  borderColor="#C1E94E"
+                  px={5}
+                  py={2.5}
+                  textAlign="justify"
+                >
+                  {survey.comment_content}
+                </Text>
+                <Input
+                  mt="2.5%"
+                  variant="filled"
+                  placeholder="Type here..."
+                  onChange={(e) => setComment(e.target.value)}
+                  value={comment}
+                  _focusWithin="#0C3944"
+                />
                 <Center>
                   <Button
                     variant="solid"
@@ -329,8 +364,9 @@ export default function NewDecision() {
                     fontWeight="700"
                     textAlign="center"
                     width="25%"
-                    mt="5%"
+                    mt="2.5%"
                     _hover={{ bg: "#196C84" }}
+                    onClick={handleSurveySubmit}
                   >
                     Post my survey
                   </Button>
