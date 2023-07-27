@@ -1,0 +1,18 @@
+.button-card button {
+  padding: 2px;
+  width: 23px;
+}
+.button-card {
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+  margin: 0 5px 5px 0;
+}
+.button-card button:hover {
+  margin-bottom: -6px;
+}
+.modal-over {
+  background-color: black;
+  backdrop-filter: blur(10px);
+  backdrop-filter: hue-rotate(90deg);
+}

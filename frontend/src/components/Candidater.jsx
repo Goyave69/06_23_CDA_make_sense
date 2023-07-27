@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import "./LePoste.css";
+import "../styles/LePoste.css";
 import ReactQuill from "react-quill";
-import rond from "../../assets/rond.png";
 import "react-quill/dist/quill.snow.css";
+import rond from "../assets/rond.png";
 
-function LePoste({ onButtonClick }) {
+function Candidater({ onButtonClick }) {
   const modulesRef = {
     toolbar: [
       ["bold", "italic", "link", "image"],
@@ -15,16 +15,16 @@ function LePoste({ onButtonClick }) {
     ],
   };
 
-  const [detailForm, setDetailForm] = useState("");
+  const [beneficeForm, setBeneficeForm] = useState("");
 
-  const handleChangeDetail = (content, delta, source, editor) => {
-    setDetailForm(editor.getContents());
+  const handleChangeBenefice = (content, delta, source, editor) => {
+    setBeneficeForm(editor.getContents());
   };
 
-  const [impactForm, setImpactForm] = useState("");
+  const [risqueForm, setRisqueForm] = useState("");
 
-  const handleChangeImpact = (content, delta, source, editor) => {
-    setImpactForm(editor.getContents());
+  const handleChangeRisque = (content, delta, source, editor) => {
+    setRisqueForm(editor.getContents());
   };
 
   return (
@@ -32,7 +32,7 @@ function LePoste({ onButtonClick }) {
       <div className="area-left">
         <div className="haeder-poste">
           <img className="imgRond" src={rond} alt="rond" />
-          <h1>Le poste</h1>
+          <h1>Candidater</h1>
         </div>
         <h4 className="p-haeder">
           C'est le moment d'etre creatif: parlez de votre mission, de l'impact
@@ -42,26 +42,6 @@ function LePoste({ onButtonClick }) {
       <div className="area-right">
         <div>
           <form className="measure">
-            <div className="mt3">
-              <label
-                htmlFor="Titre-annonce"
-                style={{
-                  textAlign: "left",
-                  color: "rgb(190, 190, 190)",
-                  fontSize: "18px",
-                }}
-              >
-                Titre de la decition *
-              </label>
-              <input
-                className="input-form"
-                type="text"
-                name="Titre-annonce"
-                id="Titre-annonce"
-                placeholder="Super job à Paris..."
-              />
-            </div>
-
             <div className="mv3">
               <label
                 className="db lh-copy f6 mb1"
@@ -72,14 +52,14 @@ function LePoste({ onButtonClick }) {
                   fontSize: "18px",
                 }}
               >
-                Les details de la décision *
+                Bénéfices *
               </label>
               <br />
               <br />
 
               <ReactQuill
-                value={detailForm}
-                onChange={handleChangeDetail}
+                value={beneficeForm}
+                onChange={handleChangeBenefice}
                 modules={modulesRef}
                 theme="snow"
               />
@@ -95,13 +75,13 @@ function LePoste({ onButtonClick }) {
                   fontSize: "18px",
                 }}
               >
-                Impact sur l'organisation *
+                Risques potentiels *
               </label>
               <br />
               <br />
               <ReactQuill
-                value={impactForm}
-                onChange={handleChangeImpact}
+                value={risqueForm}
+                onChange={handleChangeRisque}
                 modules={modulesRef}
                 theme="snow"
               />
@@ -118,7 +98,7 @@ function LePoste({ onButtonClick }) {
                 }}
                 type="submit"
                 value="Create Workspace"
-                onClick={() => onButtonClick("Candidater")}
+                onClick={() => onButtonClick("Reglages")}
               />
             </div>
           </form>
@@ -128,4 +108,4 @@ function LePoste({ onButtonClick }) {
   );
 }
 
-export default LePoste;
+export default Candidater;

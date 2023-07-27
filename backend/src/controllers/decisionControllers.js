@@ -50,11 +50,12 @@ const updateDecision = (req, res) => {
 
 const addDecision = (req, res) => {
   const decision = req.body;
-
+  console.info(req.body);
   models.decision
     .create(decision)
     .then(([result]) => {
-      res.location(`/decisions/${result.insertId}`).sendStatus(201);
+      res.sendStatus(201);
+      console.info(result);
     })
     .catch((err) => {
       console.error(err);

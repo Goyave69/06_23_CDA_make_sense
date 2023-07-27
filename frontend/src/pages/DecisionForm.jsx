@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import MultiStepProgressBar from "../components/MultiStepProgressBar/MultiStepProgressBar";
 import "../styles/DecisionForm.css";
-import LePoste from "../components/LePoste/LePoste";
-import Candidater from "../components/Candidater/Candidater";
-import Reglages from "../components/Reglages/Reglages";
+import LePoste from "../components/LePoste";
+import Candidater from "../components/Candidater";
+import Reglages from "../components/Reglages";
 
 function DecisionForm() {
   const [page, setPage] = useState("LePoste");

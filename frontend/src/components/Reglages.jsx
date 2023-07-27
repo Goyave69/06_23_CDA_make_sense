@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "./Reglages.css";
+import "../styles/LePoste.css";
 import ReactQuill from "react-quill";
-import rond from "../../assets/rond.png";
+import rond from "../assets/rond.png";
 import "react-quill/dist/quill.snow.css";
 
 function Reglages() {

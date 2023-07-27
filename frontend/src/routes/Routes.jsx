@@ -7,6 +7,8 @@ import DecisionLoader from "../components/DecisionLoader";
 import MyDecisions from "../pages/MyDecisions";
 import "../App.css";
 import SignUpPage from "../pages/SignUpPage";
+import DecisionForm from "../pages/DecisionForm";
+import PageExpert from "../pages/PageExpert";
 
 const Routes = [
   {
@@ -40,6 +42,14 @@ const Routes = [
       {
         path: "Test",
         element: <SignUpPage />,
+      },
+      {
+        path: "decisionform",
+        element: <DecisionForm />,
+      },
+      {
+        path: "page-expert",
+        element: <PageExpert />,
       },
     ],
   },

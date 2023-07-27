@@ -27,8 +27,8 @@ app.use(cors);
 
 // POST Routes
 router.post("/login", loginController.login);
-router.post("/users", validateUser, hashPassword, userControllers.addUser);
-router.post("/decisions", validateDecision, decisionControllers.addDecision);
+router.post("/users", hashPassword, userControllers.addUser);
+router.post("/decisions", decisionControllers.addDecision);
 router.post("/surveys", validateSurvey, surveyControllers.addSurvey);
 
 // GET Routes
