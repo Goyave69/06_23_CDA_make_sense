@@ -24,10 +24,10 @@ class SurveyManager extends AbstractManager {
     );
   }
 
-  getByDecision(survey, id) {
+  getByDecision(id) {
     return this.database.query(
-      `SELECT s.id, s.comment_content, u.firstname, u.lastname FROM ${this.table} AS s JOIN makesense_user AS u ON u.id = s.makesense_user_id WHERE s.decision_id = ?`,
-      [survey.decision_id, id]
+      `SELECT * from decision JOIN survey ON decision.id = survey.decision_id where decision.id= ?`,
+      [id]
     );
   }
 }

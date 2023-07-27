@@ -24,7 +24,7 @@ import DecisionResumeIntel from "../components/DecisionResumeIntel";
 
 export default function NewDecision() {
   const [decision, setDecision] = useState({});
-  const [survey, setSurvey] = useState({});
+  const [survey, setSurvey] = useState([]);
   const [comment, setComment] = useState();
   const { id } = useParams();
 
@@ -51,6 +51,9 @@ export default function NewDecision() {
       });
   }, []);
 
+  const commentaire = survey.map((item) => item.comment_content);
+  console.warn(commentaire.length);
+
   const handleSurveySubmit = (e) => {
     e.preventDefault();
     ApiHelper(
@@ -74,7 +77,7 @@ export default function NewDecision() {
   console.warn(survey.comment_content);
 
   return (
-    <Grid height="100vh" templateColumns="84% 1% 15%" color="#0C3944">
+    <Grid height="92.5vh" templateColumns="84% 1% 15%" color="#0C3944">
       <GridItem>
         <GridItem mt="4%" ml="15%">
           <Badge
@@ -344,7 +347,7 @@ export default function NewDecision() {
                   py={2.5}
                   textAlign="justify"
                 >
-                  {survey.comment_content}
+                  {commentaire}
                 </Text>
                 <Input
                   mt="2.5%"

@@ -80,8 +80,6 @@ const deleteSurvey = (req, res) => {
 
 const getByDecision = (req, res) => {
   const { id } = req.params;
-  console.warn(req.body);
-  console.warn(id);
 
   models.survey
     .getByDecision(id)
