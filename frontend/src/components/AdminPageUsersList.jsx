@@ -14,6 +14,7 @@ import {
   Tr,
   Td,
   useDisclosure,
+  useToast,
 } from "@chakra-ui/react";
 import { DeleteIcon, EditIcon, CheckIcon, CloseIcon } from "@chakra-ui/icons";
 import ApiHelper, { deleteApiHelper } from "../services/ApiHelper";
@@ -23,6 +24,8 @@ export default function AdminPageUsersList({ user, index, setDataReload }) {
   const [, setIdToUse] = useState(null);
   const [editableUserIndex, setEditableUserIndex] = useState(-1);
   const [editedData, setEditedData] = useState({});
+
+  const toast = useToast();
 
   const handleEditClick = (userIndex) => {
     setEditableUserIndex(userIndex);
@@ -55,6 +58,13 @@ export default function AdminPageUsersList({ user, index, setDataReload }) {
       setDataReload((curr) => !curr);
     });
     onDeleteAlertClose();
+
+    toast({
+      title: "User deleted.",
+      description: "Let's say goodbye!",
+      status: "success",
+      duration: 3000,
+    });
   };
   const handleEditUser = (dataId = "") => {
     ApiHelper(`users/${dataId}`, "put", JSON.stringify(editedData)).then(() => {
@@ -62,6 +72,12 @@ export default function AdminPageUsersList({ user, index, setDataReload }) {
     });
     onEditAlertClose();
     handleCancelClick();
+    toast({
+      title: "User edited.",
+      description: "Good as new!",
+      status: "success",
+      duration: 3000,
+    });
   };
 
   return (
