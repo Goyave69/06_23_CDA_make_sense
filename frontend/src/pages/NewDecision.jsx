@@ -31,6 +31,8 @@ export default function NewDecision() {
 
   const token = JSON.parse(getCookie("user").split("").splice(2).join(""));
   const userId = token.id;
+  const decisionStatus = decision.progress_status;
+  console.warn(decisionStatus);
 
   useEffect(() => {
     axios
@@ -342,7 +344,7 @@ export default function NewDecision() {
         <Divider orientation="vertical" position="absolute" top="3%" />
       </GridItem>
       <GridItem mt="10%">
-        <DecisionResumeIntel />
+        <DecisionResumeIntel status={decisionStatus} />
       </GridItem>
     </Grid>
   );

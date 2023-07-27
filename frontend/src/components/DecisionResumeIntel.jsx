@@ -5,13 +5,14 @@ import DecisionStepper from "./DecisionStepper";
 import ImpactedPersons from "./ImpactedPersons";
 import ExpertPersons from "./ExpertPersons";
 
-export default function DecisionResumeIntel() {
+export default function DecisionResumeIntel({ status }) {
+  console.warn(status);
   return (
     <>
       <Text fontSize="xl" fontWeight="800">
         Dates à retenir
       </Text>
-      <DecisionStepper />
+      <DecisionStepper status={status} />
       <ImpactedPersons />
       <ExpertPersons />
     </>
