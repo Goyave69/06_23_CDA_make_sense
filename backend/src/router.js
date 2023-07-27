@@ -9,11 +9,7 @@ const surveyControllers = require("./controllers/surveyControllers");
 const authControllers = require("./controllers/authControllers");
 
 // Validators
-const {
-  validateDecision,
-  validateUser,
-  validateSurvey,
-} = require("./services/validators");
+const { validateDecision, validateSurvey } = require("./services/validators");
 
 // Hashing
 const { hashPassword } = require("./services/passwordHelper");
