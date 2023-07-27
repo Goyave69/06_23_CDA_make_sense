@@ -8,28 +8,34 @@ function login(req, res) {
   models.user
     .findOneByEmail(email)
     .then(async ([rows]) => {
+      const user = rows[0];
+
       if (rows.length === 0) {
-        res.sendStatus(404);
+        return res.sendStatus(404);
       }
-      if (!(await helper.verifyPassword(rows[0].password, password))) {
-        console.warn(password);
-        console.warn(rows[0].password);
-        res.status(401).json("Email or password is wrong");
+      if (!(await helper.verifyPassword(user.password, password))) {
+        console.warn("titi", password);
+        console.warn("otot", user.password);
+        return res.status(401).json("Email or password is wrong");
       }
-      const token = jwtGenerator(rows[0].id);
-      res
+      const token = jwtGenerator(user.id);
+      console.warn(token);
+      delete user.password;
+      return res
         .cookie("token", token, {
           httpOnly: true,
+        })
+        .cookie("user", user, {
+          httpOnly: false,
         })
         .status(200)
         .json({ message: "Login successful" });
     })
     .catch((err) => {
       console.error(err);
-      res.sendStatus(500);
+      return res.sendStatus(500);
     });
 }
-
 async function logoutController(req, res) {
   return res.clearCookie("token").status(200).json("Successfully logged out");
 }

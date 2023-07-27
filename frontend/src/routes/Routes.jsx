@@ -3,6 +3,7 @@ import AdminPage from "../pages/AdminPage";
 import ErrorPage from "../pages/ErrorPage";
 import DecisionForm from "../pages/DecisionForm";
 import DecisionPage from "../pages/DecisionPage";
+import DecisionItem from "../components/DecisionItem";
 import LoginPage from "../pages/LoginPage";
 import MyDecisions from "../pages/MyDecisions";
 import SignUpPage from "../pages/SignUpPage";
@@ -15,13 +16,13 @@ const Routes = [
     element: <LoginPage />,
   },
   {
-    path: "/make_sense",
+    path: "/",
     element: <App />,
     children: [
-      // {
-      //   path: "decision-item",
-      //   element: <DecisionItem />,
-      // },
+      {
+        path: "decision-item",
+        element: <DecisionItem />,
+      },
       {
         path: "decision",
         element: <DecisionPage />,

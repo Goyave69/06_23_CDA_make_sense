@@ -20,6 +20,8 @@ import {
   Text,
 } from "@chakra-ui/react";
 import ApiHelper from "../services/ApiHelper";
+import getCookie from "../services/CookieHelper";
+
 import DecisionResumeIntel from "../components/DecisionResumeIntel";
 
 export default function NewDecision() {
@@ -27,6 +29,33 @@ export default function NewDecision() {
   const [survey, setSurvey] = useState([]);
   const [comment, setComment] = useState();
   const { id } = useParams();
+
+  const token = JSON.parse(getCookie("user").split("").splice(2).join(""));
+  const userId = token.id;
+
+  const userRole = token.role;
+
+  let decisionStatus = decision.progress_status;
+
+  const updateStatus = () => {
+    decisionStatus += 1;
+  };
+
+  const editedData = {
+    progress_status: decisionStatus,
+  };
+
+  // s'éxecute comme un useEffect jsp pourquoi
+
+  const handleUpdateStatus = (dataId = "") => {
+    updateStatus();
+    ApiHelper(`decisions/${dataId}`, "put", JSON.stringify(editedData)).then(
+      () => {}
+    );
+  };
+
+  const decisionConflict = decision.in_conflict;
+  console.warn(decisionConflict);
 
   useEffect(() => {
     axios
@@ -62,7 +91,7 @@ export default function NewDecision() {
       {
         decision_id: id,
         comment_content: comment,
-        makesense_user_id: 1,
+        makesense_user_id: userId,
       },
       "application/json"
     )
@@ -383,8 +412,16 @@ export default function NewDecision() {
         <Divider orientation="vertical" position="absolute" top="9.5%" />
       </GridItem>
       <GridItem mt="10%">
-        <DecisionResumeIntel />
+        <DecisionResumeIntel status={decisionStatus} />
       </GridItem>
+      <GridItem>
+        {userRole === "ROLE_EXPERT" && (
+          <Button>Put This Decision In Conflict ?</Button>
+        )}
+      </GridItem>
+      <Button type="submit" onSubmit={handleUpdateStatus(decision.id)}>
+        oIOscyoisvyiazlv
+      </Button>
     </Grid>
   );
 }

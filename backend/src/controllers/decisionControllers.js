@@ -31,10 +31,34 @@ const getOneDecision = (req, res) => {
 const updateDecision = (req, res) => {
   const decision = req.body;
 
-  decision.id = parseInt(req.params.id, 10);
+  const id = parseInt(req.params.id, 10);
+
+  if (decision.progress_status !== undefined) {
+    decision.progress_status += 1;
+  }
+  models.decision
+    .update(decision, id)
+    .then(([result]) => {
+      if (result.affectedRows === 0) {
+        res.sendStatus(404);
+      } else {
+        res.sendStatus(204);
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+};
+
+const updateDecisionStatus = (req, res) => {
+  const decision = req.body;
+  const id = parseInt(req.params.id, 10);
+
+  decision.progress_status += 1;
 
   models.decision
-    .update(decision)
+    .update(decision, id)
     .then(([result]) => {
       if (result.affectedRows === 0) {
         res.sendStatus(404);
@@ -86,4 +110,5 @@ module.exports = {
   updateDecision,
   addDecision,
   deleteDecision,
+  updateDecisionStatus,
 };

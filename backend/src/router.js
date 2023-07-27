@@ -1,6 +1,8 @@
 const express = require("express");
 
+const app = express();
 const router = express.Router();
+const cors = require("cors");
 
 // Controllers
 const decisionControllers = require("./controllers/decisionControllers");
@@ -9,10 +11,21 @@ const surveyControllers = require("./controllers/surveyControllers");
 const authControllers = require("./controllers/authControllers");
 
 // Validators
-const { validateDecision, validateSurvey } = require("./services/validators");
+const {
+  validateDecision,
+  // validateUser,
+  validateSurvey,
+  putValidateUser,
+  putValidateDecision,
+} = require("./services/validators");
 
 // Hashing
 const { hashPassword } = require("./services/passwordHelper");
+// const securityMiddleware = require("./middleware/loginMiddleware");
+
+// CORS
+
+app.use(cors);
 
 // POST Routes
 router.post("/login", authControllers.login);
@@ -21,6 +34,11 @@ router.post("/decisions", validateDecision, decisionControllers.addDecision);
 router.post("/surveys", validateSurvey, surveyControllers.addSurvey);
 
 // GET Routes
+
+router.get("/getcookie", (req, res) => {
+  res.send(req.cookies);
+});
+
 router.get("/users", userControllers.getAllUsers);
 router.get("/users/:id", userControllers.getOneUser);
 router.get("/decisions", decisionControllers.getAllDecisions);
@@ -37,14 +55,10 @@ router.get("/decisionSurvey/:id", surveyControllers.getByDecision);
 router.get("/logout", authControllers.logoutController);
 
 // PUT Routes
-router.put(
-  "/users/:id",
-
-  userControllers.updateUser
-);
+router.put("/users/:id", putValidateUser, userControllers.updateUser);
 router.put(
   "/decisions/:id",
-  validateDecision,
+  putValidateDecision,
   decisionControllers.updateDecision
 );
 router.put("/surveys/:id", validateSurvey, surveyControllers.updateSurvey);
