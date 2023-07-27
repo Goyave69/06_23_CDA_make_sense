@@ -32,6 +32,10 @@ router.get("/decisions/:id", decisionControllers.getOneDecision);
 router.get("/surveys", surveyControllers.getAllSurveys);
 router.get("/surveys/:id", surveyControllers.getOneSurvey);
 
+// GET Survey By Decision
+
+router.get("/decisionSurvey", surveyControllers.getByDecision);
+
 // PUT Routes
 router.put(
   "/users/:id",

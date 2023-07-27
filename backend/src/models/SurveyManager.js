@@ -7,27 +7,27 @@ class SurveyManager extends AbstractManager {
 
   create(survey) {
     return this.database.query(
-      `insert into ${this.table} (id, user_id, decision_id, comment_content, makesense_user_id) values (?, ?, ?, ?, ?)`,
-      [
-        survey.id,
-        survey.user_id,
-        survey.decision_id,
-        survey.comment_content,
-        survey.makesense_user_id,
-      ]
+      `insert into ${this.table} (decision_id, comment_content, makesense_user_id) values (?, ?, ?)`,
+      [survey.decision_id, survey.comment_content, survey.makesense_user_id]
     );
   }
 
   update(survey) {
     return this.database.query(
-      `update ${this.table} set user_id = ?, decision_id = ?, comment_content = ?, makesense_user_id = ? where id = ?`,
+      `update ${this.table} decision_id = ?, comment_content = ?, makesense_user_id = ? where id = ?`,
       [
-        survey.user_id,
         survey.decision_id,
         survey.comment_content,
         survey.makesense_user_id,
         survey.id,
       ]
+    );
+  }
+
+  getByDecision(survey, id) {
+    return this.database.query(
+      `SELECT s.id, s.comment_content, u.firstname, u.lastname FROM ${this.table} AS s JOIN makesense_user AS u ON u.id = s.makesense_user_id WHERE s.decision_id = ?`,
+      [survey.decision_id, id]
     );
   }
 }

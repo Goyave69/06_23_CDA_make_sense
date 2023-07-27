@@ -28,7 +28,7 @@ function DecisionForm() {
 
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleDecisionSubmit = (e) => {
     e.preventDefault();
     ApiHelper(
       "decisions",
@@ -107,7 +107,7 @@ function DecisionForm() {
               <Reglages
                 decision={[decisionForm, setDecisionForm]}
                 concerner={[concernerForm, setConcernerForm]}
-                handleSend={handleSubmit}
+                handleSend={handleDecisionSubmit}
               />
             ),
           }[page]
