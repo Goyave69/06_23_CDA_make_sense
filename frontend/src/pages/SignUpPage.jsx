@@ -109,10 +109,7 @@ export default function SignUpPage() {
           </div>
           <div className="txt_field" style={{ marginTop: 0 }}>
             <span />
-            <label
-              htmlFor="InputPassword"
-              style={{ fontWeight: 700, margin: "0, 0" }}
-            >
+            <label htmlFor="InputPassword" style={{ fontWeight: 700 }}>
               Password*
             </label>
             <input
