@@ -1,5 +1,6 @@
 import { BiHomeAlt, BiLogOut } from "react-icons/bi";
 import { AiOutlineCalendar } from "react-icons/ai";
+import { AddIcon } from "@chakra-ui/icons";
 
 export default function NavBar() {
   return (
@@ -8,6 +9,12 @@ export default function NavBar() {
         <nav>
           <img src="/src/assets/LogoMS.png" alt="MS-Logo" />
           <ol>
+            <li>
+              <AddIcon />
+              <a href="http://localhost:3000/decision-form">
+                Créer une décision
+              </a>
+            </li>
             <li>
               <BiHomeAlt />
               <a href="http://localhost:3000/decision">Toutes les décisions</a>
