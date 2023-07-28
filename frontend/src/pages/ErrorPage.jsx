@@ -32,7 +32,7 @@ export default function ErrorPage() {
             vos décisions
           </Link>{" "}
           ou{" "}
-          <Link as={ReachLink} to="/" color="#196C84">
+          <Link as={ReachLink} to="/login" color="#196C84">
             connectez-vous
           </Link>
         </Text>
