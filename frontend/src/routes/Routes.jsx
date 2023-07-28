@@ -16,6 +16,10 @@ const Routes = [
     element: <LoginPage />,
   },
   {
+    path: "/signup",
+    element: <SignUpPage />,
+  },
+  {
     path: "/",
     element: <App />,
     children: [
@@ -42,10 +46,6 @@ const Routes = [
       {
         path: "decision/:id",
         element: <NewDecision />,
-      },
-      {
-        path: "Test",
-        element: <SignUpPage />,
       },
       {
         path: "admin",

@@ -39,10 +39,7 @@ export default function SignUpPage() {
   };
 
   return (
-    <div
-      className="main"
-      style={{ backgroundColor: "#9B084F", height: "92.5vh" }}
-    >
+    <div className="main" style={{ backgroundColor: "#9B084F" }}>
       <div
         className="center"
         style={{
@@ -135,7 +132,7 @@ export default function SignUpPage() {
             href="http://localhost:3000/"
             onClick={() =>
               toast({
-                title: "Compte créée",
+                title: "Compte créé",
                 description: "Bienvenue chez vous!",
                 status: "success",
                 duration: 3000,
