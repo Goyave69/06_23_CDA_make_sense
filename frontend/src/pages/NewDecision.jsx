@@ -20,6 +20,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import ApiHelper from "../services/ApiHelper";
+import loadData from "../services/loadData";
 import getCookie from "../services/CookieHelper";
 
 import DecisionResumeIntel from "../components/DecisionResumeIntel";
@@ -33,34 +34,29 @@ export default function NewDecision() {
   const token = JSON.parse(getCookie("user").split("").splice(2).join(""));
   const userId = token.id;
 
-  // const userRole = token.role;
+  const userRole = token.role;
 
-  // let decisionStatus = decision.progress_status;
+  let decisionStatus = decision.progress_status;
 
-  // const updateStatus = () => {
-  //   decisionStatus += 1;
-  // };
+  const updateStatus = () => {
+    decisionStatus += 1;
+  };
 
-  // const editedData = {
-  //   progress_status: decisionStatus,
-  // };
+  const editedData = {
+    progress_status: decisionStatus,
+  };
 
   // s'éxecute comme un useEffect jsp pourquoi (Driss)
   // Je ne sais non plus ^^' (Benoît)
 
-  // const handleUpdateStatus = (dataId = "") => {
-  //   updateStatus();
-  //   ApiHelper(`decisions/${dataId}`, "put", JSON.stringify(editedData)).then(
-  //     () => {}
-  //   );
-  // };
-
-  const decisionConflict = decision.in_conflict;
-  console.warn(decisionConflict);
+  const handleUpdateStatus = (dataId = "") => {
+    updateStatus();
+    ApiHelper(`decisions/${dataId}`, "put", JSON.stringify(editedData)).then();
+  };
 
   useEffect(() => {
     axios
-      .get(`http://localhost:6001/decisions/${id}`)
+      .get(`http://localhost:8888/decisions/${id}`)
       .then((response) => {
         setDecision(response.data);
       })
@@ -71,7 +67,7 @@ export default function NewDecision() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:6001/decisionSurvey/${id}`)
+      .get(`http://localhost:8888/decisionSurvey/${id}`)
       .then((response) => {
         setSurvey(response.data);
         console.warn(response);
@@ -80,9 +76,6 @@ export default function NewDecision() {
         console.error(error);
       });
   }, []);
-
-  // const commentaire = survey.map((item) => item.comment_content);
-  // console.warn(commentaire.length);
 
   const handleSurveySubmit = (e) => {
     e.preventDefault();
@@ -98,6 +91,7 @@ export default function NewDecision() {
     )
       .then((response) => {
         console.warn(response);
+        loadData(`decisionSurvey/${id}`, setSurvey);
       })
       .catch((error) => {
         console.error(error);
@@ -431,14 +425,13 @@ export default function NewDecision() {
       <GridItem mt="10%">
         <DecisionResumeIntel />
       </GridItem>
-      {/* <GridItem>
+      <GridItem>
         {userRole === "ROLE_EXPERT" && (
-          <Button>Put This Decision In Conflict ?</Button>
+          <Button type="submit" onClick={() => handleUpdateStatus(decision.id)}>
+            oIOscyoisvyiazlv
+          </Button>
         )}
       </GridItem>
-      <Button type="submit" onSubmit={handleUpdateStatus(decision.id)}>
-        oIOscyoisvyiazlv
-      </Button> */}
     </Grid>
   );
 }

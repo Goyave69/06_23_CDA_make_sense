@@ -55,8 +55,6 @@ const updateDecisionStatus = (req, res) => {
   const decision = req.body;
   const id = parseInt(req.params.id, 10);
 
-  decision.progress_status += 1;
-
   models.decision
     .update(decision, id)
     .then(([result]) => {

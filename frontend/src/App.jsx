@@ -12,7 +12,7 @@ export default function App() {
 
   React.useEffect(() => {
     if (!token) {
-      navigate("/");
+      navigate("/login");
     }
   }, []);
 
