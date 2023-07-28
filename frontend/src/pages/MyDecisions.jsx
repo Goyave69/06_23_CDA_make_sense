@@ -98,7 +98,7 @@ export default function MyDecisions() {
                 margin="5%"
                 noOfLines={3}
               >
-                <LinkOverlay as={ReachLink} to={`${myDecisions.id}`}>
+                <LinkOverlay as={ReachLink} to={`/decision/${myDecisions.id}`}>
                   {myDecisions.title}
                 </LinkOverlay>
               </Text>

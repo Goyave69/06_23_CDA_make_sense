@@ -20,6 +20,10 @@ const Routes = [
     element: <SignUpPage />,
   },
   {
+    path: "*",
+    element: <ErrorPage />,
+  },
+  {
     path: "/",
     element: <App />,
     children: [
@@ -38,10 +42,6 @@ const Routes = [
       {
         path: "decision-form",
         element: <DecisionForm />,
-      },
-      {
-        path: "*",
-        element: <ErrorPage />,
       },
       {
         path: "decision/:id",

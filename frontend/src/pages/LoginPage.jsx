@@ -71,7 +71,7 @@ export default function LoginPage() {
           <div className="pass">Mot de passe oublié?</div>
           <input type="submit" value="Se connecter" />
           <div className="signup_link">
-            Vous n'êtes pas membre? <a href="Test">Enregistrez-vous</a>
+            Vous n'êtes pas membre? <a href="signup">Enregistrez-vous</a>
           </div>
         </form>
       </div>
