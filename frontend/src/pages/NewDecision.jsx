@@ -48,12 +48,11 @@ export default function NewDecision() {
     progress_status: decisionStatus,
   };
 
-  // s'éxecute comme un useEffect jsp pourquoi (Driss)
-  // Je ne sais non plus ^^' (Benoît)
-
   const handleUpdateStatus = (dataId = "") => {
     updateStatus();
-    ApiHelper(`decisions/${dataId}`, "put", JSON.stringify(editedData)).then();
+    ApiHelper(`decisions/${dataId}`, "put", JSON.stringify(editedData)).then(
+      loadData(`decisions/${dataId}`, setDecision)
+    );
   };
 
   useEffect(() => {
