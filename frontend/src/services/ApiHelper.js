@@ -8,7 +8,7 @@ const ApiHelper = async (
 ) => {
   return axios({
     method,
-    url: `http://localhost:8888/${route}`,
+    url: `http://localhost:6001/${route}`,
     data,
     headers: {
       "content-type": format,
@@ -26,7 +26,7 @@ export const deleteApiHelper = async (
 ) => {
   return axios({
     method,
-    url: `http://localhost:8888/${route}`,
+    url: `http://localhost:6001/${route}`,
     data,
     params,
   });
