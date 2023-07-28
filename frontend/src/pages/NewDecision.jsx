@@ -20,6 +20,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import ApiHelper from "../services/ApiHelper";
+import loadData from "../services/loadData";
 import getCookie from "../services/CookieHelper";
 
 import DecisionResumeIntel from "../components/DecisionResumeIntel";
@@ -36,7 +37,6 @@ export default function NewDecision() {
   const userRole = token.role;
 
   let decisionStatus = decision.progress_status;
-  console.warn(decisionStatus);
 
   const updateStatus = () => {
     decisionStatus += 1;
@@ -50,16 +50,13 @@ export default function NewDecision() {
   // Je ne sais non plus ^^' (Benoît)
 
   const handleUpdateStatus = (dataId = "") => {
-    console.warn("Has been called");
     updateStatus();
-    ApiHelper(`decisions/${dataId}`, "put", JSON.stringify(editedData)).then(
-      () => {}
-    );
+    ApiHelper(`decisions/${dataId}`, "put", JSON.stringify(editedData)).then();
   };
 
   useEffect(() => {
     axios
-      .get(`http://localhost:6001/decisions/${id}`)
+      .get(`http://localhost:8888/decisions/${id}`)
       .then((response) => {
         setDecision(response.data);
       })
@@ -70,7 +67,7 @@ export default function NewDecision() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:6001/decisionSurvey/${id}`)
+      .get(`http://localhost:8888/decisionSurvey/${id}`)
       .then((response) => {
         setSurvey(response.data);
         console.warn(response);
@@ -94,6 +91,7 @@ export default function NewDecision() {
     )
       .then((response) => {
         console.warn(response);
+        loadData(`decisionSurvey/${id}`, setSurvey);
       })
       .catch((error) => {
         console.error(error);
