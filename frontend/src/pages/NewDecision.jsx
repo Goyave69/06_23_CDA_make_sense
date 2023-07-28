@@ -33,6 +33,8 @@ export default function NewDecision() {
 
   const token = JSON.parse(getCookie("user").split("").splice(2).join(""));
   const userId = token.id;
+  const userFirstname = token.firstname;
+  const userLastname = token.lastname;
 
   const userRole = token.role;
 
@@ -138,7 +140,7 @@ export default function NewDecision() {
           </Text>
           <Stack direction="row" marginBottom="-2%">
             <Stack direction="row" margin="1% 0 2% 0">
-              <Avatar name="Jane Doe" size="sm" />
+              <Avatar name={`${userFirstname} ${userLastname}`} size="sm" />
               <Stack direction="row" margin="4% 0 2% 0">
                 <Text variant="caption" ml="2%" fontSize="sm">
                   par
@@ -149,7 +151,7 @@ export default function NewDecision() {
                   fontSize="sm"
                   margin="0 -20% 0 -2%"
                 >
-                  Jane Doe
+                  {userFirstname} {userLastname}
                 </Text>
               </Stack>
             </Stack>

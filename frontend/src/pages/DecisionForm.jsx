@@ -6,9 +6,12 @@ import LePoste from "../components/LePoste/LePoste";
 import Candidater from "../components/Candidater/Candidater";
 import Reglages from "../components/Reglages/Reglages";
 import ApiHelper from "../services/ApiHelper";
+import getCookie from "../services/CookieHelper";
 
 function DecisionForm() {
   const [page, setPage] = useState("LePoste");
+  const token = JSON.parse(getCookie("user").split("").splice(2).join(""));
+  const userId = token.id;
 
   const [titleForm, setTitleForm] = useState("");
   const [detailForm, setDetailForm] = useState();
@@ -45,7 +48,7 @@ function DecisionForm() {
         decision_benefits: beneficeResult,
         decision_risks: risqueResult,
         progress_status: "0",
-        makesense_user_id: "3",
+        makesense_user_id: userId,
         in_conflict: false,
       },
       "application/json"

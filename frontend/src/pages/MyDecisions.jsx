@@ -14,13 +14,23 @@ import {
 } from "@chakra-ui/react";
 import { Link as ReachLink } from "react-router-dom";
 import loadData from "../services/loadData";
+import getCookie from "../services/CookieHelper";
 
 export default function MyDecisions() {
   const [data, setData] = useState([]);
+  const token = JSON.parse(getCookie("user").split("").splice(2).join(""));
+  const userId = token.id;
+  const userFirstname = token.firstname;
+  const userLastname = token.lastname;
+
+  const myDecisionsByUser = data.filter(
+    (decision) => decision.makesense_user_id === userId
+  );
 
   useEffect(() => {
     loadData("decisions", setData);
   }, []);
+
   return (
     <Grid
       templateRows="repeat(1, 1fr)"
@@ -35,8 +45,8 @@ export default function MyDecisions() {
         </Text>
         <Divider />
       </GridItem>
-      {data.map((decision) => (
-        <GridItem key={decision.id}>
+      {myDecisionsByUser.map((myDecisions) => (
+        <GridItem key={myDecisions.id}>
           <LinkBox>
             <Card
               variant="elevated"
@@ -88,8 +98,8 @@ export default function MyDecisions() {
                 margin="5%"
                 noOfLines={3}
               >
-                <LinkOverlay as={ReachLink} to={`${decision.id}`}>
-                  {decision.title}
+                <LinkOverlay as={ReachLink} to={`${myDecisions.id}`}>
+                  {myDecisions.title}
                 </LinkOverlay>
               </Text>
               <Stack
@@ -98,7 +108,11 @@ export default function MyDecisions() {
                 position="absolute"
                 bottom="8%"
               >
-                <Avatar name="Jane Doe" marginLeft="10%" size="sm" />
+                <Avatar
+                  name={`${userFirstname} ${userLastname}`}
+                  marginLeft="10%"
+                  size="sm"
+                />
 
                 <Stack direction="row" margin="4% 0 2% 0">
                   <Text variant="caption" marginLeft="3%" fontSize="sm">
@@ -111,7 +125,7 @@ export default function MyDecisions() {
                     fontSize="sm"
                     margin="0 -20% 0 -2%"
                   >
-                    Jane Doe
+                    {userFirstname} {userLastname}
                   </Text>
                 </Stack>
               </Stack>
