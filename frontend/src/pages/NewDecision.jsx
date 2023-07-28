@@ -46,17 +46,16 @@ export default function NewDecision() {
     progress_status: decisionStatus,
   };
 
-  // s'éxecute comme un useEffect jsp pourquoi (Driss)
-  // Je ne sais non plus ^^' (Benoît)
-
   const handleUpdateStatus = (dataId = "") => {
     updateStatus();
-    ApiHelper(`decisions/${dataId}`, "put", JSON.stringify(editedData)).then();
+    ApiHelper(`decisions/${dataId}`, "put", JSON.stringify(editedData)).then(
+      loadData(`decisions/${dataId}`, setDecision)
+    );
   };
 
   useEffect(() => {
     axios
-      .get(`http://localhost:6001/decisions/${id}`)
+      .get(`http://localhost:8888/decisions/${id}`)
       .then((response) => {
         setDecision(response.data);
       })
@@ -67,7 +66,7 @@ export default function NewDecision() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:6001/decisionSurvey/${id}`)
+      .get(`http://localhost:8888/decisionSurvey/${id}`)
       .then((response) => {
         setSurvey(response.data);
         console.warn(response);
