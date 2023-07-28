@@ -43,6 +43,7 @@ const updateDecision = (req, res) => {
         res.sendStatus(404);
       } else {
         res.sendStatus(204);
+        console.warn("Step progress");
       }
     })
     .catch((err) => {
@@ -51,26 +52,25 @@ const updateDecision = (req, res) => {
     });
 };
 
-const updateDecisionStatus = (req, res) => {
-  const decision = req.body;
-  const id = parseInt(req.params.id, 10);
+// const updateDecisionStatus = (req, res) => {
+//   const decision = req.body;
+//   const id = parseInt(req.params.id, 10);
 
-  decision.progress_status += 1;
-
-  models.decision
-    .update(decision, id)
-    .then(([result]) => {
-      if (result.affectedRows === 0) {
-        res.sendStatus(404);
-      } else {
-        res.sendStatus(204);
-      }
-    })
-    .catch((err) => {
-      console.error(err);
-      res.sendStatus(500);
-    });
-};
+//   models.decision
+//     .update(decision, id)
+//     .then(([result]) => {
+//       if (result.affectedRows === 0) {
+//         res.sendStatus(404);
+//       } else {
+//         res.sendStatus(204);
+//         console.warn("Step progress");
+//       }
+//     })
+//     .catch((err) => {
+//       console.error(err);
+//       res.sendStatus(500);
+//     });
+// };
 
 const addDecision = (req, res) => {
   const decision = req.body;
@@ -110,5 +110,5 @@ module.exports = {
   updateDecision,
   addDecision,
   deleteDecision,
-  updateDecisionStatus,
+  // updateDecisionStatus,
 };

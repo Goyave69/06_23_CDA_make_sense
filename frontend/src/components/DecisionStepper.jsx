@@ -27,6 +27,7 @@ const steps = [
 
 export default function DecisionStepper({ status }) {
   const [activeStep, setActiveStep] = useState(0);
+  console.warn(status);
 
   useEffect(() => {
     // Trouver l'index de l'étape qui est = à progress_status

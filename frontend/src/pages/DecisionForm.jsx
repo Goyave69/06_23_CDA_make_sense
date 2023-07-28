@@ -10,6 +10,7 @@ import ApiHelper from "../services/ApiHelper";
 function DecisionForm() {
   const [page, setPage] = useState("LePoste");
 
+  const [titleForm, setTitleForm] = useState("");
   const [detailForm, setDetailForm] = useState();
   const [impactForm, setImpactForm] = useState("");
   const [beneficeForm, setBeneficeForm] = useState("");
@@ -19,6 +20,7 @@ function DecisionForm() {
 
   /// Destructure the state to get the data of the text editor
 
+  const titleResult = titleForm?.ops?.[0]?.insert;
   const detailResult = detailForm?.ops?.[0]?.insert;
   const impactResult = impactForm?.ops?.[0]?.insert;
   const beneficeResult = beneficeForm?.ops?.[0]?.insert;
@@ -34,7 +36,7 @@ function DecisionForm() {
       "decisions",
       "post",
       {
-        title: "Poste de dev",
+        title: titleResult,
         deadline: "2023-09-30",
         decision_content: detailResult,
         organization_utility: impactResult,
@@ -92,6 +94,7 @@ function DecisionForm() {
             LePoste: (
               <LePoste
                 onButtonClick={nextPage}
+                title={[titleForm, setTitleForm]}
                 detail={[detailForm, setDetailForm]}
                 impact={[impactForm, setImpactForm]}
               />

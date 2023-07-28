@@ -5,7 +5,7 @@ import ReactQuill from "react-quill";
 import rond from "../../assets/rond.png";
 import "react-quill/dist/quill.snow.css";
 
-function LePoste({ onButtonClick, detail, impact }) {
+function LePoste({ onButtonClick, detail, impact, title }) {
   const modulesRef = {
     toolbar: [
       ["bold", "italic", "link", "image"],
@@ -16,8 +16,13 @@ function LePoste({ onButtonClick, detail, impact }) {
     ],
   };
 
+  const [titleForm, setTitleForm] = title;
   const [detailForm, setDetailForm] = detail;
   const [impactForm, setImpactForm] = impact;
+
+  const handleChangeTitle = (content, delta, source, editor) => {
+    setTitleForm(editor.getContents());
+  };
 
   const handleChangeDetail = (content, delta, source, editor) => {
     setDetailForm(editor.getContents());
@@ -53,12 +58,14 @@ function LePoste({ onButtonClick, detail, impact }) {
               >
                 Titre de la décision *
               </label>
-              <input
-                className="input-form"
-                type="text"
-                name="Titre-annonce"
-                id="Titre-annonce"
-                placeholder="Super job à Paris..."
+              <br />
+              <br />
+
+              <ReactQuill
+                value={titleForm}
+                onChange={handleChangeTitle}
+                modules={modulesRef}
+                theme="snow"
               />
             </div>
 

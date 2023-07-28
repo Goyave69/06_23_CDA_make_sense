@@ -36,6 +36,7 @@ export default function NewDecision() {
   const userRole = token.role;
 
   let decisionStatus = decision.progress_status;
+  console.warn(decisionStatus);
 
   const updateStatus = () => {
     decisionStatus += 1;
@@ -49,14 +50,12 @@ export default function NewDecision() {
   // Je ne sais non plus ^^' (Benoît)
 
   const handleUpdateStatus = (dataId = "") => {
+    console.warn("Has been called");
     updateStatus();
     ApiHelper(`decisions/${dataId}`, "put", JSON.stringify(editedData)).then(
       () => {}
     );
   };
-
-  const decisionConflict = decision.in_conflict;
-  console.warn(decisionConflict);
 
   useEffect(() => {
     axios
@@ -426,13 +425,11 @@ export default function NewDecision() {
         <Divider orientation="vertical" position="absolute" top="9.5%" />
       </GridItem>
       <GridItem mt="10%">
-        <DecisionResumeIntel />
+        <DecisionResumeIntel status={editedData} />
       </GridItem>
       <GridItem>
         {userRole === "ROLE_EXPERT" && (
-          <Button type="submit" onSubmit={handleUpdateStatus(decision.id)}>
-            oIOscyoisvyiazlv
-          </Button>
+          <Button onClick={() => handleUpdateStatus(decision.id)}>Step+</Button>
         )}
       </GridItem>
     </Grid>
